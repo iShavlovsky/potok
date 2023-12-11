@@ -1,4 +1,4 @@
-@import './var';
+@import 'var';
 
 @function em($pixels, $context: $var-browser-context-em) {
   @return calc($pixels / $context) * 1em

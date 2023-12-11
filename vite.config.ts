@@ -12,8 +12,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        faq: resolve(__dirname, 'faq/index.html'),
-        documents: resolve(__dirname, 'documents/index.html'),
+        faq: resolve(__dirname, 'faq/faq.html'),
+        documents: resolve(__dirname, 'documents/documents.html'),
       },
     },
   },
@@ -74,7 +74,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 5000,
+    port: 5001,
   },
   preview: {
     port: 3040,

@@ -1,0 +1,34 @@
+$var-browser-context-em: 16;
+$var-browser-context-px: 1;
+$var-body-main-size-font: 1.1111111111111112vw;
+$var-breakpoints: (
+  'bp-xl': 1440px,
+  'bp-l-plus': 1024px,
+  'bp-l': 991px,
+  'bp-m': 767px,
+  'bp-s': 479px
+);
+$var-base-animation-time: 300ms;
+$var-transition-timing: cubic-bezier(.39, .575, .565, 1);
+$fc-major-second: 1.125;
+$fc-minor-third: 1.200;
+$fc-major-third: 1.250;
+$fc-perfect-fourth: 1.333;
+$fc-augmented-fourth: 1.414;
+$fc-perfect-fifth: 1.500;
+$fc-golden-ratio: 1.618;
+$var-multiply: $fc-major-second;
+
+/* ----------- Fonts Variable ----------- */
+// Header
+$ft-header-fonts-bold: 'Base-Bold', sans-serif;
+$ft-header-fonts-semibold: 'Base-SemiBold', sans-serif;
+
+// Body
+$ft-body-fonts-book: 'Base-Book', sans-serif;
+$ft-caption-fonts-semibold: 'Base-SemiBold', sans-serif;
+
+// Body card
+
+$ft-caption-fonts-cardbody: 'Inter', sans-serif;
+

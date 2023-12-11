@@ -1,0 +1,77 @@
+// Primary collor
+$c-primary-blue-70: #4A27EE;
+$c-primary-blue-80: #D2CAFA;
+$c-primary-blue-90: #E7E2FF;
+$c-primary-blue-99: #F2EFFF;
+$c-primary-blue-100: #F7F5FF;
+$c-primary-accent: #5733FF;
+
+// Buttons collor
+$c-top-btns: #1D1D1E;
+$c-sort-btn: #FFF2E7;
+
+// Neutral Grey collor
+$c-gray-00: #000;
+$c-gray-10: #1B1B1B;
+$c-gray-20: #2D2F31;
+$c-gray-30: #47494D;
+$c-gray-40: #5F6266;
+$c-gray-50: #767A80;
+$c-gray-60: #8E9299;
+$c-gray-70: #A6ABB2;
+$c-gray-80: #C3C7CC;
+$c-gray-90: #E0E4EA;
+$c-gray-96: #F0F2F5;
+$c-gray-98: #F5F7FA;
+$c-gray-100: #FFF;
+
+// Buttons Master collor
+$c-btn-bg-primari-default: $c-primary-accent;
+$c-btn-bg-primari-presed: $c-primary-blue-70;
+$c-btn-bg-primari-inactive: $c-primary-blue-100;
+$c-btn-bg-primari-disabled: $c-gray-98;
+$c-btn-txt-primari-default: #FFF;
+$c-btn-txt-primari-presed: #FFF;
+$c-btn-txt-primari-inactive: #C3C7CC;
+$c-btn-txt-primari-disabled: $c-gray-80;
+$c-btn-bg-secondary-default: #F2EFFF;
+$c-btn-bg-secondary-presed: #E7E2FF;
+$c-btn-bg-secondary-inactive: #F5F7FA;
+$c-btn-bg-secondary-disabled: $c-gray-98;
+$c-btn-txt-secondary-default: #5733FF;
+$c-btn-txt-secondary-presed: #5733FF;
+$c-btn-txt-secondary-inactive: #C3C7CC;
+$c-btn-txt-secondary-disabled: $c-gray-80;
+$c-btn-bg-tertiary-default: transperent;
+$c-btn-bg-tertiary-presed: transperent;
+$c-btn-bg-tertiary-inactive: transperent;
+$c-btn-bg-tertiary-disabled: transperent;
+$c-btn-txt-tertiary-default: #5733FF;
+$c-btn-txt-tertiary-presed: #5733FF;
+$c-btn-txt-tertiary-inactive: #C3C7CC;
+$c-btn-txt-tertiary-disabled: $c-gray-80;
+$c-btn-border-tertiary-default: #F2EFFF;
+$c-btn-border-tertiary-presed: #D2CAFA;
+$c-btn-border-tertiary-inactive: #C3C7CC;
+$c-btn-border-tertiary-disabled: $c-gray-80;
+
+// Up to pro collor
+$c-up-pro: #000236;
+
+// Error collor
+$c-error-04: #7B0404;
+$c-error-03: #FE0B0B;
+$c-error-02: #FBDCDC;
+$c-error-01: #FFF4F4;
+
+// Warning collor
+$c-warning-04: #4A3F02;
+$c-warning-03: #FFD706;
+$c-warning-02: #FAEFB3;
+$c-warning-01: #FFFADE;
+
+// Success collor
+$c-success-04: #094708;
+$c-success-03: #76F058;
+$c-success-02: #D1F9C2;
+$c-success-01: #ECFFE5;

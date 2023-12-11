@@ -1,0 +1,215 @@
+/* ------------ Heading ------------ */
+.h1 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(32);
+  font-weight: 600;
+  line-height: 106.25%;
+}
+
+.h2 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(26);
+  font-weight: 600;
+  line-height: 115.385%;
+}
+
+.h3 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(24);
+  font-weight: 600;
+  line-height: 116.667%;
+  letter-spacing: -0.02em;
+}
+
+.h4 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(20);
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.h5 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(18);
+  font-weight: 600;
+  line-height: 122.222%;
+
+}
+
+.h6 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(16);
+  font-weight: 600;
+  line-height: 125%;
+}
+
+.desc-h2-mob-h5 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(26);
+  font-weight: 600;
+  line-height: 115.385%;
+}
+
+.desc-h3-mob-h5 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(24);
+  font-weight: 600;
+  line-height: 116.667%;
+  letter-spacing: -0.02em;
+}
+
+.desc-h1-mob-h4 {
+  font-family: $ft-header-fonts-semibold;
+  font-style: normal;
+  font-size: px(32);
+  font-weight: 600;
+  line-height: 106.25%;
+}
+
+/* ------------ Paragraph ------------ */
+.body-card {
+  font-family: $ft-caption-fonts-cardbody;
+  font-weight: 500;
+}
+
+.caption {
+  font-family: $ft-header-fonts-bold;
+  font-style: normal;
+  font-size: px(12);
+  font-weight: 700;
+  line-height: 133.333%;
+  text-transform: uppercase;
+  letter-spacing: 0.12px;
+}
+
+.body-l {
+  font-family: $ft-body-fonts-book;
+  font-style: normal;
+  font-size: px(18);
+  font-weight: 450;
+  line-height: 133.333%;
+}
+
+.body-m {
+  font-family: $ft-body-fonts-book;
+  font-style: normal;
+  font-size: px(16);
+  font-weight: 450;
+  line-height: 137.5%;
+}
+
+.body-s {
+  font-family: $ft-body-fonts-book;
+  font-style: normal;
+  font-size: px(14);
+  font-weight: 450;
+  line-height: 142.857%;
+}
+
+.desc-bodyl-mob-bodym {
+  font-family: $ft-body-fonts-book;
+  font-style: normal;
+  font-size: px(18);
+  font-weight: 450;
+  line-height: 133.333%;
+}
+
+/* ----------------------- tablet styles ------------------------------ */
+@include tablet {
+  /* ------------ Heading ------------ */
+  .h1 {
+    font-size: px(32);
+    line-height: px(34);
+  }
+
+  .h2 {
+    font-size: px(26);
+    line-height: px(30);
+  }
+
+  .h3 {
+    font-size: px(24);
+    line-height: px(28);
+    letter-spacing: px(-0.48);
+  }
+
+  .h4 {
+    font-size: px(20);
+    line-height: px(24);
+  }
+
+  .h5 {
+    font-size: px(16);
+    line-height: px(22);
+  }
+
+  .h6 {
+    font-size: px(16);
+    line-height: px(20);
+  }
+
+  /* ------------ Paragraph ------------ */
+  .caption {
+    font-size: px(12);
+    line-height: px(16);
+    letter-spacing: px(0.12);
+  }
+
+  .body-l {
+    font-size: px(18);
+    line-height: px(24);
+  }
+
+  .body-m {
+    font-size: px(16);
+    line-height: px(22);
+  }
+
+  .body-s {
+    font-size: px(14);
+    line-height: px(20);
+  }
+}
+
+
+@include horizmobile {
+  /* ------------ Heading ------------ */
+
+
+  /* ------------ Paragraph ------------ */
+
+
+}
+
+
+@include mobile {
+  .desc-h2-mob-h5 {
+    font-size: px(18);
+    line-height: px(22);
+  }
+
+  .desc-bodyl-mob-bodym {
+    font-size: px(16);
+    line-height: px(22);
+  }
+
+  .desc-h3-mob-h5 {
+    font-size: px(18);
+    line-height: px(22);
+  }
+
+  .desc-h1-mob-h4 {
+    font-size: px(20);
+    line-height: px(24);
+  }
+}
+
+

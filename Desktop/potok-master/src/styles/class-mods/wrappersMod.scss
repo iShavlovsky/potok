@@ -1,0 +1,115 @@
+@import '../scss/color';
+@import '../scss/breakpoints';
+
+/* ----------------------- main ------------------------------ */
+.relative {
+  position: relative;
+}
+
+.sticky-0 {
+  position: sticky;
+  top: 0
+}
+
+.dont-shrink {
+  flex: 0 0 auto;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.border-radius-50prc {
+  border-radius: 50%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.wm-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.gap-4px {
+  gap: px(4);
+}
+
+.gap-8px {
+  gap: px(8);
+}
+
+.gap-16px {
+  gap: px(16);
+}
+
+.aling-self-center {
+  align-self: center;
+}
+
+.aling-self-start {
+  align-self: flex-start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-self-stretch {
+  justify-self: stretch;
+}
+
+.height-100vh {
+  min-height: 100vh;
+}
+
+.height-100prc {
+  min-height: 100%;
+}
+
+.wm-grow-if-possible {
+  flex: 1 1 0;
+}
+
+.wm-width-100prc {
+  width: 100%;
+}
+
+.mobile-show {
+  display: none;
+}
+
+.disabled {
+  color: $c-gray-00 !important;
+}
+
+.container {
+  padding: 0 48px;
+}
+
+
+@include horizmobile {
+  .horizmobile-hide {
+    display: none;
+  }
+}
+
+@include mobile {
+  .mobile-show {
+    display: block;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+}

@@ -1,0 +1,35 @@
+/* ------------ texts ------------ */
+
+
+
+/* ------------ borders ------------ */
+
+
+/* ------------ Grids ------------ */
+@mixin m-col-1-grid($mt: px(0), $row-gap: px(8)){
+  margin-top: $mt;
+  display: grid;
+  row-gap: $row-gap;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+@mixin m-col-2-grid($mt: px(0), $row-gap: px(8), $column-gap: px(8)){
+  margin-top: $mt;
+  display: grid;
+  gap: $row-gap $column-gap;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+@mixin m-col-3-grid($mt: px(0), $row-gap: px(8), $column-gap: px(8)){
+  margin-top: $mt;
+  display: grid;
+  gap: $row-gap $column-gap;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+// is used to indent text blocks
+
+

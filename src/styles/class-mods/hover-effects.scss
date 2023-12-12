@@ -1,0 +1,11 @@
+@import '../scss/var';
+@import '../scss/color';
+
+.link {
+    transition: color $var-base-animation-time linear;
+
+    &:hover {
+        color: $accent-color;
+    }
+}
+

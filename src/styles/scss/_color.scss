@@ -42,10 +42,10 @@ $c-btn-txt-secondary-default: #5733FF;
 $c-btn-txt-secondary-presed: #5733FF;
 $c-btn-txt-secondary-inactive: #C3C7CC;
 $c-btn-txt-secondary-disabled: $c-gray-80;
-$c-btn-bg-tertiary-default: transperent;
-$c-btn-bg-tertiary-presed: transperent;
-$c-btn-bg-tertiary-inactive: transperent;
-$c-btn-bg-tertiary-disabled: transperent;
+$c-btn-bg-tertiary-default: transparent;
+$c-btn-bg-tertiary-presed: transparent;
+$c-btn-bg-tertiary-inactive: transparent;
+$c-btn-bg-tertiary-disabled: transparent;
 $c-btn-txt-tertiary-default: #5733FF;
 $c-btn-txt-tertiary-presed: #5733FF;
 $c-btn-txt-tertiary-inactive: #C3C7CC;
@@ -75,3 +75,9 @@ $c-success-04: #094708;
 $c-success-03: #76F058;
 $c-success-02: #D1F9C2;
 $c-success-01: #ECFFE5;
+
+
+/* Main Colors */
+$accent-color: #04CCD9;
+$background-color: #173B57;
+$deep-dive: #10273D;

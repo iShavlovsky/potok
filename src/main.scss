@@ -3,7 +3,7 @@
 @import 'styles/class-mods/fontStyle';
 
 body {
-    background: rgba(23, 59, 87, 1);
+    background: $background-color;
 }
 
 header.header {
@@ -11,32 +11,159 @@ header.header {
     top: 2;
     left: 0;
     width: 100%;
-    height: 76px;
+    height: px(76);
 
-    padding: 28px 0;
+    padding: px(28) 0;
 
-    font-size: 15px;
+    font-size: px(15);
     font-weight: 500;
     line-height: 1;
     letter-spacing: 1%;
-    color: #fff;
+    color: $c-gray-100;
 }
 
 .header__inner {
     align-items: center;
 }
 
-.header__navigation {
-    ul {
-        column-gap: 40px;
-    }
+.header__navbar{
+    column-gap: px(40);
 }
 
 .login {
     text-transform: lowercase;
     display: block;
+    position: relative;
+    cursor: pointer;
     
     span {
-        margin-right: 6px;
+        margin-right: px(6);
+    }
+    
+    svg {
+        transition: transform $var-base-animation-time linear;
+
+        path {
+            transition: stroke $var-base-animation-time linear;
+        }
+    }
+
+    &:hover {
+        svg {
+            transform: rotate(180deg);
+            
+            path {
+                stroke: $accent-color;
+            }
+        }
+
+        span {
+            color: $accent-color;
+        }
     }
 }
+
+.login-popup {
+    position: absolute;
+    
+    padding: px(20); 
+    right: 0;
+    top: 100%;
+    width: 200%;
+
+    background: $c-gray-100;
+    border-radius: px(20);
+    color: $background-color;
+
+    display: none;
+
+    a {
+        display: block;
+        margin-bottom: px(20);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.login:hover .login-popup,
+.login-popup:hover {
+    display: flex;
+}
+
+/* Main */
+.main {
+    padding-top: px(76);
+}
+
+/* Intro */
+.intro {
+    padding-top: px(42);
+    height: calc(100vh - px(76));
+    position: relative;
+}
+
+.intro__inner {
+    color: $c-gray-100;
+    text-transform: lowercase;
+
+    max-width: 60%;
+}
+
+.intro__title {
+    line-height: px(63);
+    letter-spacing: px(-1);
+    font-size: px(70);
+    font-weight: 500;
+
+    margin-bottom: px(40);
+}
+
+.intro__desc {
+    line-height: px(22);
+    font-size: px(20);
+    max-width: 50%;
+}
+
+.intro__cards {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    align-items: stretch;
+    column-gap: px(1);
+}
+
+/* Card */
+.card {
+    padding: px(28);
+    text-transform: lowercase;
+    background: $c-gray-100;
+    display: inline-block;
+    cursor: pointer;
+    width: 265px;
+    position: relative;
+
+    svg {
+        position: absolute;
+        bottom: px(32);
+        left: px(28);
+    }
+}
+
+.card__title {
+    font-weight: 500;
+    font-size: px(17);
+    line-height: px(20.4);
+    color: $deep-dive;
+    margin-bottom: px(10);
+}
+
+.card__desc {
+    color: $c-gray-50;
+    line-height: px(18);
+    font-size: px(15);
+    margin-bottom: 71px;
+}
+
+

@@ -69,6 +69,7 @@ export default defineConfig({
         @import "@/styles/scss/_function.scss";
         @import "@/styles/scss/_mixins.scss";
         @import "@/styles/scss/_breakpoints.scss";
+        @import "@/styles/scss/_fonts.scss";
         `,
       },
     },

@@ -3,23 +3,23 @@
 @import 'styles/class-mods/fontStyle';
 
 body {
-    background: $background-color;
+    background: $c-white;
 }
 
-header.header {
+.header {
     position: absolute;
-    top: 2;
+    top: 0;
     left: 0;
     width: 100%;
     height: px(76);
 
     padding: px(28) 0;
 
-    font-size: px(15);
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: 1%;
-    color: $c-gray-100;
+    letter-spacing: px(1);
+    color: $c-white;
+    background: $c-background;
+
+    z-index: 1000;
 }
 
 .header__inner {
@@ -53,12 +53,12 @@ header.header {
             transform: rotate(180deg);
             
             path {
-                stroke: $accent-color;
+                stroke: $c-accent;
             }
         }
 
         span {
-            color: $accent-color;
+            color: $c-accent;
         }
     }
 }
@@ -66,20 +66,22 @@ header.header {
 .login-popup {
     position: absolute;
     
-    padding: px(20); 
+    padding: px(24) px(20); 
     right: 0;
-    top: 100%;
+    top: calc(100% + px(10));
     width: 200%;
 
-    background: $c-gray-100;
-    border-radius: px(20);
-    color: $background-color;
+    background: $c-white;
+    border-radius: px(12);
+    color: $c-deep-dive;
+    line-height: px(18);
+    box-shadow: 0px 2px 22px 0px rgba(13, 39, 65, 0.12);
 
     display: none;
 
     a {
         display: block;
-        margin-bottom: px(20);
+        margin-bottom: px(10);
 
         &:last-child {
             margin-bottom: 0;
@@ -100,30 +102,25 @@ header.header {
 /* Intro */
 .intro {
     padding-top: px(42);
-    height: calc(100vh - px(76));
+    min-height: calc(100vh - px(76));
     position: relative;
+    background: $c-background;
 }
 
 .intro__inner {
-    color: $c-gray-100;
+    color: $c-white;
     text-transform: lowercase;
 
-    max-width: 60%;
+    max-width: 70%;
 }
 
 .intro__title {
-    line-height: px(63);
-    letter-spacing: px(-1);
-    font-size: px(70);
-    font-weight: 500;
-
     margin-bottom: px(40);
+    letter-spacing: px(-1);
 }
 
 .intro__desc {
-    line-height: px(22);
-    font-size: px(20);
-    max-width: 50%;
+    max-width: 40%;
 }
 
 .intro__cards {
@@ -137,33 +134,128 @@ header.header {
 /* Card */
 .card {
     padding: px(28);
+    padding-bottom: px(32);
     text-transform: lowercase;
     background: $c-gray-100;
-    display: inline-block;
     cursor: pointer;
     width: 265px;
     position: relative;
-
-    svg {
-        position: absolute;
-        bottom: px(32);
-        left: px(28);
-    }
 }
 
 .card__title {
-    font-weight: 500;
-    font-size: px(17);
-    line-height: px(20.4);
-    color: $deep-dive;
+    color: $c-deep-dive;
     margin-bottom: px(10);
 }
 
 .card__desc {
     color: $c-gray-50;
-    line-height: px(18);
-    font-size: px(15);
-    margin-bottom: 71px;
+    margin-bottom: px(24);
+}
+
+/* Partners */ 
+.partners {
+    margin-top: px(80);
+    overflow: hidden;
+}
+
+.partners__title {
+    color: $c-deep-dive;
+    margin-bottom: px(64);
+}
+
+.partners__scroll {
+    gap: px(20);
+}
+
+.partners__list {
+    column-gap: px(20);
+}
+
+.partner {
+    width: 21.6%;
+    height: px(160);
+    border: 1px solid $c-light-gray;
+    border-radius: px(12);
+    position: relative;
+}
+
+.partner__desc {
+    position: absolute;
+    top: px(14);
+    left: px(14);
+    color: $c-deep-dive;
+}
+
+/* Products */
+.products {
+    padding-top: px(140);
+}
+
+.products__inner {
+    column-gap: px(20);
+    align-items: stretch;
+}
+
+.products__title {
+    color: $c-deep-dive;
+    margin-bottom: px(32);
+}
+
+.product {
+    background: $c-background;
+    padding: px(40) px(28);
+    flex: 0 0 48%;
+    border-radius: px(24);
+    min-height: px(595);
+}
+
+.product__content {
+    max-width: 78%;
+
+    .descriptor {
+        color: $c-white;
+        opacity: 0.5;
+    }
+}
+
+.product__title {
+    color: $c-white;
+    margin-bottom: px(20);
+}
+
+.product__advs {
+    color: $c-white;
+    gap: px(6);
+    margin-bottom: px(20);
+    
+    li {
+        font-weight: 400;
+        position: relative;
+        padding-left: px(10);
+
+        &::before {
+            content: '';
+
+            background-color: $c-white;
+            width: px(4);
+            height: px(4);
+            border-radius: 100%;
+
+            position: absolute;
+            top: px(8);
+            left: 0;
+        }
+    }
+}
+
+.product__button {
+    display: inline-block;
+    background-color: $c-white;
+    padding: px(20) px(32) px(24);
+    text-align: center;
+    color: $c-background;
+    border-radius: 8px;
+    border: 1px solid $c-white;
 }
 
 

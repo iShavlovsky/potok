@@ -2,26 +2,27 @@
 .h1 {
   font-family: $ft-medium;
   font-style: normal;
-  font-size: px(32);
-  font-weight: 600;
-  line-height: 106.25%;
+  font-size: px(70);
+  font-weight: 500;
+  line-height: px(63);
+  letter-spacing: -0.01em;
 }
 
 .h2 {
   font-family: $ft-medium;
   font-style: normal;
-  font-size: px(26);
-  font-weight: 600;
-  line-height: 115.385%;
+  font-size: px(60);
+  font-weight: 500;
+  line-height: px(54);
+  letter-spacing: -0.01em;
 }
 
 .h3 {
   font-family: $ft-medium;
   font-style: normal;
-  font-size: px(24);
-  font-weight: 600;
-  line-height: 116.667%;
-  letter-spacing: -0.02em;
+  font-size: px(42);
+  font-weight: 500;
+  line-height: px(42);
 }
 
 .h4 {
@@ -74,6 +75,19 @@
   line-height: 106.25%;
 }
 
+.btn-text {
+  font-size: px(15);
+  line-height: px(15);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.descriptor {
+  font-size: px(12);
+  line-height: px(13.2);
+  letter-spacing: 0.02em;
+}
+
 /* ------------ Paragraph ------------ */
 .body-card {
   font-family: $ft-regular;
@@ -93,25 +107,25 @@
 .body-l {
   font-family: $ft-regular;
   font-style: normal;
-  font-size: px(18);
+  font-size: px(20);
   font-weight: 450;
-  line-height: 133.333%;
+  line-height: px(22);
 }
 
 .body-m {
   font-family: $ft-regular;
   font-style: normal;
-  font-size: px(16);
+  font-size: px(17);
   font-weight: 450;
-  line-height: 137.5%;
+  line-height: px(20.4);
 }
 
 .body-s {
   font-family: $ft-regular;
   font-style: normal;
-  font-size: px(14);
+  font-size: px(15);
   font-weight: 450;
-  line-height: 142.857%;
+  line-height: px(18);
 }
 
 .desc-bodyl-mob-bodym {

@@ -120,7 +120,7 @@ body {
 }
 
 .intro__desc {
-    max-width: 40%;
+    max-width: 45%;
 }
 
 .intro__cards {
@@ -188,7 +188,7 @@ body {
 
 /* Products */
 .products {
-    padding-top: px(140);
+    margin-top: px(140);
 }
 
 .products__inner {
@@ -231,31 +231,330 @@ body {
     li {
         font-weight: 400;
         position: relative;
-        padding-left: px(10);
+    }
+}
+
+/* Numbers */
+.numbers {
+    margin-top: px(140);
+}
+
+.numbers__title {
+    color: $c-deep-dive;
+    margin-bottom: px(48);
+}
+
+.numbers__line {
+    height: px(340);
+    padding-left: px(48);
+    overflow: hidden;
+    gap: px(58);
+}
+
+.indices {
+    height: px(158);
+
+    &:nth-child(even) {
+        align-self: flex-end;
+    }
+}
+
+.indices__number {
+    font-size: px(140);
+    line-height: px(126);
+    letter-spacing: -0.01em;
+    color: $c-deep-dive;
+    white-space: nowrap;
+    margin-bottom: px(12);
+    position: relative;
+
+    &.bill-rub::after { 
+        content: 'млрд ₽';
+
+        position: absolute;
+        right: px(-50);
+        bottom: px(20);
+
+        font-size: px(20);
+        line-height: px(22);
+        opacity: 0.5;
+    }
+}
+
+/* Cabinet */
+.cabinet {
+    margin-top: px(140);
+    padding-top: px(51);
+    padding-bottom: px(50);
+}
+
+.cabinet__tabs {
+    gap: px(20);
+}
+
+.cabinet__img {
+    position: relative;
+    flex-basis: 49%;
+}
+
+.tabs__img {
+    position: absolute;
+    display: none;
+    bottom: px(-100);
+
+    &.active {
+        display: block;
+    }
+}
+
+.cabinet__content {
+    flex-basis: 49%;
+    color: $c-deep-dive;
+}
+
+.cabinet__title {
+    margin-bottom: px(24);
+}
+
+.tabs__headlines {
+    gap: px(16);
+    margin-bottom: px(64);
+}
+
+.tabs__tab {
+    position: relative;
+    cursor: pointer;
+    opacity: 0.3;
+
+    &::before {
+        content: '';
+
+        display: none;
+        width: 24px;
+        height: 24px;
+
+        position: absolute;
+        top: 50%;
+        left: -32px;
+        transform: translateY(-40%);
+
+        background: url('../src/assets/img/svg/right-arrow.svg');
+    }
+
+    &.active {
+        opacity: 1;
 
         &::before {
-            content: '';
-
-            background-color: $c-white;
-            width: px(4);
-            height: px(4);
-            border-radius: 100%;
-
-            position: absolute;
-            top: px(8);
-            left: 0;
+            display: block;
         }
     }
 }
 
-.product__button {
-    display: inline-block;
-    background-color: $c-white;
-    padding: px(20) px(32) px(24);
-    text-align: center;
-    color: $c-background;
-    border-radius: 8px;
-    border: 1px solid $c-white;
+.tabs__content {
+    margin-bottom: 48px;
 }
 
+.tabs__list {
+    gap: px(8);
+
+    li {
+        &::before {
+            background-color: $c-deep-dive;
+        }
+    }
+}
+
+.tabs__button {
+    display: none;
+    color: $c-deep-dive;
+
+    &.active {
+        display: inline-block;
+    }
+}
+
+/* Documents */
+.documents__title {
+    color: $c-deep-dive;
+    margin-top: px(140);
+    margin-bottom: px(64);
+}
+
+.documents__inner {
+    gap: px(20);
+    align-items: stretch;
+    margin-bottom: px(28);
+}
+
+.documents__document {
+    flex-basis: 30%;
+    padding: px(24) px(28) px(50) px(28);
+    border: 1px solid $c-light-gray;
+    border-radius: px(12);
+    min-height: 256px;
+    display: inline-block;
+    color: $c-deep-dive;
+
+    position: relative;
+
+    svg {
+        position: absolute;
+        bottom: 28px;
+        right: 28px;
+    }
+}
+
+.documents__desc {
+    color: $c-deep-dive;
+    opacity: 0.5;
+
+    a {
+        opacity: 1;
+        color: $c-accent;
+        text-decoration: underline;
+    }
+}
+
+/* Develop */
+.develop {
+    margin-top: px(97);
+}
+
+.develop__title {
+    color: $c-deep-dive;
+    margin-bottom: px(32);
+}
+
+.develop__slider {
+    gap: px(161);
+    align-items: stretch;
+    padding-left: px(48);
+    overflow: hidden;
+    margin-bottom: px(20);
+}
+
+.develop__year {
+    align-items: center;
+    gap: px(71);
+
+    &:nth-child(even) {
+        align-items: flex-end;
+    }
+}
+
+.slider__year-image {
+    display: flex;
+    flex-direction: column;
+    gap: px(71);
+    position: relative;
+    padding-top: px(132);
+}
+
+.develop__year:nth-child(even) .slider__year-image {
+    flex-direction: column-reverse;
+    padding-top: 0;
+    padding-bottom: px(132);
+}
+
+.slider__year {
+    opacity: 0.05;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.develop__year:nth-child(even) .slider__year {
+    top: auto;
+    bottom: 0;
+}
+
+.slider__desc {
+    width: px(240);
+}
+
+.timeline {
+    padding: px(20) 0;
+    column-gap: 10%;
+
+    span {
+        color: $c-deep-dive;
+        opacity: 0.3;
+        cursor: pointer;
+        
+        &:first-child {
+            margin-right: 30%;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+    }   
+}
+
+/* Staff */
+.staff {
+    margin-top: px(140);
+}
+
+.staff__title {
+    color: $c-deep-dive;
+    margin-bottom: px(98);
+}
+
+.staff__man {
+    align-items: center;
+    color: $c-deep-dive;
+    padding: px(32) px(48);
+    border-bottom: 1px solid $c-light-gray;
+    background-color: $c-white;
+    cursor: pointer;
+
+    transition: background-color $var-base-animation-time linear;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    >div {
+        flex-basis: 10%;
+    }
+
+    svg {
+        float: right;
+        
+    }
+    
+    path {
+        transition: stroke $var-base-animation-time linear,
+        fill $var-base-animation-time linear;
+    }
+}
+
+.staff__name {
+    flex-basis: 50%;
+    transition: color $var-base-animation-time linear;
+}
+
+.staff__prof {
+    flex-basis: 40%;
+    transition: color $var-base-animation-time linear;
+}
+
+.staff__man:hover {
+    background-color: $c-background;
+
+    path {
+        stroke: $c-white;
+        fill: $c-white;
+    }
+
+    .staff__name {
+        color: $c-white;
+    }
+
+    .staff__prof {
+        color: $c-white;
+    }
+}
 

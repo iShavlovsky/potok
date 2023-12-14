@@ -1,0 +1,19 @@
+.list-style-disc {
+    li {
+        padding-left: px(10);
+        position: relative;
+
+        &::before {
+            content: '';
+
+            background-color: $c-white;
+            width: px(4);
+            height: px(4);
+            border-radius: 100%;
+
+            position: absolute;
+            top: px(8);
+            left: 0;
+        }
+    }
+}

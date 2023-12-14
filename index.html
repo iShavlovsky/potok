@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="intro__cards wm-flex-row">
-        <div class="card flex-column">
+        <div class="card flex-column justify-space-between">
           <div class="card__text">
             <p class="card__title body-m">хочу получить заем</p>
             <div class="card__desc body-s">онлайн, без залога за 1 день</div>
@@ -245,32 +245,227 @@
         <p class="products__title body-l">продукты</p>
         <div class="products__inner wm-flex-row">
           <div class="product flex-column justify-space-between">
-            <div class="product__content">  
+            <div class="product__content">
               <h3 class="product__title h3">заем на развитие бизнеса</h3>
-              <ul class="product__advs flex-column">
+              <ul class="product__advs flex-column list-style-disc">
                 <li class="body-m">без визитов в офис, перечислим деньги на р/с в любом банке</li>
                 <li class="body-m">не требуем предоставления залога</li>
                 <li class="body-m">выдаем по ставке от 13.5% годовых</li>
               </ul>
             </div>
             <div>
-              <a href="#" class="product__button btn-text">узнать больше</a>
+              <a href="#" class="product__button btn-text button-l">узнать больше</a>
             </div>
           </div>
           <div class="product flex-column justify-space-between">
-            <div class="product__content">  
+            <div class="product__content">
               <h3 class="product__title h3">инвестиции в малый бизнес</h3>
-              <ul class="product__advs">
+              <ul class="product__advs flex-column list-style-disc">
                 <li class="body-m">доходность 24,3% годовых* для стратегии «оптимальная»</li>
-                <li class="body-m">собственная технология скоринга, которая позволяет выбрать заёмщиков, способных вернуть деньги</li>
+                <li class="body-m">собственная технология скоринга, которая позволяет выбрать заёмщиков, способных
+                  вернуть деньги</li>
                 <li class="body-m">инструменты инвестирования без риска</li>
               </ul>
               <p class="descriptor">* средняя доходность инвесторов платформы за последние 12 месяцев</p>
             </div>
             <div>
-              <a href="#" class="product__button btn-text">узнать больше</a>
+              <a href="#" class="product__button btn-text button-l">узнать больше</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers">
+      <div class="container">
+        <p class="body-l numbers__title">поток в цифрах</p>
+      </div>
+      <div class="numbers__line wm-flex-row">
+        <div class="indices flex-column">
+          <span class="indices__number bill-rub">1,34</span>
+          <p class="indices__desc body-m">выплачено процентного дохода инвесторам</p>
+        </div>
+        <div class="indices flex-column">
+          <span class="indices__number bill-rub">17,66</span>
+          <p class="indices__desc body-m">выдали с 2020 года</p>
+        </div>
+        <div class="indices flex-column">
+          <span class="indices__number">327 637</span>
+          <p class="indices__desc body-m">компаний прошли оценку</p>
+        </div>
+        <div class="indices flex-column">
+          <span class="indices__number">49 552</span>
+          <p class="indices__desc body-m">зарегестрированных инвесторов</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cabinet">
+      <div class="container">
+        <div class="cabinet__tabs wm-flex-row">
+          <div class="cabinet__img">
+            <img src="./src/assets/img/png/iphone.png" alt="iphone" class="tabs__static">
+            <img src="./src/assets/img/png/lenders.png" alt="lenders" data-tab="1" class="tabs__img active">
+            <img src="./src/assets/img/png/investors.png" alt="investros" data-tab="2" class="tabs__img">
+          </div>
+          <div class="cabinet__content">
+            <p class="cabinet__title body-l">личный кабинет</p>
+            <div class="tabs__headlines flex-column">
+              <h2 class="h2 tabs__tab active" data-tab="1">заемщика</h2>
+              <h2 class="h2 tabs__tab" data-tab="2">инвестора</h2>
+            </div>
+            <div class="tabs__content">
+              <ul class="tabs__list flex-column list-style-disc active" data-tab="1">
+                <li>получение заема онлайн</li>
+                <li>автоматический скоринг привлечения заема</li>
+                <li>полное и частичное досрочное погашение</li>
+              </ul>
+              <ul class="flex-column list-style-disc" data-tab="2">
+                <li>контроль распределения инвестированных средств</li>
+                <li>инвестирование с возможностью настройки кастомных параметров</li>
+                <li>готовые стратегии инвестирования от экспертов Потока </li>
+              </ul>
+            </div>
+            <a href="#" class="btn-text tabs__button button-l outline active" data-tab="1">стать заемщиком</a>
+            <a href="#" class="btn-text tabs__button button-l outline" data-tab="2">стать инвестором</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="documents">
+      <div class="container">
+        <h2 class="documents__title h2">собственная система скоринга π-score позволяет понять, кому и сколько денег
+          можно выдать</h2>
+        <div class="documents__inner wm-flex-row justify-space-between flex-wrap">
+          <a href="#" download class="documents__document body-l">скоринг происходит по минимальному комплекту
+            документов автоматически: по номеру ИНН и выписке из банка
+            <svg width="24" height="32" viewBox="0 0 24 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4 17C4 16.4477 4.44771 16 5 16C5.55229 16 6 16.4477 6 17C6 17.5523 5.55229 18 5 18C4.44771 18 4 17.5523 4 17ZM5 20C4.44771 20 4 20.4477 4 21C4 21.5523 4.44771 22 5 22C5.55229 22 6 21.5523 6 21C6 20.4477 5.55229 20 5 20ZM4 25C4 24.4477 4.44771 24 5 24C5.55229 24 6 24.4477 6 25C6 25.5523 5.55229 26 5 26C4.44771 26 4 25.5523 4 25ZM9 16C8.44772 16 8 16.4477 8 17C8 17.5523 8.44772 18 9 18H19C19.5523 18 20 17.5523 20 17C20 16.4477 19.5523 16 19 16H9ZM8 21C8 20.4477 8.44772 20 9 20H19C19.5523 20 20 20.4477 20 21C20 21.5523 19.5523 22 19 22H9C8.44772 22 8 21.5523 8 21ZM9 24C8.44772 24 8 24.4477 8 25C8 25.5523 8.44772 26 9 26H19C19.5523 26 20 25.5523 20 25C20 24.4477 19.5523 24 19 24H9ZM4 0C1.79086 0 0 1.79086 0 4V28C0 30.2091 1.79086 32 4 32H20C22.2091 32 24 30.2091 24 28V10.8284C24 10.0328 23.6839 9.26972 23.1213 8.70711L15.2929 0.87868C14.7303 0.316071 13.9672 0 13.1716 0H4ZM2 4C2 2.89543 2.89543 2 4 2H12V9C12 10.6569 13.3431 12 15 12H22V28C22 29.1046 21.1046 30 20 30H4C2.89543 30 2 29.1046 2 28V4ZM21.5858 10H15C14.4477 10 14 9.55229 14 9V2.41421L21.5858 10Z"
+                fill="#10273D" />
+            </svg>
+          </a>
+          <a href="#" download class="documents__document body-l">учитываем более 300 факторов, в том числе санкционные
+            и мобилизационные риски
+            <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14 8C14.5523 8 15 8.44771 15 9V19C15 19.5523 14.5523 20 14 20C13.4477 20 13 19.5523 13 19V9C13 8.44771 13.4477 8 14 8ZM14 25C14.8284 25 15.5 24.3284 15.5 23.5C15.5 22.6716 14.8284 22 14 22C13.1716 22 12.5 22.6716 12.5 23.5C12.5 24.3284 13.1716 25 14 25ZM13.4453 0.16795C13.7812 -0.0559832 14.2188 -0.0559832 14.5547 0.16795C18.4311 2.75221 22.6233 4.36461 27.1414 5.01005C27.6341 5.08043 28 5.50235 28 6V15C28 22.7827 23.386 28.4614 14.359 31.9333C14.1279 32.0222 13.8721 32.0222 13.641 31.9333C4.61399 28.4614 0 22.7827 0 15V6C0 5.50235 0.36593 5.08043 0.858579 5.01005C5.37667 4.36461 9.56892 2.75221 13.4453 0.16795ZM13.1983 2.69165C9.70549 4.79213 5.97082 6.18109 2 6.85573V15C2 21.7841 5.93589 26.7267 14 29.9264C22.0641 26.7267 26 21.7841 26 15V6.85573C22.0292 6.18109 18.2945 4.79213 14.8017 2.69165L14 2.1943L13.1983 2.69165Z"
+                fill="#10273D" />
+            </svg>
+          </a>
+          <a href="#" download class="documents__document body-l">учитываем более 300 факторов, в том числе санкционные
+            и мобилизационные риски
+            <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6 4C6 1.79086 7.79086 0 10 0H19.1716C19.9672 0 20.7303 0.31607 21.2929 0.87868L29.1213 8.70711C29.6839 9.26972 30 10.0328 30 10.8284V28C30 30.2091 28.2091 32 26 32H17.4857C17.9929 31.3858 18.4348 30.7156 18.8006 30H26C27.1046 30 28 29.1046 28 28V12H21C19.3431 12 18 10.6569 18 9V2H10C8.89543 2 8 2.89543 8 4V14.0448C7.31318 14.1067 6.64456 14.2318 6 14.4141V4ZM20 2.41421V9C20 9.55229 20.4477 10 21 10H27.5858L20 2.41421ZM15.364 31.364C11.8492 34.8787 6.15078 34.8787 2.63605 31.364C-0.878683 27.8492 -0.878683 22.1508 2.63605 18.636C6.15078 15.1213 11.8492 15.1213 15.364 18.636C18.8787 22.1508 18.8787 27.8492 15.364 31.364ZM4.8075 30.6067C7.54931 32.6623 11.4562 32.4433 13.9498 29.9498C16.4433 27.4562 16.6623 23.5493 14.6067 20.8075L4.8075 30.6067ZM3.39328 29.1925L13.1925 19.3933C10.4507 17.3377 6.54384 17.5567 4.05026 20.0503C1.55669 22.5438 1.3377 26.4507 3.39328 29.1925Z"
+                fill="#10273D" />
+            </svg>
+          </a>
+        </div>
+        <p class="documents__desc body-s">про систему скоринга, стратегии инвестирования и новости платформы читайте в
+          нашем <a href="#">блоге</a></p>
+      </div>
+    </section>
+
+    <section class="develop">
+      <div class="container">
+        <p class="body-l develop__title">ключевые точки развития Потока</p>
+      </div>
+      <div class="develop__slider wm-flex-row justify-space-between">
+        <div class="develop__year wm-flex-row">
+          <div class="slider__year-image">
+            <span class="slider__year accent-l">2016</span>
+            <img src="./src/assets/img/webp/images/develop-images/2016.webp" alt="2016">
+          </div>
+          <p class="body-s slider__desc">Fintech-компания, запущенная в 2016 году, как внутренний стартап Альфа-банка.
+          </p>
+        </div>
+        <div class="develop__year wm-flex-row justify-space-between">
+          <div class="slider__year-image">
+            <span class="slider__year accent-l">2019</span>
+            <img src="./src/assets/img/webp/images/develop-images/2019.webp" alt="2019">
+          </div>
+          <p class="body-s slider__desc">Антон Еременко и Юрий Попов выкупают у банка контрольный пакет, а Поток
+            превращается в самостоятельную инвестиционную платформу.</p>
+        </div>
+        <div class="develop__year wm-flex-row justify-space-between">
+          <div class="slider__year-image">
+            <span class="slider__year accent-l">2020</span>
+            <img src="./src/assets/img/webp/images/develop-images/2020.webp" alt="2020">
+          </div>
+          <p class="body-s slider__desc">Начало работы над скорингом
+            π-score — Юрий и Антон сами выступают в роли инвесторов. Поток становится резидентом “Сколково”.</p>
+        </div>
+        <div class="develop__year wm-flex-row justify-space-between">
+          <div class="slider__year-image">
+            <span class="slider__year accent-l">2021</span>
+            <img src="./src/assets/img/webp/images/develop-images/2021.webp" alt="2021">
+          </div>
+          <p class="body-s slider__desc">Лидер вторичного рынка инвестиций по объему операций. Разрабатываем
+            и поддерживаем уникальные IT-технологии онлайн-скоринга и торговли инвестициями в займы.</p>
+        </div>
+        <div class="develop__year wm-flex-row justify-space-between">
+          <div class="slider__year-image">
+            <span class="slider__year accent-l">2022</span>
+            <img src="./src/assets/img/webp/images/develop-images/2022.webp" alt="2022">
+          </div>
+          <p class="body-s slider__desc">Акционером компании становится Московская биржа, в штате работает более 50
+            сотрудников. Процессы выстраиваются в соответствии с банковскими стандартами.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="timeline wm-flex-row">
+          <span class="body-m active">2016</span>
+          <span class="body-m">2019</span>
+          <span class="body-m">2020</span>
+          <span class="body-m">2021</span>
+          <span class="body-m">2022</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="staff">
+      <div class="container">
+        <p class="body-l staff__title">участники потока финансируют не менее 10% каждого займа</p>
+      </div>
+      <div class="staff__inner">
+        <div class="staff__man wm-flex-row">
+          <h2 class="h2 staff__name">Юрий Попов</h2>
+          <p class="body-m staff__prof">генеральный директор Поток.Холдинг</p>
+          <div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
+                fill="#10273D" />
+            </svg>
+          </div>
+
+        </div>
+        <div class="staff__man wm-flex-row">
+          <h2 class="h2 staff__name">Антон Еременко</h2>
+          <p class="body-m staff__prof">генеральный директор Поток.Диджитал</p>
+          <div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
+                fill="#10273D" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="staff__man wm-flex-row">
+          <h2 class="h2 staff__name">Юрий Попов</h2>
+          <p class="body-m staff__prof">стратегический партнёр</p>
+          <div>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
+                fill="#10273D" />
+            </svg>
+          </div>
+
         </div>
       </div>
     </section>

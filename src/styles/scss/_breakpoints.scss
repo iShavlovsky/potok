@@ -1,30 +1,36 @@
 /* - от этого разрешения и ниже - */
 @mixin desc1440 {
   @media (max-width: map-get($var-breakpoints, bp-xl)) {
-    @content
+    @content;
 	}
 }
 
 @mixin tablet1024 {
   @media (max-width: map-get($var-breakpoints, bp-l-plus)) {
-    @content
+    @content;
 	}
 }
 
 @mixin tablet {
-  @media (max-width: map-get($var-breakpoints, bp-l)) {
-    @content
+  @media (max-width: map-get($var-breakpoints, bp-m)) {
+    @content;
 	}
 }
 
-@mixin horizmobile {
-  @media (max-width: map-get($var-breakpoints, bp-m)) {
-    @content
-	}
+@mixin big-mobile {
+  @media (max-width: map-get($var-breakpoints, bp-ms)) {
+    @content;
+  }
 }
 
 @mixin mobile {
   @media (max-width: map-get($var-breakpoints, bp-s)) {
-    @content
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: map-get($var-breakpoints, bp-t)) {
+    @content;
 	}
 }

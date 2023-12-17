@@ -6,7 +6,9 @@ $var-breakpoints: (
   'bp-l-plus': 1024px,
   'bp-l': 991px,
   'bp-m': 767px,
-  'bp-s': 479px
+  'bp-ms': 575px,
+  'bp-s': 479px,
+  'bp-t': 376px
 );
 $var-base-animation-time: 300ms;
 $var-transition-timing: cubic-bezier(.39, .575, .565, 1);
@@ -23,5 +25,4 @@ $var-multiply: $fc-major-second;
 
 $ft-regular: 'SuisseIntl-Regular', sans-serif;
 $ft-medium: 'SuisseIntl-Medium', sans-serif;
-
 

@@ -1,16 +1,37 @@
 .button-l {
     display: inline-block;
-    background-color: $c-white;
     padding: px(20) px(32) px(24);
     text-align: center;
     color: $c-background;
     border-radius: 8px;
     border: 1px solid $c-white;
+    background-color: $c-white;
+
+    transition: color $var-base-animation-time linear,
+    background-color $var-base-animation-time linear;
+
+    &:hover {
+        background-color: transparent;
+        color: $c-white;
+    }
 
     &.outline {
         border: 1px solid $c-background;
         color: $c-deep-dive;
         background-color: transparent;
+
+        &:hover {
+            background-color: $c-background;
+            color: $c-white;
+
+            path {
+                fill: $c-white;
+            }
+        }
+    }
+
+    @include mobile {
+        padding: px(14) px(26);
     }
 }
 

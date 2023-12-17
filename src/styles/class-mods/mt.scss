@@ -492,3 +492,15 @@
     margin-top: px(300);
   }
 }
+
+.constant-section-margin-top {
+  margin-top: px(140);
+
+  @include tablet {
+    margin-top: px(120);
+  }
+
+  @include mobile {
+    margin-top: px(100);
+  }
+}

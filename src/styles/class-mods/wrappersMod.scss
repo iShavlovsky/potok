@@ -108,14 +108,39 @@
 }
 
 .container {
-  padding: 0 48px;
+  padding: 0 px(48);
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+
+  @include tablet {
+    padding: 0 px(32);
+  }
+
+  @include mobile {
+    padding: 0 px(16);
+  }
 }
 
+.flex-row-w-tablet-column {
+  display: flex;
+  flex-direction: row;
 
-@include horizmobile {
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
+.flex-row-w-mobile-column {
+  display: flex;
+  flex-direction: row;
+
+  @include big-mobile {
+    flex-direction: column;
+  }
+}
+
+@include tablet {
   .horizmobile-hide {
     display: none;
   }

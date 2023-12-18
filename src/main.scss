@@ -302,6 +302,12 @@ a, button {
         height: auto;
     }
 
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
     @include tablet {
         height: px(115);
     }
@@ -509,7 +515,11 @@ a, button {
 
 .cabinet__content {
     flex: 0 0 49%;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c73c1b7 (merge)
 }
 
 .cabinet__title {
@@ -803,6 +813,11 @@ a, button {
     @include tablet {
         display: none;
     }
+<<<<<<< HEAD
+=======
+
+    span {
+>>>>>>> c73c1b7 (merge)
 
     span {
         
@@ -866,13 +881,21 @@ a, button {
 
 .staff__content {
     flex: 0 0 95%;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c73c1b7 (merge)
     @include tablet1024 {
         align-items: flex-start;
         flex-direction: column;
         gap: px(16);
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c73c1b7 (merge)
 }
 
 .staff__name {
@@ -921,6 +944,7 @@ a, button {
     color: $c-popup;
 
     padding-right: px(80);
+<<<<<<< HEAD
     padding-top: px(100);    
     padding-bottom: px(24);
 
@@ -928,6 +952,15 @@ a, button {
     @include tablet1024 {
         padding-right: px(47);
         padding-top: px(32);    
+=======
+    padding-top: px(100);
+    padding-bottom: px(24);
+
+
+    @include tablet1024 {
+        padding-right: px(47);
+        padding-top: px(32);
+>>>>>>> c73c1b7 (merge)
         padding-bottom: px(32);
     }
 
@@ -947,7 +980,11 @@ a, button {
             margin: 0 auto;
         }
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c73c1b7 (merge)
     @include big-mobile {
         gap: px(28);
         flex-direction: column;
@@ -1040,7 +1077,11 @@ a, button {
 
 .mm__news {
     flex: 0 0 30%;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c73c1b7 (merge)
 }
 
 .mm__date {
@@ -1152,7 +1193,11 @@ a, button {
 
 .footer__navigation {
     flex: 0 0 65%;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c73c1b7 (merge)
     nav {
         gap: px(20);
         margin-bottom: px(65);
@@ -1201,7 +1246,11 @@ a, button {
 
     &.how {
         flex: 0 0 25%;
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> c73c1b7 (merge)
         @include tablet1024 {
             flex: 0 0 45%;
         }

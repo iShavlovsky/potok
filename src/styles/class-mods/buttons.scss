@@ -14,6 +14,10 @@
         padding: px(14) px(26);
     }
 
+    @include tablet {
+        padding: px(14) px(26);
+    }
+
     &:hover {
         background-color: transparent;
         color: $c-white;

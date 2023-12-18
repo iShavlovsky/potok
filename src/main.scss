@@ -34,11 +34,11 @@ a, button {
 
 .header__navbar{
     column-gap: px(40);
-    
+
     a {
         color: $c-white;
     }
-    
+
     @include tablet {
         top: 0;
         left: 0;
@@ -55,7 +55,7 @@ a, button {
         display: none;
 
         &.active {
-            display: flex;  
+            display: flex;
         }
     }
 }
@@ -68,11 +68,11 @@ a, button {
     @include small-mobile {
         display: none;
     }
-    
+
     span {
         margin-right: px(6);
     }
-    
+
     svg {
         transition: transform $var-base-animation-time linear;
 
@@ -84,7 +84,7 @@ a, button {
     &:hover {
         svg {
             transform: rotate(180deg);
-            
+
             path {
                 stroke: $c-accent;
             }
@@ -98,17 +98,17 @@ a, button {
 
 .login-popup {
     position: absolute;
-    
-    padding: px(24) px(20); 
+
+    padding: px(24) px(20);
     right: 0;
-    top: calc(100% + px(10));
+    top: calc(100% + 10px);
     width: 200%;
 
     background: $c-white;
     border-radius: px(12);
-    
+
     line-height: px(18);
-    box-shadow: 0px 2px 22px 0px rgba(13, 39, 65, 0.12);
+    box-shadow: 0 2px 22px 0 rgba(13, 39, 65, 0.12);
 
     display: none;
 
@@ -145,13 +145,14 @@ a, button {
 }
 
 /* Intro */
-.intro {
-    padding-top: px(42);
-    padding-bottom: px(183);
-    min-height: calc(100vh - px(76));
-    position: relative;
-    background: $c-background;
 
+
+.intro {
+    //padding-top: px(42);
+    padding-bottom: px(183);
+    min-height: calc(100vh - 76px);
+    //position: relative;
+    z-index: 0;
     @include big-mobile {
         padding-top: px(32);
         padding-bottom: px(240);
@@ -160,6 +161,35 @@ a, button {
     @include mobile {
         padding-bottom: px(188);
     }
+}
+
+.rail-intro {
+    height: 250vh;
+    margin-bottom: -100vh;
+    position: relative;
+    transform: translate(0);
+    .sticky-intro {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+}
+
+.bg-video {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: $c-background;
+    overflow: hidden;
+}
+
+.bg-video video {
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: 0 100% !important;
 }
 
 .intro__inner {
@@ -246,7 +276,7 @@ a, button {
     margin-bottom: px(24);
 }
 
-/* Partners */ 
+/* Partners */
 .partners {
     margin-top: px(80);
     overflow: hidden;
@@ -304,7 +334,7 @@ a, button {
     position: absolute;
     top: px(14);
     left: px(14);
-    
+
 }
 
 /* Products */
@@ -317,7 +347,7 @@ a, button {
     }
 }
 
-.products__title {  
+.products__title {
     margin-bottom: px(32);
 
     @include tablet {
@@ -367,7 +397,7 @@ a, button {
     color: $c-white;
     gap: px(6);
     margin-bottom: px(20);
-    
+
     li {
         font-weight: 400;
         position: relative;
@@ -415,7 +445,7 @@ a, button {
     font-size: px(140);
     line-height: px(126);
     letter-spacing: -0.01em;
-    
+
     white-space: nowrap;
     margin-bottom: px(12);
     position: relative;
@@ -425,7 +455,7 @@ a, button {
         line-height: px(64);
     }
 
-    &.bill-rub::after { 
+    &.bill-rub::after {
         content: 'млрд ₽';
 
         position: absolute;
@@ -475,7 +505,7 @@ a, button {
 
 .cabinet__content {
     flex-basis: 49%;
-    
+
 }
 
 .cabinet__title {
@@ -556,7 +586,7 @@ a, button {
     border-radius: px(12);
     min-height: 256px;
     display: inline-block;
-    
+
 
     position: relative;
 
@@ -568,7 +598,7 @@ a, button {
 }
 
 .documents__desc {
-    
+
     opacity: 0.5;
 
     a {
@@ -588,7 +618,7 @@ a, button {
 }
 
 .develop__title {
-    
+
     margin-bottom: px(32);
 }
 
@@ -645,10 +675,10 @@ a, button {
     column-gap: 10%;
 
     span {
-        
+
         opacity: 0.3;
         cursor: pointer;
-        
+
         &:first-child {
             margin-right: 30%;
         }
@@ -656,7 +686,7 @@ a, button {
         &.active {
             opacity: 1;
         }
-    }   
+    }
 }
 
 /* Staff */
@@ -666,7 +696,7 @@ a, button {
 
 .staff__man {
     align-items: center;
-    
+
     padding: px(32) px(48);
     border-bottom: 1px solid $c-light-gray;
     background-color: $c-white;
@@ -684,9 +714,9 @@ a, button {
 
     svg {
         float: right;
-        
+
     }
-    
+
     path {
         transition: stroke $var-base-animation-time linear,
         fill $var-base-animation-time linear;
@@ -730,7 +760,7 @@ a, button {
     background: $c-white;
     color: $c-popup;
 
-    
+
     >img {
         position: absolute;
         left: 25%;
@@ -787,7 +817,7 @@ a, button {
 }
 
 .mm__title {
-    
+
     margin-bottom: px(53);
 }
 
@@ -801,7 +831,7 @@ a, button {
 
 .mm__news {
     flex-basis: 30%;
-    
+
 }
 
 .mm__date {
@@ -813,7 +843,7 @@ a, button {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .mm__img {
@@ -823,7 +853,7 @@ a, button {
 
     &::before {
         content: 'опубликовано';
-        
+
         display: block;
         position: absolute;
         opacity: 0.5;
@@ -840,7 +870,7 @@ a, button {
     padding-top: px(64);
     padding-bottom: px(56);
     background-color: #F5F5F5;
-    
+
 }
 
 .footer__logo {
@@ -882,7 +912,7 @@ a, button {
 
 .footer__navigation {
     flex-basis: 65%;
-    
+
     nav {
         gap: px(20);
         margin-bottom: px(65);

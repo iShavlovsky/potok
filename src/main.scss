@@ -101,14 +101,14 @@ a, button {
 
     padding: px(24) px(20);
     right: 0;
-    top: calc(100% + 10px);
+    top: calc(100% + px(10));
     width: 200%;
 
     background: $c-white;
     border-radius: px(12);
 
     line-height: px(18);
-    box-shadow: 0 2px 22px 0 rgba(13, 39, 65, 0.12);
+    box-shadow: 0px 2px 22px 0px rgba(13, 39, 65, 0.12);
 
     display: none;
 
@@ -145,14 +145,13 @@ a, button {
 }
 
 /* Intro */
-
-
 .intro {
-    //padding-top: px(42);
+    padding-top: px(42);
     padding-bottom: px(183);
-    min-height: calc(100vh - 76px);
-    //position: relative;
-    z-index: 0;
+    min-height: calc(100vh - px(76));
+    position: relative;
+    background: $c-background;
+
     @include big-mobile {
         padding-top: px(32);
         padding-bottom: px(240);
@@ -163,39 +162,14 @@ a, button {
     }
 }
 
-.rail-intro {
-    height: 250vh;
-    margin-bottom: -100vh;
-    position: relative;
-    transform: translate(0);
-    .sticky-intro {
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-}
-
-.bg-video {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-    background: $c-background;
-    overflow: hidden;
-}
-
-.bg-video video {
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    object-position: 0 100% !important;
-}
-
 .intro__inner {
     color: $c-white;
 
     max-width: 70%;
+
+    @include tablet1024 {
+        max-width: 85%;
+    }
 
     @include tablet {
         max-width: 90%;
@@ -302,6 +276,7 @@ a, button {
     gap: px(20);
 }
 
+
 .partners__list {
     column-gap: px(20);
 
@@ -315,18 +290,24 @@ a, button {
 }
 
 .partner {
-    width: 21.6%;
+    flex: 0 0 21%;
     height: px(160);
     border: 1px solid $c-light-gray;
     border-radius: px(12);
     position: relative;
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 
     @include tablet {
         height: px(115);
     }
 
     @include mobile {
-        width: 49%;
+        flex: 0 0 45%;
     }
 }
 
@@ -368,6 +349,9 @@ a, button {
 
     @include big-mobile {
         flex: 0 0 100%;
+        justify-content: flex-start;
+        gap: px(24);
+        min-height: auto;
     }
 }
 
@@ -432,6 +416,10 @@ a, button {
 .indices {
     height: px(158);
 
+    @include big-mobile {
+        height: auto;
+    }
+
     &:nth-child(even) {
         align-self: flex-end;
 
@@ -453,6 +441,7 @@ a, button {
     @include big-mobile {
         font-size: px(72);
         line-height: px(64);
+        max-width: max-content;
     }
 
     &.bill-rub::after {
@@ -470,6 +459,10 @@ a, button {
             font-size: px(16);
             line-height: px(19.8);
         }
+
+        @include big-mobile {
+            bottom: 0;
+        }
     }
 }
 
@@ -481,11 +474,24 @@ a, button {
 
 .cabinet__tabs {
     gap: px(20);
+    align-items: center;
+
+    @include tablet {
+        flex-direction: column-reverse;
+        align-items: stretch;
+        justify-content: stretch;
+        gap: px(40);
+    }
 }
 
 .cabinet__img {
-    position: relative;
-    flex-basis: 49%;
+    flex: 0 0 49%;
+
+    @include tablet {
+        flex: 100%;
+        width: 60%;
+        margin: 0 auto;
+    }
 
     img {
         max-width: 100%;
@@ -494,9 +500,7 @@ a, button {
 }
 
 .tabs__img {
-    position: absolute;
     display: none;
-    bottom: px(-100);
 
     &.active {
         display: block;
@@ -504,17 +508,28 @@ a, button {
 }
 
 .cabinet__content {
-    flex-basis: 49%;
+    flex: 0 0 49%;
 
 }
 
 .cabinet__title {
     margin-bottom: px(24);
+
+    @include tablet {
+        margin-bottom: px(20);
+    }
 }
 
 .tabs__headlines {
     gap: px(16);
     margin-bottom: px(64);
+
+    @include tablet {
+        flex-direction: row;
+        gap: px(10);
+        margin-bottom: px(32);
+        flex-wrap: wrap;
+    }
 }
 
 .tabs__tab {
@@ -542,21 +557,38 @@ a, button {
 
         &::before {
             display: block;
+
+            @include tablet {
+                display: none;
+            }
         }
     }
 }
 
 .tabs__content {
     margin-bottom: 48px;
+
+    @include tablet {
+        margin-bottom: px(32);
+    }
 }
 
 .tabs__list {
     gap: px(8);
+    display: none;
 
     li {
         &::before {
             background-color: $c-deep-dive;
         }
+
+        @include tablet {
+            margin-bottom: px(12);
+        }
+    }
+
+    &.active {
+        display: flex;
     }
 }
 
@@ -571,16 +603,30 @@ a, button {
 /* Documents */
 .documents__title {
     margin-bottom: px(64);
+
+    @include tablet1024 {
+        margin-bottom: px(54);
+    }
+
+    @include tablet {
+        margin-bottom: px(40);
+    }
 }
 
 .documents__inner {
     gap: px(20);
     align-items: stretch;
     margin-bottom: px(28);
+    overflow: auto;
+
+    @include tablet {
+        flex-wrap: wrap;
+        margin-bottom: px(12);
+    }
 }
 
 .documents__document {
-    flex-basis: 30%;
+    flex: 0 0 30%;
     padding: px(24) px(28) px(70) px(28);
     border: 1px solid $c-light-gray;
     border-radius: px(12);
@@ -595,11 +641,29 @@ a, button {
         bottom: 28px;
         right: 28px;
     }
+
+    @include tablet {
+        flex: 100%;
+        min-height: 0;
+        padding: px(20) px(15) px(78);
+    }
+
+    span {
+        display: block;
+
+        @include tablet {
+            max-width: px(268);
+        }
+    }
 }
 
 .documents__desc {
-
     opacity: 0.5;
+
+    @include tablet {
+        max-width: px(300);
+        font-size: px(12);
+    }
 
     a {
         opacity: 1;
@@ -618,7 +682,6 @@ a, button {
 }
 
 .develop__title {
-
     margin-bottom: px(32);
 }
 
@@ -628,14 +691,31 @@ a, button {
     padding-left: px(48);
     overflow: hidden;
     margin-bottom: px(20);
+
+    @include tablet {
+        padding: 0 px(32);
+        gap: px(80);
+    }
+
+    @include mobile {
+        padding: 0 px(16);
+    }
 }
 
 .develop__year {
     align-items: center;
     gap: px(71);
 
+    @include big-mobile {
+        gap: px(12);
+    }
+
     &:nth-child(even) {
         align-items: flex-end;
+
+        @include tablet {
+            align-items: center;
+        }
     }
 }
 
@@ -645,12 +725,40 @@ a, button {
     gap: px(71);
     position: relative;
     padding-top: px(132);
+
+    img {
+        display: block;
+        height: auto;
+
+        @include tablet {
+            max-width: 100%;
+        }
+    }
+
+    @include tablet {
+        padding-top: px(96);
+        gap: px(40);
+        flex: 0 0 55%;
+    }
+
+    @include big-mobile {
+        flex: 0 0 100%;
+    }
 }
 
 .develop__year:nth-child(even) .slider__year-image {
     flex-direction: column-reverse;
     padding-top: 0;
     padding-bottom: px(132);
+
+    @include tablet {
+        flex-direction: column;
+    }
+
+    @include tablet {
+        padding-top: px(96);
+        padding-bottom: 0;
+    }
 }
 
 .slider__year {
@@ -659,20 +767,42 @@ a, button {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    @include tablet {
+        font-size: px(128);
+        line-height: 1;
+    }
 }
 
 .develop__year:nth-child(even) .slider__year {
     top: auto;
     bottom: 0;
+
+    @include tablet {
+        top: 0;
+        bottom: auto;
+    }
 }
 
 .slider__desc {
     width: px(240);
+
+    @include tablet {
+        width: auto;
+    }
+
+    @include big-mobile {
+        width: px(284);
+    }
 }
 
 .timeline {
     padding: px(20) 0;
     column-gap: 10%;
+
+    @include tablet {
+        display: none;
+    }
 
     span {
 
@@ -692,24 +822,31 @@ a, button {
 /* Staff */
 .staff__title {
     margin-bottom: px(98);
+
+    @include tablet {
+        margin-bottom: px(10);
+    }
 }
 
 .staff__man {
-    align-items: center;
-
+    align-items: flex-start;
     padding: px(32) px(48);
     border-bottom: 1px solid $c-light-gray;
     background-color: $c-white;
     cursor: pointer;
 
+    @include tablet {
+        padding: px(32) px(32);
+    }
+
+    @include mobile {
+        padding: px(32) px(16);
+    }
+
     transition: background-color $var-base-animation-time linear;
 
     &:last-child {
         border-bottom: none;
-    }
-
-    >div {
-        flex-basis: 10%;
     }
 
     svg {
@@ -723,14 +860,38 @@ a, button {
     }
 }
 
+.staff__svg {
+    flex: 0 0 5%;
+}
+
+.staff__content {
+    flex: 0 0 95%;
+
+    @include tablet1024 {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: px(16);
+    }
+
+}
+
 .staff__name {
-    flex-basis: 50%;
+    flex: 0 0 55%;
     transition: color $var-base-animation-time linear;
+
+    @include tablet1024 {
+        flex: 0 0 100%;
+    }
 }
 
 .staff__prof {
-    flex-basis: 40%;
+    flex: 0 0 45%;
+    opacity: 0.9;
     transition: color $var-base-animation-time linear;
+
+    @include tablet1024 {
+        flex: 0 0 100%;
+    }
 }
 
 .staff__man:hover {
@@ -750,32 +911,56 @@ a, button {
     }
 }
 
+.staff__popup {
+    padding-top: px(72);
+}
+
 .staff__popup-content {
-    position: relative;
-
-    padding: px(80);
-
-    min-height: px(476);
-    width: 75%;
+    width: 90%;
     background: $c-white;
     color: $c-popup;
 
+    padding-right: px(80);
+    padding-top: px(100);
+    padding-bottom: px(24);
+
+
+    @include tablet1024 {
+        padding-right: px(47);
+        padding-top: px(32);
+        padding-bottom: px(32);
+    }
 
     >img {
-        position: absolute;
-        left: 25%;
-        transform: translateX(-50%);
-        bottom: 0;
+        flex: 0 0 55%;
+        height: auto;
+        display: block;
+        max-width: 100%;
 
-        &.popup__img-center {
-            bottom: 50%;
-            transform: translate(-50%, 50%);
+        @include tablet {
+            width: 50%;
         }
+
+        @include big-mobile {
+            width: 100%;
+            flex: 0 0 100%;
+            margin: 0 auto;
+        }
+    }
+
+    @include big-mobile {
+        gap: px(28);
+        flex-direction: column;
+        padding: px(40) px(28);
     }
 }
 
 .staff__popup-text {
-    flex-basis: 43%;
+    flex: 0 0 43%;
+
+    @include big-mobile {
+        flex: 0 0 100%;
+    }
 }
 
 .staff__popup-title {
@@ -785,6 +970,10 @@ a, button {
 .staff__popup-prof {
     opacity: 0.5;
     margin-bottom: px(50);
+
+    @include big-mobile {
+        margin-bottom: px(24);
+    }
 }
 
 /* Slogan */
@@ -795,8 +984,12 @@ a, button {
 .slogan__inner {
     background: $c-background;
     border-radius: px(12);
-    min-height: 600px;
+    min-height: px(600);
     text-align: center;
+
+    @include mobile {
+        min-height: px(508);
+    }
 }
 
 .slogan__title {
@@ -807,6 +1000,8 @@ a, button {
 
 .slogan__btns {
     gap: px(12);
+
+    justify-content: center;
 }
 
 /* Mass Media */
@@ -817,8 +1012,11 @@ a, button {
 }
 
 .mm__title {
-
     margin-bottom: px(53);
+
+    @include mobile {
+        margin-bottom: px(48);
+    }
 }
 
 .mm__slider {
@@ -827,10 +1025,21 @@ a, button {
     column-gap: px(52);
     align-items: stretch;
     min-width: 100%;
+
+    @include tablet {
+        padding-left: px(32);
+        padding-bottom: 0;
+    }
+
+    @include mobile {
+        padding-top: 0;
+        padding-left: px(16);
+        border-top: 0;
+    }
 }
 
 .mm__news {
-    flex-basis: 30%;
+    flex: 0 0 30%;
 
 }
 
@@ -870,7 +1079,19 @@ a, button {
     padding-top: px(64);
     padding-bottom: px(56);
     background-color: #F5F5F5;
+}
 
+@include tablet1024 {
+    .footer__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@include tablet {
+    .footer__inner {
+        display: block;
+    }
 }
 
 .footer__logo {
@@ -881,20 +1102,35 @@ a, button {
 .footer__content {
     gap: px(20);
     width: 100%;
+    position: relative;
+
+    @include tablet {
+        padding-bottom: px(22);
+    }
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .footer__contacts {
     gap: px(10);
-    flex-basis: 35%;
+    flex: 0 0 35%;
 }
 
-.footer__social {
-    > div {
-        gap: px(8);
+.footer__social-without {
+    flex: 0 0 60%;
 
-        a {
-            border-radius: 100%;
-        }
+    @include tablet1024 {
+        flex: 0 0 100%;
+        flex-wrap: wrap;
+        gap: px(36);
+    }
+
+    @include tablet {
+        gap: px(24);
     }
 }
 
@@ -908,14 +1144,36 @@ a, button {
         gap: px(16);
         margin-bottom: px(20);
     }
+
+    @include tablet1024 {
+        flex: 0 0 35%;
+    }
 }
 
 .footer__navigation {
-    flex-basis: 65%;
+    flex: 0 0 65%;
 
     nav {
         gap: px(20);
         margin-bottom: px(65);
+
+        @include tablet1024 {
+            position: relative;
+        }
+    }
+}
+
+.footer__social {
+    flex: 0 0 35%;
+
+    @include tablet1024 {
+        position: absolute;
+        bottom: 12%;
+        left: calc(48% + px(36));
+    }
+
+    > div {
+        gap: px(8);
     }
 }
 
@@ -926,20 +1184,45 @@ a, button {
 
     &.to {
         gap: px(6);
-        flex-basis: 40%;
+        flex: 0 0 50%;
+
+        @include tablet1024 {
+            flex: 0 0 45%;
+        }
     }
 
     &.where {
-        flex-basis: 15%;
+        flex: 0 0 25%;
+
+        @include tablet1024 {
+            flex: 0 0 45%;
+        }
     }
 
     &.how {
-        flex-basis: 25%;
+        flex: 0 0 25%;
+
+        @include tablet1024 {
+            flex: 0 0 45%;
+        }
     }
 }
 
+.footer__text {
+    @include tablet {
+        flex-direction: column;
+    }
+}
 
 .footer__desc {
+    flex: 0 0 60%;
+
+    @include tablet {
+        flex: 0 0 100%;
+    }
+}
+
+.footer__descriptors {
     gap: px(12);
     margin-bottom: px(40);
     opacity: 0.5;
@@ -950,8 +1233,13 @@ a, button {
 
     a {
         padding: px(10) px(17);
+        width: 100%;
     }
 }
 
-
+.footer__logo-copy {
+    @include tablet {
+        margin-bottom: px(20);
+    }
+}
 

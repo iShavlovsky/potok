@@ -10,6 +10,10 @@
     transition: color $var-base-animation-time linear,
     background-color $var-base-animation-time linear;
 
+    @include tablet {
+        padding: px(14) px(26);
+    }
+
     &:hover {
         background-color: transparent;
         color: $c-white;
@@ -23,15 +27,8 @@
         &:hover {
             background-color: $c-background;
             color: $c-white;
-
-            path {
-                fill: $c-white;
-            }
         }
     }
 
-    @include mobile {
-        padding: px(14) px(26);
-    }
 }
 

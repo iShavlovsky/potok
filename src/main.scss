@@ -26,6 +26,23 @@ a, button {
     background: $c-background;
 
     z-index: 1000;
+
+    &.transparent {
+        background: $c-white;
+        color: $c-background;
+
+        a {
+            color: $c-deep-dive;
+        }
+
+        .logo {
+            color: $c-deep-dive;
+        }
+
+        path {
+            stroke: $c-deep-dive;
+        }
+    }
 }
 
 .header__inner {
@@ -34,11 +51,11 @@ a, button {
 
 .header__navbar{
     column-gap: px(40);
-    
+
     a {
         color: $c-white;
     }
-    
+
     @include tablet {
         top: 0;
         left: 0;
@@ -55,7 +72,7 @@ a, button {
         display: none;
 
         &.active {
-            display: flex;  
+            display: flex;
         }
     }
 }
@@ -68,11 +85,11 @@ a, button {
     @include small-mobile {
         display: none;
     }
-    
+
     span {
         margin-right: px(6);
     }
-    
+
     svg {
         transition: transform $var-base-animation-time linear;
 
@@ -84,7 +101,7 @@ a, button {
     &:hover {
         svg {
             transform: rotate(180deg);
-            
+
             path {
                 stroke: $c-accent;
             }
@@ -98,15 +115,15 @@ a, button {
 
 .login-popup {
     position: absolute;
-    
-    padding: px(24) px(20); 
+
+    padding: px(24) px(20);
     right: 0;
     top: calc(100% + px(10));
     width: 200%;
 
     background: $c-white;
     border-radius: px(12);
-    
+
     line-height: px(18);
     box-shadow: 0px 2px 22px 0px rgba(13, 39, 65, 0.12);
 
@@ -139,18 +156,18 @@ a, button {
     }
 }
 
-/* Main */
-.main {
-    padding-top: px(76);
-}
-
 /* Intro */
 .intro {
-    padding-top: px(42);
+    padding-top: px(118);
     padding-bottom: px(183);
     min-height: calc(100vh - px(76));
     position: relative;
     background: $c-background;
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
 
     @include big-mobile {
         padding-top: px(32);
@@ -160,6 +177,32 @@ a, button {
     @include mobile {
         padding-bottom: px(188);
     }
+}
+
+.intro__video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    z-index: 0%;
+
+    video {
+        object-fit: cover;
+        object-position: left 90%;
+        vertical-align: baseline;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+        
+        height: 100%;
+        width: 100%;
+
+        @include tablet {
+            object-position: left 150%;
+        }
+    }   
 }
 
 .intro__inner {
@@ -250,7 +293,7 @@ a, button {
     margin-bottom: px(24);
 }
 
-/* Partners */ 
+/* Partners */
 .partners {
     margin-top: px(80);
     overflow: hidden;
@@ -295,12 +338,6 @@ a, button {
     border: 1px solid $c-light-gray;
     border-radius: px(12);
     position: relative;
-    
-    img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-    }
 
     img {
         display: block;
@@ -321,7 +358,7 @@ a, button {
     position: absolute;
     top: px(14);
     left: px(14);
-    
+
 }
 
 /* Products */
@@ -334,7 +371,7 @@ a, button {
     }
 }
 
-.products__title {  
+.products__title {
     margin-bottom: px(32);
 
     @include tablet {
@@ -387,7 +424,7 @@ a, button {
     color: $c-white;
     gap: px(6);
     margin-bottom: px(20);
-    
+
     li {
         font-weight: 400;
         position: relative;
@@ -439,7 +476,7 @@ a, button {
     font-size: px(140);
     line-height: px(126);
     letter-spacing: -0.01em;
-    
+
     white-space: nowrap;
     margin-bottom: px(12);
     position: relative;
@@ -450,7 +487,7 @@ a, button {
         max-width: max-content;
     }
 
-    &.bill-rub::after { 
+    &.bill-rub::after {
         content: 'млрд ₽';
 
         position: absolute;
@@ -515,11 +552,7 @@ a, button {
 
 .cabinet__content {
     flex: 0 0 49%;
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> c73c1b7 (merge)
 }
 
 .cabinet__title {
@@ -637,20 +670,10 @@ a, button {
 
 .documents__document {
     flex: 0 0 30%;
-    padding: px(24) px(28) px(70) px(28);
-    border: 1px solid $c-light-gray;
-    border-radius: px(12);
     min-height: 256px;
-    display: inline-block;
-    
+
 
     position: relative;
-
-    svg {
-        position: absolute;
-        bottom: 28px;
-        right: 28px;
-    }
 
     @include tablet {
         flex: 100%;
@@ -813,17 +836,12 @@ a, button {
     @include tablet {
         display: none;
     }
-<<<<<<< HEAD
-=======
 
     span {
->>>>>>> c73c1b7 (merge)
 
-    span {
-        
         opacity: 0.3;
         cursor: pointer;
-        
+
         &:first-child {
             margin-right: 30%;
         }
@@ -831,7 +849,7 @@ a, button {
         &.active {
             opacity: 1;
         }
-    }   
+    }
 }
 
 /* Staff */
@@ -866,9 +884,9 @@ a, button {
 
     svg {
         float: right;
-        
+
     }
-    
+
     path {
         transition: stroke $var-base-animation-time linear,
         fill $var-base-animation-time linear;
@@ -881,21 +899,13 @@ a, button {
 
 .staff__content {
     flex: 0 0 95%;
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> c73c1b7 (merge)
     @include tablet1024 {
         align-items: flex-start;
         flex-direction: column;
         gap: px(16);
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> c73c1b7 (merge)
 }
 
 .staff__name {
@@ -944,15 +954,6 @@ a, button {
     color: $c-popup;
 
     padding-right: px(80);
-<<<<<<< HEAD
-    padding-top: px(100);    
-    padding-bottom: px(24);
-
-    
-    @include tablet1024 {
-        padding-right: px(47);
-        padding-top: px(32);    
-=======
     padding-top: px(100);
     padding-bottom: px(24);
 
@@ -960,7 +961,6 @@ a, button {
     @include tablet1024 {
         padding-right: px(47);
         padding-top: px(32);
->>>>>>> c73c1b7 (merge)
         padding-bottom: px(32);
     }
 
@@ -980,11 +980,7 @@ a, button {
             margin: 0 auto;
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> c73c1b7 (merge)
     @include big-mobile {
         gap: px(28);
         flex-direction: column;
@@ -1077,11 +1073,7 @@ a, button {
 
 .mm__news {
     flex: 0 0 30%;
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> c73c1b7 (merge)
 }
 
 .mm__date {
@@ -1093,7 +1085,7 @@ a, button {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .mm__img {
@@ -1103,7 +1095,7 @@ a, button {
 
     &::before {
         content: 'опубликовано';
-        
+
         display: block;
         position: absolute;
         opacity: 0.5;
@@ -1193,11 +1185,7 @@ a, button {
 
 .footer__navigation {
     flex: 0 0 65%;
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> c73c1b7 (merge)
     nav {
         gap: px(20);
         margin-bottom: px(65);
@@ -1246,11 +1234,7 @@ a, button {
 
     &.how {
         flex: 0 0 25%;
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> c73c1b7 (merge)
         @include tablet1024 {
             flex: 0 0 45%;
         }
@@ -1274,7 +1258,7 @@ a, button {
 .footer__descriptors {
     gap: px(12);
     margin-bottom: px(40);
-    opacity: 0.5;   
+    opacity: 0.5;
 }
 
 .footer__btns {
@@ -1282,7 +1266,10 @@ a, button {
 
     a {
         padding: px(10) px(17);
-        width: 100%;
+
+        @include tablet {
+            width: 100%;
+        }
     }
 }
 

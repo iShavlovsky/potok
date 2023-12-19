@@ -48,3 +48,22 @@
         display: flex;
     }
 }
+
+.document {
+    padding: px(24) px(28) px(70) px(28);
+    border: 1px solid $c-light-gray;
+    border-radius: px(12);
+    display: inline-block;
+
+    position: relative;
+
+    svg {
+        position: absolute;
+        bottom: 28px;
+        right: 28px;
+    }
+
+    @include tablet {
+        padding: px(20) px(15) px(78);
+    }
+}

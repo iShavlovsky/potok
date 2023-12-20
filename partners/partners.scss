@@ -1,0 +1,271 @@
+/* Slogan */
+.slogan-partners {
+    padding-top: 0;
+
+    @include mobile {
+        padding-bottom: 0;
+    }
+}
+
+.slogan__title-partners {
+    text-align: center;
+
+    span {
+        opacity: 0.3;
+    }
+
+    @include mobile {
+        font-size: px(30);
+        line-height: 1;
+    }
+}
+
+.video-line {
+    padding-left: 0;
+    padding-right: 0;
+
+    video {
+        object-fit: cover;
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+    }
+}
+
+/* Benefits */
+.benefits {
+    overflow: auto;
+}
+
+@include tablet1024 {
+    .benefits__inner {
+        display: none;
+    }
+}
+
+.benefits__images {
+    flex: 0 0 50%;
+
+    img {
+        display: none;
+        max-width: 100%;
+        height: auto;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+.benefits__content {
+    flex: 0 0 43%;
+}
+
+.benefits__headline {
+    margin-bottom: px(28);
+}
+
+.benefits__benefit {
+    opacity: 0.3;
+    padding: px(20) 0;
+
+    p {
+        margin-top: px(20);
+        display: none;
+    }
+
+    &.active {
+        opacity: 1;
+
+        p {
+            display: block;
+        }
+    }
+}
+
+.benefits__cards {
+    display: none;
+    
+    @include tablet1024 {
+        display: flex;
+        padding: px(32) 0;
+        width: min-content;
+        gap: px(206);
+    }
+
+    @include mobile {
+        padding: px(16) 0;
+    }
+}
+
+.benefits__card {
+    border-radius: 12px;
+    flex-direction: column;
+    padding: 0 22px 34px;
+    display: flex;
+    background-color: $c-light-gray;
+    width: px(310);
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        align-self: center;
+    }
+
+    h3 {
+        font-size: px(32);
+        line-height: 1;
+        margin-bottom: px(16);
+    }
+}
+
+/* Variants */
+.variants {
+    padding-top: px(100);
+    padding-bottom: px(100);
+    background-color: $c-background;
+    background: url('../src/assets/img/webp/images/variants/variants-background.webp');
+    background-position: center;
+    background-size: cover;
+}
+
+.variants__title {
+    color: $c-white;
+    margin-bottom: px(64);
+}
+
+.variants__cards {
+    gap: px(20);
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.variants__card {
+    flex: 0 0 47%;
+    min-height: 440px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: px(40) px(28);
+    border-radius: px(24);
+
+    @include big-mobile {
+        flex: 0 0 100%;
+    }
+    
+    &:nth-child(1) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg1.webp');
+    }
+    
+    &:nth-child(2) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg2.webp');
+    }
+
+    &:nth-child(3) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg3.webp');
+    }
+
+    &:nth-child(4) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg4.webp');
+    }
+}
+
+.variants__text {
+    max-width: px(345);
+
+    h3 {
+        margin-bottom: px(28);
+
+        @include tablet {
+            font-size: px(24);
+        }
+    }
+
+    p {
+        opacity: 0.5;
+    }
+}
+
+.variants__button {
+    margin-top: px(60);
+
+    align-self: center;
+
+    transition: border-color $var-base-animation-time linear,
+    color $var-base-animation-time linear;
+
+    &:hover {
+        background: $c-background;
+        border-color: $c-background;
+    }
+}
+
+/* Plan */
+.plan__title {
+    margin-bottom: px(64);
+    text-align: center;
+
+    span {
+        opacity: 0.3;
+    }
+
+    @include tablet {
+        text-align: left;
+        font-size: px(30);
+        max-width: px(500);
+        margin-bottom: px(32);
+    }
+}
+
+.plan {
+    width: 100%;
+    overflow: hidden;
+}
+
+.plan__stage {
+    flex: 0 0 16%;
+    background-color: $c-white;
+    z-index: 2;
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+        max-width: px(300);
+        gap: px(28);
+    }
+}
+
+.plan__stage:not(:last-child) {
+    span {
+        position: relative;
+        &::after {
+            content: '';
+
+            position: absolute;
+            width: 200%;
+            height: px(5);
+            background-color: $c-deep-dive;
+            
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+
+            display: block;
+            z-index: 1;
+
+            @include tablet {
+                left: 50%;
+                transform: translate(-50%, 0) rotate(90deg);
+                top: px(104);
+                height: px(2);
+                width: px(104);
+            }
+        }
+    }
+
+    @include tablet {
+        margin-bottom: px(124);
+    }
+}
+

@@ -12,6 +12,42 @@ a, button {
     color: $c-deep-dive
 }
 
+section, header, footer {
+    padding: px(70) px(48) px(70);
+
+    @include tablet {
+        padding: px(60) px(32) px(70);
+    }
+
+    @include mobile {
+        padding: px(50) px(16) px(70);
+    }
+}
+
+header, footer {
+    padding-top: 0;
+    padding-bottom: 0;
+    
+    @include tablet {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    @include mobile {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.main {
+    padding-top: px(160);
+
+    @include tablet {
+        padding-top: px(140);
+    }
+}
+
+
 .header {
     position: absolute;
     top: 0;
@@ -19,7 +55,8 @@ a, button {
     width: 100%;
     height: px(76);
 
-    padding: px(28) 0;
+    padding-top: px(28);
+    padding-bottom: px(28);
 
     letter-spacing: px(1);
     color: $c-white;
@@ -33,6 +70,10 @@ a, button {
 
         a {
             color: $c-deep-dive;
+
+            &:hover {
+                color: $c-accent;
+            }
         }
 
         .logo {
@@ -40,6 +81,10 @@ a, button {
         }
 
         path {
+            stroke: $c-deep-dive;
+        }
+
+        circle {
             stroke: $c-deep-dive;
         }
     }
@@ -258,6 +303,7 @@ a, button {
 
     @include mobile {
         display: none;
+        position: static;
     }
 }
 
@@ -295,7 +341,7 @@ a, button {
 
 /* Partners */
 .partners {
-    margin-top: px(80);
+    padding-top: px(80);
     overflow: hidden;
 
     @include mobile {
@@ -741,6 +787,7 @@ a, button {
 
     @include big-mobile {
         gap: px(12);
+        flex-wrap: wrap;
     }
 
     &:nth-child(even) {
@@ -1010,10 +1057,6 @@ a, button {
 }
 
 /* Slogan */
-.slogan {
-    margin-top: px(140);
-}
-
 .slogan__inner {
     background: $c-background;
     border-radius: px(12);
@@ -1039,9 +1082,8 @@ a, button {
 
 /* Mass Media */
 .mm {
-    margin-top: px(140);
-    margin-bottom: px(100);
     overflow: hidden;
+    padding-bottom: px(100);
 }
 
 .mm__title {
@@ -1163,7 +1205,7 @@ a, button {
     }
 
     @include tablet {
-        gap: px(24);
+        gap: px(20);
     }
 }
 

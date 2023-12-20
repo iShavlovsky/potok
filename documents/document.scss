@@ -1,12 +1,4 @@
-main {
-    padding-top: px(160);
-
-    @include tablet {
-        padding-top: px(140);
-    }
-}
-
-.main-documents__title {
+.main-title {
     text-align: center;
     margin-bottom: px(140);
 
@@ -39,74 +31,4 @@ main {
     }
 }
 
-.main-documents__accordion {
-    gap: px(18);
-}
 
-.accordion__content {
-    display: none;
-    align-items: stretch;
-    gap: px(20);
-}
-
-.accordion__content-headline {
-    display: none;
-}
-
-.accordion__item.active {
-    .accordion__content-headline {
-        display: block;
-    }
-
-    .accordion__content {
-        display: flex;
-    }
-
-    .accordion__title {
-        &::after {
-            transform: rotate(180deg);
-            transform-origin: top;
-        }
-    }
-}
-
-.accordion__title {
-    position: relative;
-
-    cursor: pointer;
-    border-bottom: 1px solid $c-light-gray;
-    padding-bottom: px(28);
-    margin-bottom: px(48);
-
-    &::after {
-        content: '';
-
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-
-        display: block;
-
-        width: px(18);
-        height: px(18);
-
-        background: url('../src/assets/img/svg/big-more-arrow.svg') no-repeat;
-    }
-
-    &.active::after {
-        transform: rotate(180deg);
-    }
-}
-
-.accordion__content-headline {
-    margin-bottom: px(72);
-
-    &:last-child {
-        margin-bottom: 0;
-    }
-
-    >p {
-        margin-bottom: px(28);
-    }
-}

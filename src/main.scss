@@ -6,6 +6,8 @@ body {
     background: $c-white;
     color: $c-deep-dive;
     font-family: $ft-regular;
+
+    font-size: px(15);
 }
 
 a, button {
@@ -13,14 +15,14 @@ a, button {
 }
 
 section, header, footer {
-    padding: px(70) px(48) px(70);
+    padding: px(70) px(48);
 
     @include tablet {
-        padding: px(60) px(32) px(70);
+        padding: px(60) px(32);
     }
 
     @include mobile {
-        padding: px(50) px(16) px(70);
+        padding: px(50) px(16);
     }
 }
 
@@ -60,7 +62,7 @@ header, footer {
 
     letter-spacing: px(1);
     color: $c-white;
-    background: $c-background;
+    background: transparent;
 
     z-index: 1000;
 
@@ -99,6 +101,10 @@ header, footer {
 
     a {
         color: $c-white;
+
+        &.active {
+            color: $c-accent;
+        }
     }
 
     @include tablet {
@@ -203,24 +209,16 @@ header, footer {
 
 /* Intro */
 .intro {
-    padding-top: px(118);
-    padding-bottom: px(183);
-    min-height: calc(100vh - px(76));
+    padding-top: px(128);
+    padding-bottom: px(64);
+    min-height: 100vh;
     position: relative;
     background: $c-background;
+    overflow: hidden;
 
     .container {
         position: relative;
         z-index: 1;
-    }
-
-    @include big-mobile {
-        padding-top: px(32);
-        padding-bottom: px(240);
-    }
-
-    @include mobile {
-        padding-bottom: px(188);
     }
 }
 
@@ -228,18 +226,18 @@ header, footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    left: 0%;
-    z-index: 0%;
-
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    
     video {
         object-fit: cover;
         object-position: left 90%;
         vertical-align: baseline;
-        overflow-clip-margin: content-box;
         overflow: clip;
+        overflow-clip-margin: content-box;
         
         height: 100%;
         width: 100%;
@@ -248,12 +246,18 @@ header, footer {
             object-position: left 150%;
         }
     }   
+
+    &.investors-page {
+        video {
+            object-position: 50% 50%;
+        }
+    }
 }
 
 .intro__inner {
     color: $c-white;
 
-    max-width: 70%;
+    max-width: px(740);
 
     @include tablet1024 {
         max-width: 85%;
@@ -279,14 +283,6 @@ header, footer {
 
 .intro__desc {
     max-width: 45%;
-
-    @include tablet {
-        max-width: 60%;
-    }
-
-    @include big-mobile {
-        max-width: 100%;
-    }
 
     @include mobile {
         margin-bottom: px(40);
@@ -314,9 +310,38 @@ header, footer {
         max-width: max-content;
     }
 
+    &.investors-page {
+        display: flex;
+    }
+
     @include mobile {
         display: flex;
         gap: px(8);
+    }
+}
+
+.intro__yield {
+    color: $c-white;
+
+    p {
+        opacity: 0.5;
+        margin-bottom: px(8);
+        margin-top: px(40);
+    }
+}
+
+.intro__img-abs {
+    position: absolute;
+    bottom: px(64);
+    right: px(48);
+    width: px(165);
+    color: $c-white;
+    text-align: right;
+
+    line-height: 1.2;
+
+    img {
+        margin-bottom: px(10);
     }
 }
 
@@ -1321,3 +1346,55 @@ header, footer {
     }
 }
 
+/* Advantages */
+@include tablet1024 {
+    .advatages {
+        display: none;
+    }
+}
+
+.advantages__title {
+    max-width: px(654);
+    margin-bottom: px(64);
+}
+
+.advantages__content {
+    gap: px(12);
+    flex: 0 0 48%;
+}
+
+.advantages__advantage {
+    border-radius: px(12);
+    border: 1px solid $c-light-gray;
+    padding: px(24) px(28);
+    cursor: pointer;
+
+    p {
+        opacity: 0.5;
+    }
+
+    &.active {
+        color: $c-white;
+        background-color: $c-background;
+    }
+}
+
+.advantage__title {
+    margin-bottom: px(10);
+    font-weight: 500;
+}
+
+.advantages__img {
+    flex: 0 0 48%;
+
+    img {
+        display: none;
+        max-width: 100%;
+        height: 100%;
+        border-radius: px(12);
+    
+        &.active {
+            display: block;
+        }
+    }
+}

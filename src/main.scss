@@ -17,11 +17,11 @@ a, button {
 section, header, footer {
     padding: px(70) px(48);
 
-    @include tablet {
+    @include tablet1024 {
         padding: px(60) px(32);
     }
 
-    @include mobile {
+    @include tablet {
         padding: px(50) px(16);
     }
 }
@@ -384,6 +384,10 @@ header, footer {
     @include mobile {
         margin-bottom: px(32);
     }
+
+    &.body-l {
+        margin-bottom: px(32);
+    }
 }
 
 .partners__scroll {
@@ -400,6 +404,12 @@ header, footer {
 
     @include small-mobile {
         column-gap: px(10);
+    }
+
+    &.without-border {
+        .partner {
+            border: 0;
+        }
     }
 }
 
@@ -1348,7 +1358,7 @@ header, footer {
 
 /* Advantages */
 @include tablet1024 {
-    .advatages {
+    .advantages {
         display: none;
     }
 }
@@ -1398,3 +1408,56 @@ header, footer {
         }
     }
 }
+
+/* Cards Desc */
+.cards__title {
+    margin-bottom: px(64);
+
+    @include tablet1024 {
+        margin-bottom: px(54);
+    }
+
+    @include tablet {
+        margin-bottom: px(47);
+    }
+}
+
+ .cards-desc {
+    overflow: auto;       
+    
+    >div {
+        gap: px(20);
+        
+        @include tablet1024 {
+            width: max-content;
+            gap: px(16);
+        }
+        
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+ }
+
+ .card-desc {
+    width: 33.3%;
+    border: 1px solid $c-light-gray;
+    border-radius: px(16);
+    flex: 1;
+    padding: px(24) px(45) px(50) px(28);
+
+    @include tablet1024 {
+        width: 62.5vw;
+    }
+
+    @include tablet {
+        width: 100%;
+    }
+ }
+
+ .card-desc-title {
+    margin-bottom: px(16);
+    font-weight: 600;
+ }
+

@@ -2,6 +2,14 @@
 @import '../scss/breakpoints';
 
 /* ----------------------- main ------------------------------ */
+.mob {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
 .relative {
   position: relative;
 }
@@ -111,14 +119,6 @@
   max-width: 1184px;
   width: 100%;
   margin: 0 auto;
-
-  @include tablet {
-    padding: 0 px(32);
-  }
-
-  @include mobile {
-    padding: 0 px(16);
-  }
 
   &.container-small {
     max-width: 782px;

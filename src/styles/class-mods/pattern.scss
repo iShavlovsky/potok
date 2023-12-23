@@ -12,8 +12,9 @@
             border-radius: 100%;
 
             position: absolute;
-            top: px(8);
             left: 0;
+            top: 50%;
+            transform: translateY(-50%);
         }
     }
 }
@@ -257,4 +258,16 @@
     }
 }
 
+/* Note */
+.note {
+    opacity: 0.5;
+    
+    @include tablet1024 {
+        font-size: px(14);
+    }
+
+    @include tablet {
+        font-size: px(12);
+    }
+}
 

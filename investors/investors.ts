@@ -1,2 +1,2 @@
-import './investors.scss';
 import '../src/main.scss';
+import './investors.scss';

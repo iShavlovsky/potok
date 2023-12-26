@@ -271,3 +271,20 @@
     }
 }
 
+/* Input */
+.input {
+    color: $c-deep-dive;
+    background-color: $c-whity;
+    border: 1px #000;
+    border-radius: px(8);
+    margin-bottom: 0;
+    padding: px(8) px(12);
+    font-size: px(17);
+    line-height: 120%;
+    display: block;
+    height: auto;
+    min-height: 59px;
+
+    font-family: $ft-regular;
+}
+

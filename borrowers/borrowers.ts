@@ -1,2 +1,2 @@
-import './partners.scss';
 import '../src/main.scss';
+import './borrowers.scss';

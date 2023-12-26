@@ -6,6 +6,7 @@
     border-radius: 8px;
     border: 1px solid $c-white;
     background-color: $c-white;
+    cursor: pointer;
 
     transition: color $var-base-animation-time linear,
     background-color $var-base-animation-time linear;

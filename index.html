@@ -11,8 +11,8 @@
   <header class="header">
     <div class="container">
       <div class="header__inner wm-flex-row justify-space-between">
-        <a href="#" aria-label="logo" class="header__logo"><svg class="logo" width="76" height="20" viewBox="0 0 76 20" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+        <a href="#" aria-label="logo" class="header__logo"><svg class="logo" width="76" height="20" viewBox="0 0 76 20"
+            fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.7916 19.6477V0H0V19.6477H3.44594V2.87263H12.3457V19.6477H15.7916Z" fill="white" />
             <path
               d="M21.2195 12.3666C21.2195 9.00612 23.0103 7.35301 25.0725 7.35301C27.1346 7.35301 28.9254 9.00612 28.9254 12.3666C28.9254 15.727 27.1346 17.353 25.0725 17.353C23.0103 17.353 21.2195 15.727 21.2195 12.3666ZM25.0725 4.72428C21.518 4.72428 17.8821 7.10911 17.8821 12.3666C17.8821 17.6511 21.518 19.9817 25.0725 19.9817C28.6269 19.9817 32.2628 17.6511 32.2628 12.3666C32.2628 7.10911 28.6269 4.72428 25.0725 4.72428Z"
@@ -28,11 +28,14 @@
         </a>
         <nav class="header__navigation">
           <ul class="header__navbar flex-row-w-tablet-column">
-            <li class="header__navigation-item"><a class="link btn-text" aria-label="инвесторам" href="./investors/investors.html">инвесторам</a>
+            <li class="header__navigation-item"><a class="link btn-text" aria-label="инвесторам"
+                href="./investors/investors.html">инвесторам</a>
             </li>
-            <li class="header__navigation-item"><a class="link btn-text" aria-label="заёмщикам" href="./borrowers/borrowers.html">заёмщикам</a>
+            <li class="header__navigation-item"><a class="link btn-text" aria-label="заёмщикам"
+                href="./borrowers/borrowers.html">заёмщикам</a>
             </li>
-            <li class="header__navigation-item"><a class="link btn-text" aria-label="партнерам" href="./partners/partners.html">партнерам</a>
+            <li class="header__navigation-item"><a class="link btn-text" aria-label="партнерам"
+                href="./partners/partners.html">партнерам</a>
             </li>
             <li class="header__navigation-item"><a class="link btn-text" aria-label="блог" href="#">блог</a></li>
           </ul>
@@ -79,13 +82,9 @@
           <h1 class="intro__title h1">пассивный доход для инвесторов и деньги на развитие бизнеса</h1>
           <p class="intro__desc body-l">платформа для финансирования малого бизнеса</p>
         </div>
-        <div class="intro__btns flex-column">
-          <a href="#" class="btn-text button-l" aria-label="хочу получить заем">хочу получить заем</a>
-          <a href="#" class="btn-text button-l" aria-label="хочу инвестировать">хочу инвестировать</a>
-        </div>
       </div>
       <div class="intro__cards wm-flex-row">
-        <div class="card flex-column justify-space-between">
+        <a href="#" aria-label="хочу инвестировать" class="card flex-column justify-space-between">
           <div class="card__text">
             <p class="card__title body-m">хочу получить заем</p>
             <div class="card__desc body-s">онлайн, без залога за 1 день</div>
@@ -95,8 +94,8 @@
               d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
               fill="#10273D" />
           </svg>
-        </div>
-        <div class="card flex-column justify-space-between">
+        </a>
+        <a href="#" aria-label="хочу инвестировать" class="card flex-column justify-space-between">
           <div class="card__text">
             <p class="card__title body-m">хочу инвестировать</p>
             <div class="card__desc body-s">инвестиции в займы бизнесам, прошедшим тщательный отбор</div>
@@ -106,7 +105,7 @@
               d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
               fill="#10273D" />
           </svg>
-        </div>
+        </a>
       </div>
     </section>
 
@@ -158,7 +157,7 @@
     <section>
       <div class="container">
         <p class="products__title body-l">продукты</p>
-        <div class="products__inner flex-row-w-mobile-column">
+        <div class="products__inner flex-row-w-tablet-column">
           <div class="product flex-column justify-space-between">
             <div class="product__content">
               <h3 class="product__title h3">заем на развитие бизнеса</h3>
@@ -168,9 +167,10 @@
                 <li class="body-m">выдаем по ставке от 13.5% годовых</li>
               </ul>
             </div>
-            <div>
-              <a href="#" class="product__button btn-text button-l" aria-label="узнать больше">узнать больше</a>
+            <div class="product__button">
+              <a href="#" class="btn-text button-l" aria-label="узнать больше">узнать больше</a>
             </div>
+            <img src="./src/assets/img/png/product_img1.png" class="product__img">
           </div>
           <div class="product flex-column justify-space-between">
             <div class="product__content">
@@ -183,34 +183,43 @@
               </ul>
               <p class="descriptor">* средняя доходность инвесторов платформы за последние 12 месяцев</p>
             </div>
-            <div>
-              <a href="#" class="product__button btn-text button-l" aria-label="узнать больше">узнать больше</a>
+            <div class="product__button">
+              <a href="#" class="btn-text button-l" aria-label="узнать больше">узнать больше</a>
             </div>
+            <img src="./src/assets/img/png/product_img2.png" class="product__img">
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="numbers">
       <div class="container">
         <p class="body-l numbers__title">поток в цифрах</p>
       </div>
-      <div class="numbers__line flex-row-w-mobile-column">
-        <div class="indices flex-column">
-          <span class="indices__number bill-rub">1,34</span>
-          <p class="indices__desc body-m">выплачено процентного дохода инвесторам</p>
+      <div class="numbers__scroll">
+        <div class="numbers__line flex-row-w-tablet-column">
+          <div class="indices flex-column">
+            <span class="indices__number">23,3<span class="body-l">млрд ₽</span></span>
+            <p class="indices__desc body-m">выдали с 2016 года</p>
+          </div>
+          <div class="indices flex-column">
+            <span class="indices__number">2,1<span class="body-l">млрд ₽</span></span>
+            <p class="indices__desc body-m">процентного дохода выплатили инвесторам</p>
+          </div>
+          <div class="indices flex-column">
+            <span class="indices__number">314 671</span>
+            <p class="indices__desc body-m">компаний прошли оценку</p>
+          </div>
+          <div class="indices flex-column">
+            <span class="indices__number">96 902</span>
+            <p class="indices__desc body-m">зарегистрированных инвесторов</p>
+          </div>
         </div>
-        <div class="indices flex-column">
-          <span class="indices__number bill-rub">17,66</span>
-          <p class="indices__desc body-m">выдали с 2020 года</p>
-        </div>
-        <div class="indices flex-column">
-          <span class="indices__number">327 637</span>
-          <p class="indices__desc body-m">компаний прошли оценку</p>
-        </div>
-        <div class="indices flex-column">
-          <span class="indices__number">49 552</span>
-          <p class="indices__desc body-m">зарегестрированных инвесторов</p>
+
+        <div class="numbers__video">
+          <video muted autoplay loop width="auto" height="auto">
+            <source src="./src/assets/video/numbers-video.mp4" />
+          </video>
         </div>
       </div>
     </section>
@@ -219,25 +228,25 @@
       <div class="container">
         <div class="cabinet__tabs flex-row-w-tablet-column">
           <div class="cabinet__img">
-            <img src="./src/assets/img/png/zaem.png" alt="zaem" data-tab="1" class="tabs__img active">
-            <img src="./src/assets/img/png/invest.png" alt="investros" data-tab="2" class="tabs__img">
+            <img src="./src/assets/img/png/zaem.png" alt="zaem" data-tab="1" class="tabs__img active" width="441">
+            <img src="./src/assets/img/png/invest.png" alt="investros" data-tab="2" class="tabs__img" width="441">
           </div>
           <div class="cabinet__content">
             <p class="cabinet__title body-l">личный кабинет</p>
             <div class="tabs__headlines flex-column">
-              <h2 class="h2 tabs__tab active" data-tab="1">заемщика</h2>
-              <h2 class="h2 tabs__tab" data-tab="2">инвестора</h2>
+              <div class="h2 tabs__tab active" data-tab="1">заемщика</div>
+              <div class="h2 tabs__tab" data-tab="2">инвестора</div>
             </div>
             <div class="tabs__content">
               <ul class="tabs__list flex-column list-style-disc active" data-tab="1">
-                <li>получение заема онлайн</li>
-                <li>автоматический скоринг привлечения заема</li>
-                <li>полное и частичное досрочное погашение</li>
+                <li class="body-m">получение заема онлайн</li>
+                <li class="body-m">автоматический скоринг привлечения заема</li>
+                <li class="body-m">полное и частичное досрочное погашение</li>
               </ul>
               <ul class="tabs__list flex-column list-style-disc" data-tab="2">
-                <li>контроль распределения инвестированных средств</li>
-                <li>инвестирование с возможностью настройки кастомных параметров</li>
-                <li>готовые стратегии инвестирования от экспертов Потока </li>
+                <li class="body-m">контроль распределения инвестированных средств</li>
+                <li class="body-m">инвестирование с возможностью настройки кастомных параметров</li>
+                <li class="body-m">готовые стратегии инвестирования от экспертов Потока </li>
               </ul>
             </div>
             <a href="#" class="btn-text tabs__button button-l outline active" data-tab="1"
@@ -346,123 +355,123 @@
       </div>
     </section>
 
-    <section>
+    <section class="staff">
       <div class="container">
-        <p class="body-l staff__title">участники потока финансируют не менее 10% каждого займа</p>
-      </div>
-      <div class="staff__inner">
-        <div class="staff__man wm-flex-row" data-popup-index="1">
-          <div class="staff__content wm-flex-row justify-space-between align-items-center">
-            <h2 class="h2 staff__name">Юрий Попов</h2>
-            <p class="body-m staff__prof">генеральный директор Поток.Холдинг</p>
-          </div>
-          <div class="staff__svg">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
-                fill="#10273D" />
-            </svg>
-          </div>
-        </div>
-        <div class="staff__man wm-flex-row" data-popup-index="2">
-          <div class="staff__content wm-flex-row justify-space-between align-items-center">
-            <h2 class="h2 staff__name">Антон Еременко</h2>
-            <p class="body-m staff__prof">генеральный директор Поток.Диджитал</p>
-          </div>
-          <div class="staff__svg">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
-                fill="#10273D" />
-            </svg>
-          </div>
-        </div>
-        <div class="staff__man wm-flex-row" data-popup-index="3">
-          <div class="staff__content wm-flex-row justify-space-between align-items-center">
-            <h2 class="h2 staff__name">Мосбиржа</h2>
-            <p class="body-m staff__prof">стратегический партнёр</p>
-          </div>
-          <div class="staff__svg">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
-                fill="#10273D" />
-            </svg>
-          </div>
-        </div>
-
-        <div class="staff__popup popup" data-popup-index="1">
-          <svg class="popup-cross" width="72" height="72" viewBox="0 0 72 72" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1_4869)">
-              <path d="M10.5442 10.544L61.4558 61.4557M61.4558 10.544L10.5442 61.4557" stroke="white"
-                stroke-width="2" />
-            </g>
-            <defs>
-              <clipPath id="clip0_1_4869">
-                <rect width="72" height="72" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-
-          <div class="staff__popup-content align-items-center justify-end wm-flex-row">
-            <img src="./src/assets/img/png/staff-popup-content/1.png">
-            <div class="staff__popup-text">
-              <h4 class="h4 staff__popup-title">Юрий Попов</h4>
-              <p class="body-s staff__popup-prof">генеральный директор Поток.Холдинг</p>
-              <p class="body-m staff__popup-desc">ранее занимали руководящие должности в Эльбрус Капитал, Ренессанс
-                Капитал и PwC. Член ассоциаций Chartered Financial Analyst (CFA) и Association of Chartered Certified
-                Accountants (ACCA).</p>
+        <div class="body-l staff__title">участники потока финансируют не менее 10% каждого займа</div>
+        <div class="staff__inner">
+          <div class="staff__man wm-flex-row align-items-center" data-popup-index="1">
+            <div class="staff__content wm-flex-row justify-space-between align-items-center">
+              <h2 class="h2 staff__name">Юрий Попов</h2>
+              <p class="body-m staff__prof">генеральный директор Поток.Холдинг</p>
+            </div>
+            <div class="staff__svg">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
+                  fill="#10273D" />
+              </svg>
             </div>
           </div>
-        </div>
-        <div class="staff__popup popup" data-popup-index="2">
-          <svg class="popup-cross" width="72" height="72" viewBox="0 0 72 72" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1_4869)">
-              <path d="M10.5442 10.544L61.4558 61.4557M61.4558 10.544L10.5442 61.4557" stroke="white"
-                stroke-width="2" />
-            </g>
-            <defs>
-              <clipPath id="clip0_1_4869">
-                <rect width="72" height="72" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
-
-          <div class="staff__popup-content align-items-center justify-end wm-flex-row">
-            <img src="./src/assets/img/png/staff-popup-content/2.png">
-            <div class="staff__popup-text">
-              <h4 class="h4 staff__popup-title">Антон Еременко</h4>
-              <p class="body-s staff__popup-prof">генеральный директор Поток.Диджитал</p>
-              <p class="body-m staff__popup-desc">ранее занимал руководящие должности в Revo Technologies (управление
-                рисками, операционная деятельность и IT, стратегическое развитие), Номос-Банке (с 2014 года - Банк
-                «Финансовая корпорация Открытие») и McKinsey & Company.</p>
+          <div class="staff__man wm-flex-row" data-popup-index="2">
+            <div class="staff__content wm-flex-row justify-space-between align-items-center">
+              <h2 class="h2 staff__name">Антон Еременко</h2>
+              <p class="body-m staff__prof">генеральный директор Поток.Диджитал</p>
+            </div>
+            <div class="staff__svg">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
+                  fill="#10273D" />
+              </svg>
             </div>
           </div>
-        </div>
-        <div class="staff__popup popup" data-popup-index="3">
-          <svg class="popup-cross" width="72" height="72" viewBox="0 0 72 72" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_1_4869)">
-              <path d="M10.5442 10.544L61.4558 61.4557M61.4558 10.544L10.5442 61.4557" stroke="white"
-                stroke-width="2" />
-            </g>
-            <defs>
-              <clipPath id="clip0_1_4869">
-                <rect width="72" height="72" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+          <div class="staff__man wm-flex-row" data-popup-index="3">
+            <div class="staff__content wm-flex-row justify-space-between align-items-center">
+              <h2 class="h2 staff__name">Мосбиржа</h2>
+              <p class="body-m staff__prof">стратегический партнёр</p>
+            </div>
+            <div class="staff__svg">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.4394 6.14649L4.85359 6.14648L4.85359 4.14648L15.8536 4.14649L15.8536 15.1465L13.8536 15.1465L13.8536 7.5607L5.5607 15.8536L4.14648 14.4394L12.4394 6.14649Z"
+                  fill="#10273D" />
+              </svg>
+            </div>
+          </div>
 
-          <div class="staff__popup-content align-items-center justify-end wm-flex-row">
-            <img src="./src/assets/img/png/staff-popup-content/3.png">
-            <div class="staff__popup-text">
-              <h4 class="h4 staff__popup-title">Московская биржа</h4>
-              <p class="body-s staff__popup-prof">стратегический партнёр </p>
-              <p class="body-m staff__popup-desc">Группа "Московская Биржа" включает в себя ПАО Московская биржа,
-                которое управляет единственной в России многофункциональной биржевой площадкой по торговле акциями,
-                облигациями, производными инструментами, валютой, инструментами денежного рынка и товарами.</p>
+          <div class="staff__popup popup" data-popup-index="1">
+            <svg class="popup-cross" width="72" height="72" viewBox="0 0 72 72" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_4869)">
+                <path d="M10.5442 10.544L61.4558 61.4557M61.4558 10.544L10.5442 61.4557" stroke="white"
+                  stroke-width="2" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_4869">
+                  <rect width="72" height="72" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+
+            <div class="staff__popup-content align-items-center justify-end wm-flex-row">
+              <img src="./src/assets/img/png/staff-popup-content/1.png">
+              <div class="staff__popup-text">
+                <h4 class="h4 staff__popup-title">Юрий Попов</h4>
+                <p class="body-s staff__popup-prof">генеральный директор Поток.Холдинг</p>
+                <p class="body-m staff__popup-desc">ранее занимали руководящие должности в Эльбрус Капитал, Ренессанс
+                  Капитал и PwC. Член ассоциаций Chartered Financial Analyst (CFA) и Association of Chartered Certified
+                  Accountants (ACCA).</p>
+              </div>
+            </div>
+          </div>
+          <div class="staff__popup popup" data-popup-index="2">
+            <svg class="popup-cross" width="72" height="72" viewBox="0 0 72 72" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_4869)">
+                <path d="M10.5442 10.544L61.4558 61.4557M61.4558 10.544L10.5442 61.4557" stroke="white"
+                  stroke-width="2" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_4869">
+                  <rect width="72" height="72" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+
+            <div class="staff__popup-content align-items-center justify-end wm-flex-row">
+              <img src="./src/assets/img/png/staff-popup-content/2.png">
+              <div class="staff__popup-text">
+                <h4 class="h4 staff__popup-title">Антон Еременко</h4>
+                <p class="body-s staff__popup-prof">генеральный директор Поток.Диджитал</p>
+                <p class="body-m staff__popup-desc">ранее занимал руководящие должности в Revo Technologies (управление
+                  рисками, операционная деятельность и IT, стратегическое развитие), Номос-Банке (с 2014 года - Банк
+                  «Финансовая корпорация Открытие») и McKinsey & Company.</p>
+              </div>
+            </div>
+          </div>
+          <div class="staff__popup popup" data-popup-index="3">
+            <svg class="popup-cross" width="72" height="72" viewBox="0 0 72 72" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_1_4869)">
+                <path d="M10.5442 10.544L61.4558 61.4557M61.4558 10.544L10.5442 61.4557" stroke="white"
+                  stroke-width="2" />
+              </g>
+              <defs>
+                <clipPath id="clip0_1_4869">
+                  <rect width="72" height="72" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+
+            <div class="staff__popup-content align-items-center justify-end wm-flex-row">
+              <img src="./src/assets/img/png/staff-popup-content/3.png">
+              <div class="staff__popup-text">
+                <h4 class="h4 staff__popup-title">Московская биржа</h4>
+                <p class="body-s staff__popup-prof">стратегический партнёр </p>
+                <p class="body-m staff__popup-desc">Группа "Московская Биржа" включает в себя ПАО Московская биржа,
+                  которое управляет единственной в России многофункциональной биржевой площадкой по торговле акциями,
+                  облигациями, производными инструментами, валютой, инструментами денежного рынка и товарами.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -471,13 +480,18 @@
 
     <section>
       <div class="container">
-        <div class="slogan__inner">
+        <div class="slogan__inner flex-center">
           <div class="slogan__content flex-center flex-column">
             <h2 class="h2 slogan__title">начните зарабатывать с Потоком уже сегодня</h2>
             <div class="slogan__btns wm-flex-row flex-wrap">
               <a href="#" class="btn-text button-l" aria-label="стать заемщиком">стать заемщиком</a>
               <a href="#" class="btn-text button-l" aria-label="стать инвестором">стать инвестором</a>
             </div>
+          </div>
+          <div class="slogan__video">
+            <video muted autoplay loop width="auto" height="auto">
+              <source src="./src/assets/video/slogan-bg.mp4" />
+            </video>
           </div>
         </div>
       </div>
@@ -486,76 +500,76 @@
     <section class="mm">
       <div class="container">
         <h2 class="h2 mm__title">сми о Потоке</h2>
-      </div>
-      <div class="mm__slider wm-flex-row">
-        <a href="#" class="mm__news">
-          <p class="body-s mm__date">29 октября 2022</p>
-          <h4 class="h4 mm__headline">Московская биржа приобрела долю в инвестиционной компании</h4>
-          <div class="mm__img">
-            <svg width="35" height="32" viewBox="0 0 35 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1_4229)">
-                <path
-                  d="M27.8592 14.7398C30.3885 14.7398 32.2927 13.683 33.6967 11.8432L31.8202 10.4074C30.8676 11.6556 29.4245 12.3716 27.8592 12.3716C25.1141 12.3716 23.125 10.1288 23.125 7.3767C23.125 4.62462 25.0817 2.25544 27.9374 2.25544C29.2068 2.25544 30.1041 2.55602 30.8867 3.0423V5.46222H33.2481V1.93381L32.7957 1.57675C31.4976 0.552504 29.5152 0.00878906 27.8582 0.00878906C23.8074 0.00878906 20.5127 3.3132 20.5127 7.37574C20.5127 11.4345 23.8055 14.7398 27.8582 14.7398H27.8592ZM32.7584 29.2708L32.6744 25.8793V17.6029H27.7494V19.9722H30.1871V25.5873C30.1871 28.0063 28.345 29.7188 26.4866 29.7188C24.6283 29.7188 23.6586 28.4266 23.6586 26.0085V17.602H19.058V19.9712H21.1713V26.4192C21.1713 29.7006 23.0057 31.9617 26.2776 31.9617C28.1579 31.9617 29.5896 30.9153 30.4438 29.3024H30.482L30.8189 31.5576H34.6034V29.2737H32.7613V29.2689L32.7584 29.2708ZM19.9686 0.356269H15.8644L12.2947 10.752H12.2393L8.68876 0.356269H4.31537V2.72641H6.77503L11.0081 14.5752H13.2568V14.5723L17.6712 2.72737H19.9667V0.357226L19.9686 0.356269ZM0.474609 31.5883H2.90659V29.1502H0.475564V31.5883H0.474609ZM9.8665 20.3503H9.83984L9.68709 17.6029H5.3462V19.7625H7.656V29.2718H5.3462V31.5567H16.0743V29.3167H10.1013V23.5781C10.3714 21.5009 11.9243 19.7271 14.0433 19.7271H14.0814L14.0385 21.8502H16.3998V17.5637H14.5329C12.3949 17.558 10.8086 18.7182 9.86559 20.3512L9.8665 20.3503Z"
-                  fill="#151515" />
-              </g>
-              <defs>
-                <clipPath id="clip0_1_4229">
-                  <rect width="35" height="32" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </a>
-        <a href="#" class="mm__news">
-          <p class="body-s mm__date">3 ноября 2022</p>
-          <h4 class="h4 mm__headline">«Альфа-банк» запустил онлайн-платформу Поток, в которой можно инвестировать</h4>
-          <div class="mm__img">
-            <svg width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1_4237)">
-                <path
-                  d="M41.7988 0H54.8957V3.71454H46.297V8.07845C46.297 8.07845 43.5978 8.07845 48.5277 8.07845C53.4575 8.07845 56.7284 9.43861 56.6705 14.4601C56.6093 19.7677 52.5827 20.9305 48.2086 20.9305H41.7988V0ZM47.4545 17.2585C48.0539 17.2585 48.5556 17.2585 48.9917 17.2585C51.6827 17.2585 52.3559 15.7827 52.3559 14.4312C52.3559 12.2984 51.138 11.4271 49.1005 11.4271H46.297V17.2585H47.4545Z"
-                  fill="#10273D" />
-                <path
-                  d="M24.8477 0C24.8477 0 28.3973 0 32.8343 0C37.2714 0 39.7194 2.5711 39.7194 6.42638C39.7194 10.2817 38.22 11.4139 37.0878 12.0871C35.9555 12.7603 34.1299 13.2499 33.1452 13.2499H29.4683V20.8693H24.8477V0ZM32.5283 9.94506C34.2113 9.94506 35.3129 8.47625 35.3129 6.70144C35.3129 4.92663 34.1807 3.61082 32.6529 3.61082C31.1251 3.61082 29.4683 3.61082 29.4683 3.61082V9.94506C29.4683 9.94506 30.8453 9.94506 32.5283 9.94506Z"
-                  fill="#10273D" />
-                <path
-                  d="M60.0977 0H64.9632V8.96586L72.399 0H77.5398L69.1248 9.85326L77.9988 20.8693H72.3378L64.9632 11.6281V20.8693H60.0977V0Z"
-                  fill="#10273D" />
-                <path d="M19.5229 0L0 19.4617V0H19.5229Z" fill="#92CFAE" />
-                <path d="M1.4082 20.8693L20.9312 1.40753V20.8693H1.4082Z" fill="#2A8288" />
-              </g>
-              <defs>
-                <clipPath id="clip0_1_4237">
-                  <rect width="78" height="21" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </a>
-        <a href="#" class="mm__news">
-          <p class="body-s mm__date">2 ноября 2022</p>
-          <h4 class="h4 mm__headline">Как частные инвесторы могут вложиться в малый бизнес и не потерять при это</h4>
-          <div class="mm__img">
-            <svg width="115" height="16" viewBox="0 0 115 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0_1_4983)">
-                <path
-                  d="M114.529 2.25475C114.529 1.4748 113.892 0.842028 113.107 0.842028C112.328 0.842125 111.686 1.47992 111.686 2.25465C111.686 3.02948 112.328 3.66689 113.108 3.66708C113.888 3.66737 114.529 3.02967 114.529 2.25475ZM111.445 2.25465C111.445 1.34811 112.195 0.602661 113.107 0.602661C114.024 0.602661 114.77 1.34318 114.77 2.25427C114.77 3.16062 114.02 3.90616 113.108 3.90645C112.195 3.90674 111.445 3.1612 111.445 2.25465Z"
-                  fill="#7F7F7F" />
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M113.058 1.04105C113.102 1.44585 113.43 1.21586 113.571 1.1028C113.623 1.06211 113.686 0.987219 113.721 0.966153C113.743 0.953011 113.776 0.96229 113.79 0.989829C113.803 1.03051 113.808 1.08183 113.783 1.15672C113.753 1.24475 113.701 1.33018 113.672 1.37618C113.597 1.49707 113.522 1.60347 113.434 1.71518C113.29 1.89395 113.107 2.03582 112.957 2.21063C112.725 2.4787 112.594 2.89269 112.666 3.24222C112.684 3.33151 112.726 3.44458 112.812 3.49183C113.323 3.77314 113.697 2.56673 113.524 2.21063C113.5 2.16463 113.452 2.08182 113.389 2.0937C113.069 2.15284 112.921 3.18569 113.12 3.26058C113.111 3.38283 112.916 3.45772 112.859 3.23169C112.84 3.15283 112.836 3.07001 112.839 2.98855C112.849 2.64424 113.126 2.12385 113.443 1.96489C113.587 1.89125 113.791 1.8926 113.872 2.05688C114.156 2.64163 113.388 3.72182 112.723 3.62326C112.401 3.57465 112.285 3.26851 112.31 2.97802C112.33 2.73894 112.43 2.51156 112.569 2.31703C112.85 1.92546 113.291 1.81114 113.505 1.50364C113.505 1.50364 113.513 1.49185 113.515 1.48528C113.518 1.47562 113.507 1.46421 113.492 1.47562C113.469 1.49668 113.346 1.55979 113.26 1.57022C113.087 1.58994 112.993 1.35473 112.964 1.22465C112.957 1.19576 112.955 1.17344 112.928 1.21016C112.843 1.31926 112.778 1.92903 112.692 1.96315L112.357 2.09592C112.357 2.09592 112.342 2.10269 112.337 2.08278C112.298 1.94082 112.645 1.44808 112.741 1.28244C112.755 1.26147 112.834 1.10772 112.849 1.09584C112.874 1.07487 113.027 1.03544 113.059 1.04066L113.058 1.04105Z"
-                  fill="#7F7F7F" />
-                <path
-                  d="M12.4743 12.6277H7.84872L5.01574 7.9596L4.09526 8.91137V12.6277H0.228516V0.88324H4.09526V4.67379L7.41076 0.88324H11.9458L7.69372 5.26365L12.4743 12.6277ZM17.6517 8.27067C17.6517 7.73367 17.5249 7.24672 17.271 6.81543C17.0172 6.38415 16.6254 6.1671 16.0902 6.1671C15.6128 6.1671 15.2515 6.38415 15.0087 6.81824C14.7659 7.25503 14.6445 7.73927 14.6445 8.27067C14.6445 8.84112 14.7742 9.38092 15.0336 9.88459C15.2901 10.391 15.6873 10.6441 16.2198 10.6441C16.7331 10.6441 17.0999 10.3993 17.3207 9.90682C17.5414 9.41436 17.6517 8.86895 17.6517 8.27067ZM20.3336 10.9168C19.4199 12.2632 17.8538 12.8933 16.2341 12.8933C14.5649 12.8933 12.9561 12.2685 12.0231 10.8685C11.1674 9.58425 11.0579 7.49015 11.7788 6.11985C12.3333 5.06526 13.3498 4.30299 14.5152 3.99328C15.7989 3.6392 17.1882 3.71574 18.4207 4.22095C19.5731 4.69157 20.4305 5.65986 20.8038 6.81089C21.2114 8.06764 21.066 9.83724 20.3336 10.9168ZM50.299 7.40916C50.1781 6.84983 49.9791 6.46213 49.7047 6.24605C49.4277 6.02679 49.0782 5.91875 48.6506 5.91875C48.2365 5.91875 47.9084 6.02369 47.6663 6.23649C47.4243 6.44628 47.2414 6.83718 47.115 7.40916H50.299ZM53.6068 9.06782H47.1484C47.1484 9.33222 47.1941 9.56424 47.2856 9.76641C47.5635 10.3813 48.0663 10.7964 48.7862 10.7964C49.3148 10.7964 49.9245 10.5848 50.0382 10.0142H53.3459C53.2204 10.8239 52.7004 11.5383 52.031 12.0078C51.3556 12.4799 50.5263 12.743 49.7074 12.8359C48.6572 12.9641 47.4422 12.9292 46.4696 12.5257C45.3381 12.0583 44.4932 11.1943 44.0332 10.0793C43.6106 8.99254 43.6048 7.78711 44.0144 6.69164C44.4392 5.5552 45.3139 4.6763 46.4481 4.21022C47.8275 3.64587 49.7587 3.68414 51.0924 4.34503C52.2758 4.92929 53.083 5.92532 53.4186 7.18246C53.5842 7.81484 53.6471 8.42075 53.6068 9.06782H53.6068ZM62.8714 10.9331C62.2359 12.1369 61.0623 12.8888 59.6477 12.8888C58.6317 12.8888 57.9634 12.5606 57.2768 11.8603V15.5429H53.8312V4.099H56.8821V5.37498C57.5439 4.0645 59.1818 3.58837 60.5033 3.91896C61.943 4.27584 62.9127 5.47886 63.2578 6.83099C63.5805 8.08774 63.4686 9.81038 62.8714 10.9331ZM60.0648 8.15056C60.0648 7.78885 59.9442 7.39399 59.6998 6.9687C59.4555 6.5435 59.1015 6.3309 58.6404 6.3309C58.1821 6.3309 57.828 6.52968 57.581 6.93004C57.3339 7.3277 57.2104 7.73357 57.2104 8.15056C57.2104 8.66147 57.3065 9.13914 57.4987 9.58096C57.6934 10.0228 58.0723 10.2437 58.6404 10.2437C59.1948 10.2437 59.5681 10.0145 59.7684 9.55612C59.9498 9.11373 60.0648 8.62997 60.0648 8.15056ZM70.8475 12.5295C69.5086 12.9955 67.6888 13.067 66.3559 12.5158C65.5165 12.1688 64.7725 11.5832 64.3026 10.8045C63.8434 10.0566 63.6048 9.195 63.6048 8.31793C63.6048 7.73377 63.7284 7.15975 63.9362 6.61472C64.4178 5.38918 65.2505 4.68596 66.4528 4.19882C67.8288 3.64123 69.8725 3.66153 71.179 4.36803C72.424 5.04139 73.0758 5.96871 73.247 7.33534H69.7212C69.6592 6.91497 69.5399 6.65511 69.3655 6.43343C68.8718 5.8051 67.754 6.11212 67.3972 6.73213C66.9421 7.52329 66.8669 8.69191 67.1547 9.55912C67.3445 10.1307 67.9693 10.6154 68.5761 10.6154C69.4365 10.6154 69.6151 10.0396 69.8398 9.32391H73.247C73.2113 10.7549 72.3503 12.0063 70.8475 12.5295ZM79.532 9.27404C79.532 9.11527 79.5176 8.98491 79.4887 8.88566C79.2523 9.01603 78.8832 9.12948 78.3815 9.22582C77.9994 9.29521 77.593 9.38005 77.2513 9.56608C76.767 9.80409 76.7931 10.4866 77.2167 10.7623C77.7068 11.0553 78.5287 11.0312 78.9408 10.6207C79.333 10.2492 79.532 9.80139 79.532 9.27404H79.532ZM83.3655 12.6277H79.8386L79.7046 11.7243C79.4473 12.0546 78.8729 12.3266 78.2927 12.5486C78.01 12.6568 77.7193 12.7424 77.4219 12.7969C77.1244 12.8488 76.8082 12.8762 76.4786 12.8762C75.8837 12.8762 75.3397 12.7725 74.8467 12.565C74.3536 12.3575 73.9811 12.0327 73.7238 11.596C73.4934 11.1156 73.3781 10.6298 73.3781 10.133C73.3781 9.5052 73.6724 8.98752 74.0768 8.52347C74.3074 8.25879 74.5332 8.11006 74.9404 7.95458C75.1333 7.88094 75.3241 7.81697 75.5112 7.76353C75.6965 7.71057 75.8722 7.66013 76.0391 7.63519L77.4835 7.4196C78.0965 7.32809 78.6895 7.24913 78.9516 7.16303C79.1128 7.10998 79.303 6.93681 79.3968 6.82761C79.4905 6.71851 79.4767 6.6038 79.4767 6.48648C79.4767 6.32539 79.399 6.19165 79.2409 6.08254C79.0829 5.97335 78.8577 5.91875 78.5657 5.91875C78.2147 5.91875 77.7783 5.97064 77.5666 6.07433C77.3549 6.17802 77.2182 6.3855 77.1539 6.69386H73.8869C73.9968 6.13434 73.9768 5.80771 74.1365 5.46601C74.2957 5.12537 74.5466 4.83285 74.8895 4.58991C75.2325 4.34706 75.7035 4.15823 76.3071 4.03309C76.5985 3.97269 76.945 3.93056 77.3388 3.89934C77.7355 3.86784 78.1749 3.85025 78.6626 3.85025C79.8497 3.85025 80.7388 3.99057 81.3316 4.27052C81.9232 4.55009 82.3091 4.77535 82.4892 5.19543C82.6683 5.61328 82.7893 6.15618 82.8456 6.8222V11.3312C82.8456 11.7953 83.0198 12.1392 83.3655 12.363V12.6277V12.6277ZM92.9494 12.6277H89.5472V9.44016H87.0274V12.6277H83.658L83.6547 4.23197L83.658 4.10363H87.0274V6.95981H89.5092V4.10363H92.9494L92.9462 12.4749L92.9494 12.6277ZM102.403 6.61588H99.4735V12.6277H96.0607V6.61588H93.1064V4.10363H102.403V6.61588ZM113.454 9.89996C113.454 10.6487 113.095 11.3065 112.518 11.7757C111.76 12.3992 110.711 12.6277 109.748 12.6277H104.481V6.61588H102.514V4.10363H107.765V7.09539H109.561C110.561 7.09539 111.67 7.28972 112.462 7.9424C113.058 8.43302 113.454 9.11923 113.454 9.89996ZM110.062 9.90865C110.062 9.3701 109.762 9.14417 109.247 9.0828C109.142 9.0828 108.935 9.07411 108.628 9.06106C108.322 9.04743 107.911 9.04202 107.765 9.04202V10.6883L108.618 10.7046C108.851 10.7095 109.042 10.6998 109.191 10.6883C109.714 10.6497 110.062 10.5082 110.062 9.90865V9.90865ZM27.6305 12.6276H25.9769L24.17 6.93333L24.449 9.16523V12.6276H21.4317V4.05445H25.3014L26.8037 8.79009L28.306 4.05445H32.1758V12.6276H29.1584V9.16523L29.4375 6.93333L27.6305 12.6276ZM38.9302 12.6276H37.2765L35.4696 6.93333L35.7487 9.16523V12.6276H32.7313V4.05445H36.6011L38.1034 8.79009L39.6056 4.05445H43.4754V12.6276H40.458V9.16523L40.7371 6.93333L38.9302 12.6276Z"
-                  fill="black" />
-              </g>
-              <defs>
-                <clipPath id="clip0_1_4983">
-                  <rect width="115" height="16" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-        </a>
+        <div class="mm__slider wm-flex-row">
+          <a href="#" class="mm__news">
+            <p class="body-s mm__date">29 октября 2022</p>
+            <h4 class="h4 mm__headline">Московская биржа приобрела долю в инвестиционной компании</h4>
+            <div class="mm__img">
+              <svg width="35" height="32" viewBox="0 0 35 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_4229)">
+                  <path
+                    d="M27.8592 14.7398C30.3885 14.7398 32.2927 13.683 33.6967 11.8432L31.8202 10.4074C30.8676 11.6556 29.4245 12.3716 27.8592 12.3716C25.1141 12.3716 23.125 10.1288 23.125 7.3767C23.125 4.62462 25.0817 2.25544 27.9374 2.25544C29.2068 2.25544 30.1041 2.55602 30.8867 3.0423V5.46222H33.2481V1.93381L32.7957 1.57675C31.4976 0.552504 29.5152 0.00878906 27.8582 0.00878906C23.8074 0.00878906 20.5127 3.3132 20.5127 7.37574C20.5127 11.4345 23.8055 14.7398 27.8582 14.7398H27.8592ZM32.7584 29.2708L32.6744 25.8793V17.6029H27.7494V19.9722H30.1871V25.5873C30.1871 28.0063 28.345 29.7188 26.4866 29.7188C24.6283 29.7188 23.6586 28.4266 23.6586 26.0085V17.602H19.058V19.9712H21.1713V26.4192C21.1713 29.7006 23.0057 31.9617 26.2776 31.9617C28.1579 31.9617 29.5896 30.9153 30.4438 29.3024H30.482L30.8189 31.5576H34.6034V29.2737H32.7613V29.2689L32.7584 29.2708ZM19.9686 0.356269H15.8644L12.2947 10.752H12.2393L8.68876 0.356269H4.31537V2.72641H6.77503L11.0081 14.5752H13.2568V14.5723L17.6712 2.72737H19.9667V0.357226L19.9686 0.356269ZM0.474609 31.5883H2.90659V29.1502H0.475564V31.5883H0.474609ZM9.8665 20.3503H9.83984L9.68709 17.6029H5.3462V19.7625H7.656V29.2718H5.3462V31.5567H16.0743V29.3167H10.1013V23.5781C10.3714 21.5009 11.9243 19.7271 14.0433 19.7271H14.0814L14.0385 21.8502H16.3998V17.5637H14.5329C12.3949 17.558 10.8086 18.7182 9.86559 20.3512L9.8665 20.3503Z"
+                    fill="#151515" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_4229">
+                    <rect width="35" height="32" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </a>
+          <a href="#" class="mm__news">
+            <p class="body-s mm__date">3 ноября 2022</p>
+            <h4 class="h4 mm__headline">«Альфа-банк» запустил онлайн-платформу Поток, в которой можно инвестировать</h4>
+            <div class="mm__img">
+              <svg width="78" height="21" viewBox="0 0 78 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_4237)">
+                  <path
+                    d="M41.7988 0H54.8957V3.71454H46.297V8.07845C46.297 8.07845 43.5978 8.07845 48.5277 8.07845C53.4575 8.07845 56.7284 9.43861 56.6705 14.4601C56.6093 19.7677 52.5827 20.9305 48.2086 20.9305H41.7988V0ZM47.4545 17.2585C48.0539 17.2585 48.5556 17.2585 48.9917 17.2585C51.6827 17.2585 52.3559 15.7827 52.3559 14.4312C52.3559 12.2984 51.138 11.4271 49.1005 11.4271H46.297V17.2585H47.4545Z"
+                    fill="#10273D" />
+                  <path
+                    d="M24.8477 0C24.8477 0 28.3973 0 32.8343 0C37.2714 0 39.7194 2.5711 39.7194 6.42638C39.7194 10.2817 38.22 11.4139 37.0878 12.0871C35.9555 12.7603 34.1299 13.2499 33.1452 13.2499H29.4683V20.8693H24.8477V0ZM32.5283 9.94506C34.2113 9.94506 35.3129 8.47625 35.3129 6.70144C35.3129 4.92663 34.1807 3.61082 32.6529 3.61082C31.1251 3.61082 29.4683 3.61082 29.4683 3.61082V9.94506C29.4683 9.94506 30.8453 9.94506 32.5283 9.94506Z"
+                    fill="#10273D" />
+                  <path
+                    d="M60.0977 0H64.9632V8.96586L72.399 0H77.5398L69.1248 9.85326L77.9988 20.8693H72.3378L64.9632 11.6281V20.8693H60.0977V0Z"
+                    fill="#10273D" />
+                  <path d="M19.5229 0L0 19.4617V0H19.5229Z" fill="#92CFAE" />
+                  <path d="M1.4082 20.8693L20.9312 1.40753V20.8693H1.4082Z" fill="#2A8288" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_4237">
+                    <rect width="78" height="21" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </a>
+          <a href="#" class="mm__news">
+            <p class="body-s mm__date">2 ноября 2022</p>
+            <h4 class="h4 mm__headline">Как частные инвесторы могут вложиться в малый бизнес и не потерять при это</h4>
+            <div class="mm__img">
+              <svg width="115" height="16" viewBox="0 0 115 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1_4983)">
+                  <path
+                    d="M114.529 2.25475C114.529 1.4748 113.892 0.842028 113.107 0.842028C112.328 0.842125 111.686 1.47992 111.686 2.25465C111.686 3.02948 112.328 3.66689 113.108 3.66708C113.888 3.66737 114.529 3.02967 114.529 2.25475ZM111.445 2.25465C111.445 1.34811 112.195 0.602661 113.107 0.602661C114.024 0.602661 114.77 1.34318 114.77 2.25427C114.77 3.16062 114.02 3.90616 113.108 3.90645C112.195 3.90674 111.445 3.1612 111.445 2.25465Z"
+                    fill="#7F7F7F" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M113.058 1.04105C113.102 1.44585 113.43 1.21586 113.571 1.1028C113.623 1.06211 113.686 0.987219 113.721 0.966153C113.743 0.953011 113.776 0.96229 113.79 0.989829C113.803 1.03051 113.808 1.08183 113.783 1.15672C113.753 1.24475 113.701 1.33018 113.672 1.37618C113.597 1.49707 113.522 1.60347 113.434 1.71518C113.29 1.89395 113.107 2.03582 112.957 2.21063C112.725 2.4787 112.594 2.89269 112.666 3.24222C112.684 3.33151 112.726 3.44458 112.812 3.49183C113.323 3.77314 113.697 2.56673 113.524 2.21063C113.5 2.16463 113.452 2.08182 113.389 2.0937C113.069 2.15284 112.921 3.18569 113.12 3.26058C113.111 3.38283 112.916 3.45772 112.859 3.23169C112.84 3.15283 112.836 3.07001 112.839 2.98855C112.849 2.64424 113.126 2.12385 113.443 1.96489C113.587 1.89125 113.791 1.8926 113.872 2.05688C114.156 2.64163 113.388 3.72182 112.723 3.62326C112.401 3.57465 112.285 3.26851 112.31 2.97802C112.33 2.73894 112.43 2.51156 112.569 2.31703C112.85 1.92546 113.291 1.81114 113.505 1.50364C113.505 1.50364 113.513 1.49185 113.515 1.48528C113.518 1.47562 113.507 1.46421 113.492 1.47562C113.469 1.49668 113.346 1.55979 113.26 1.57022C113.087 1.58994 112.993 1.35473 112.964 1.22465C112.957 1.19576 112.955 1.17344 112.928 1.21016C112.843 1.31926 112.778 1.92903 112.692 1.96315L112.357 2.09592C112.357 2.09592 112.342 2.10269 112.337 2.08278C112.298 1.94082 112.645 1.44808 112.741 1.28244C112.755 1.26147 112.834 1.10772 112.849 1.09584C112.874 1.07487 113.027 1.03544 113.059 1.04066L113.058 1.04105Z"
+                    fill="#7F7F7F" />
+                  <path
+                    d="M12.4743 12.6277H7.84872L5.01574 7.9596L4.09526 8.91137V12.6277H0.228516V0.88324H4.09526V4.67379L7.41076 0.88324H11.9458L7.69372 5.26365L12.4743 12.6277ZM17.6517 8.27067C17.6517 7.73367 17.5249 7.24672 17.271 6.81543C17.0172 6.38415 16.6254 6.1671 16.0902 6.1671C15.6128 6.1671 15.2515 6.38415 15.0087 6.81824C14.7659 7.25503 14.6445 7.73927 14.6445 8.27067C14.6445 8.84112 14.7742 9.38092 15.0336 9.88459C15.2901 10.391 15.6873 10.6441 16.2198 10.6441C16.7331 10.6441 17.0999 10.3993 17.3207 9.90682C17.5414 9.41436 17.6517 8.86895 17.6517 8.27067ZM20.3336 10.9168C19.4199 12.2632 17.8538 12.8933 16.2341 12.8933C14.5649 12.8933 12.9561 12.2685 12.0231 10.8685C11.1674 9.58425 11.0579 7.49015 11.7788 6.11985C12.3333 5.06526 13.3498 4.30299 14.5152 3.99328C15.7989 3.6392 17.1882 3.71574 18.4207 4.22095C19.5731 4.69157 20.4305 5.65986 20.8038 6.81089C21.2114 8.06764 21.066 9.83724 20.3336 10.9168ZM50.299 7.40916C50.1781 6.84983 49.9791 6.46213 49.7047 6.24605C49.4277 6.02679 49.0782 5.91875 48.6506 5.91875C48.2365 5.91875 47.9084 6.02369 47.6663 6.23649C47.4243 6.44628 47.2414 6.83718 47.115 7.40916H50.299ZM53.6068 9.06782H47.1484C47.1484 9.33222 47.1941 9.56424 47.2856 9.76641C47.5635 10.3813 48.0663 10.7964 48.7862 10.7964C49.3148 10.7964 49.9245 10.5848 50.0382 10.0142H53.3459C53.2204 10.8239 52.7004 11.5383 52.031 12.0078C51.3556 12.4799 50.5263 12.743 49.7074 12.8359C48.6572 12.9641 47.4422 12.9292 46.4696 12.5257C45.3381 12.0583 44.4932 11.1943 44.0332 10.0793C43.6106 8.99254 43.6048 7.78711 44.0144 6.69164C44.4392 5.5552 45.3139 4.6763 46.4481 4.21022C47.8275 3.64587 49.7587 3.68414 51.0924 4.34503C52.2758 4.92929 53.083 5.92532 53.4186 7.18246C53.5842 7.81484 53.6471 8.42075 53.6068 9.06782H53.6068ZM62.8714 10.9331C62.2359 12.1369 61.0623 12.8888 59.6477 12.8888C58.6317 12.8888 57.9634 12.5606 57.2768 11.8603V15.5429H53.8312V4.099H56.8821V5.37498C57.5439 4.0645 59.1818 3.58837 60.5033 3.91896C61.943 4.27584 62.9127 5.47886 63.2578 6.83099C63.5805 8.08774 63.4686 9.81038 62.8714 10.9331ZM60.0648 8.15056C60.0648 7.78885 59.9442 7.39399 59.6998 6.9687C59.4555 6.5435 59.1015 6.3309 58.6404 6.3309C58.1821 6.3309 57.828 6.52968 57.581 6.93004C57.3339 7.3277 57.2104 7.73357 57.2104 8.15056C57.2104 8.66147 57.3065 9.13914 57.4987 9.58096C57.6934 10.0228 58.0723 10.2437 58.6404 10.2437C59.1948 10.2437 59.5681 10.0145 59.7684 9.55612C59.9498 9.11373 60.0648 8.62997 60.0648 8.15056ZM70.8475 12.5295C69.5086 12.9955 67.6888 13.067 66.3559 12.5158C65.5165 12.1688 64.7725 11.5832 64.3026 10.8045C63.8434 10.0566 63.6048 9.195 63.6048 8.31793C63.6048 7.73377 63.7284 7.15975 63.9362 6.61472C64.4178 5.38918 65.2505 4.68596 66.4528 4.19882C67.8288 3.64123 69.8725 3.66153 71.179 4.36803C72.424 5.04139 73.0758 5.96871 73.247 7.33534H69.7212C69.6592 6.91497 69.5399 6.65511 69.3655 6.43343C68.8718 5.8051 67.754 6.11212 67.3972 6.73213C66.9421 7.52329 66.8669 8.69191 67.1547 9.55912C67.3445 10.1307 67.9693 10.6154 68.5761 10.6154C69.4365 10.6154 69.6151 10.0396 69.8398 9.32391H73.247C73.2113 10.7549 72.3503 12.0063 70.8475 12.5295ZM79.532 9.27404C79.532 9.11527 79.5176 8.98491 79.4887 8.88566C79.2523 9.01603 78.8832 9.12948 78.3815 9.22582C77.9994 9.29521 77.593 9.38005 77.2513 9.56608C76.767 9.80409 76.7931 10.4866 77.2167 10.7623C77.7068 11.0553 78.5287 11.0312 78.9408 10.6207C79.333 10.2492 79.532 9.80139 79.532 9.27404H79.532ZM83.3655 12.6277H79.8386L79.7046 11.7243C79.4473 12.0546 78.8729 12.3266 78.2927 12.5486C78.01 12.6568 77.7193 12.7424 77.4219 12.7969C77.1244 12.8488 76.8082 12.8762 76.4786 12.8762C75.8837 12.8762 75.3397 12.7725 74.8467 12.565C74.3536 12.3575 73.9811 12.0327 73.7238 11.596C73.4934 11.1156 73.3781 10.6298 73.3781 10.133C73.3781 9.5052 73.6724 8.98752 74.0768 8.52347C74.3074 8.25879 74.5332 8.11006 74.9404 7.95458C75.1333 7.88094 75.3241 7.81697 75.5112 7.76353C75.6965 7.71057 75.8722 7.66013 76.0391 7.63519L77.4835 7.4196C78.0965 7.32809 78.6895 7.24913 78.9516 7.16303C79.1128 7.10998 79.303 6.93681 79.3968 6.82761C79.4905 6.71851 79.4767 6.6038 79.4767 6.48648C79.4767 6.32539 79.399 6.19165 79.2409 6.08254C79.0829 5.97335 78.8577 5.91875 78.5657 5.91875C78.2147 5.91875 77.7783 5.97064 77.5666 6.07433C77.3549 6.17802 77.2182 6.3855 77.1539 6.69386H73.8869C73.9968 6.13434 73.9768 5.80771 74.1365 5.46601C74.2957 5.12537 74.5466 4.83285 74.8895 4.58991C75.2325 4.34706 75.7035 4.15823 76.3071 4.03309C76.5985 3.97269 76.945 3.93056 77.3388 3.89934C77.7355 3.86784 78.1749 3.85025 78.6626 3.85025C79.8497 3.85025 80.7388 3.99057 81.3316 4.27052C81.9232 4.55009 82.3091 4.77535 82.4892 5.19543C82.6683 5.61328 82.7893 6.15618 82.8456 6.8222V11.3312C82.8456 11.7953 83.0198 12.1392 83.3655 12.363V12.6277V12.6277ZM92.9494 12.6277H89.5472V9.44016H87.0274V12.6277H83.658L83.6547 4.23197L83.658 4.10363H87.0274V6.95981H89.5092V4.10363H92.9494L92.9462 12.4749L92.9494 12.6277ZM102.403 6.61588H99.4735V12.6277H96.0607V6.61588H93.1064V4.10363H102.403V6.61588ZM113.454 9.89996C113.454 10.6487 113.095 11.3065 112.518 11.7757C111.76 12.3992 110.711 12.6277 109.748 12.6277H104.481V6.61588H102.514V4.10363H107.765V7.09539H109.561C110.561 7.09539 111.67 7.28972 112.462 7.9424C113.058 8.43302 113.454 9.11923 113.454 9.89996ZM110.062 9.90865C110.062 9.3701 109.762 9.14417 109.247 9.0828C109.142 9.0828 108.935 9.07411 108.628 9.06106C108.322 9.04743 107.911 9.04202 107.765 9.04202V10.6883L108.618 10.7046C108.851 10.7095 109.042 10.6998 109.191 10.6883C109.714 10.6497 110.062 10.5082 110.062 9.90865V9.90865ZM27.6305 12.6276H25.9769L24.17 6.93333L24.449 9.16523V12.6276H21.4317V4.05445H25.3014L26.8037 8.79009L28.306 4.05445H32.1758V12.6276H29.1584V9.16523L29.4375 6.93333L27.6305 12.6276ZM38.9302 12.6276H37.2765L35.4696 6.93333L35.7487 9.16523V12.6276H32.7313V4.05445H36.6011L38.1034 8.79009L39.6056 4.05445H43.4754V12.6276H40.458V9.16523L40.7371 6.93333L38.9302 12.6276Z"
+                    fill="black" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_1_4983">
+                    <rect width="115" height="16" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
   </main>
@@ -704,8 +718,13 @@
           </div>
           <div class="footer__desc flex-column">
             <div class="footer__descriptors">
-              <p class="descriptor">Инвестиционная платформа Поток предоставляет возможность частным инвесторам выдавать займы малому и среднему бизнесу России. Оператором инвестиционной платформы Поток является ООО «Поток.Диджитал».</p>
-              <p class="descriptor">ООО «Поток.Диджитал» включено Банком России в реестр операторов инвестиционных платформ. ООО “Поток.Диджитал” участвует в программе субсидирования для субъектов МСП, реализуемой Министерством экономического развития Российской Федерации в соответствии с Постановлением Правительства РФ от 27.12.2019 г. № 1898</p>
+              <p class="descriptor">Инвестиционная платформа Поток предоставляет возможность частным инвесторам выдавать
+                займы малому и среднему бизнесу России. Оператором инвестиционной платформы Поток является ООО
+                «Поток.Диджитал».</p>
+              <p class="descriptor">ООО «Поток.Диджитал» включено Банком России в реестр операторов инвестиционных
+                платформ. ООО “Поток.Диджитал” участвует в программе субсидирования для субъектов МСП, реализуемой
+                Министерством экономического развития Российской Федерации в соответствии с Постановлением Правительства
+                РФ от 27.12.2019 г. № 1898</p>
             </div>
             <div class="footer__btns wm-flex-row flex-wrap">
               <a href="#" class="button-l outline">

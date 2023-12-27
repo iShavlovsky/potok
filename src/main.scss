@@ -107,7 +107,7 @@ header, footer {
         }
     }
 
-    @include tablet {
+    @include tablet1024 {
         top: 0;
         left: 0;
         right: 0;
@@ -202,7 +202,7 @@ header, footer {
 .header__navigation-menu {
     display: none;
 
-    @include tablet {
+    @include tablet1024 {
         display: block;
     }
 }
@@ -252,6 +252,11 @@ header, footer {
             object-position: 50% 50%;
         }
     }
+
+    @include mobile {
+        width: 200%;
+        left: -100%;
+    }
 }
 
 .intro__inner {
@@ -276,12 +281,24 @@ header, footer {
     margin-bottom: px(40);
     letter-spacing: px(-1);
 
+    @include tablet1024 {
+        font-size: px(52);
+        line-height: 0.9;
+    }
+
     @include mobile {
-        margin-bottom: px(28);
+        margin-bottom: px(24);
+        font-size: px(32);
     }
 }
 
 .intro__desc {
+    max-width: px(330);
+
+    @include tablet1024 {
+        font-size: px(18);
+
+    }
 
     @include mobile {
         margin-bottom: px(40);
@@ -296,27 +313,21 @@ header, footer {
     column-gap: px(1);
     justify-content: flex-end;
 
-    @include mobile {
-        display: none;
+    @include tablet {
         position: static;
+        right: auto;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: px(32);
+        padding-bottom: px(100);
+
+        gap: px(8);
     }
 }
 
 .intro__btns {
-    display: none;
-
-    a {
-        max-width: max-content;
-    }
-
-    &.investors-page {
-        display: flex;
-    }
-
-    @include mobile {
-        display: flex;
-        gap: px(8);
-    }
+    display: inline-block;
 }
 
 .intro__yield {
@@ -347,20 +358,53 @@ header, footer {
 /* Card */
 .card {
     padding: px(28);
+    padding-right: px(56);
     padding-bottom: px(32);
     background: $c-gray-100;
     cursor: pointer;
-    width: 40%;
+    width: px(265);
     position: relative;
+    display: inline-block;
+
+    @include tablet1024 {
+        width: px(248);
+        padding-left: px(25);
+        padding-top: px(25);
+    }
+
+    @include tablet {
+        width: auto;
+        min-width: px(190);
+        text-align: center;
+        letter-spacing: px(0.01);
+        border-radius: px(8);
+        padding: px(14) px(24) px(16);
+        font-size: px(14);
+        line-height: 110%;
+        display: inline-block;
+
+        svg {
+            display: none;
+        }
+    }
 }
 
 .card__title {
     margin-bottom: px(10);
+    font-weight: 600;
+
+    @include tablet {
+        margin-bottom: 0;
+    }
 }
 
 .card__desc {
     color: $c-gray-50;
     margin-bottom: px(24);
+
+    @include tablet {
+        display: none;
+    }
 }
 
 /* Partners */
@@ -470,24 +514,36 @@ header, footer {
     border-radius: px(24);
     min-height: px(595);
 
-    @include big-mobile {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    @include tablet1024 {
+        min-height: px(464);
+        padding-top: px(32);
+        padding-bottom: px(33);
+        padding-left: px(24);
+    }
+
+    @include tablet {
+        min-height: px(447);
         flex: 0 0 100%;
         justify-content: flex-start;
         gap: px(24);
-        min-height: auto;
     }
 }
 
 .product__content {
-    max-width: 78%;
+    max-width: px(372);
+    margin-bottom: px(24);
 
     .descriptor {
         color: $c-white;
         opacity: 0.5;
     }
 
-    @include big-mobile {
-        max-width: 100%;
+    @include tablet {
+        max-width: px(290);
     }
 }
 
@@ -511,42 +567,95 @@ header, footer {
     }
 }
 
-/* Numbers */
-.numbers__title {
-    margin-bottom: px(48);
+.product__button {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
 }
 
-.numbers__line {
-    height: px(340);
-    padding-left: px(48);
-    overflow: hidden;
-    gap: px(58);
+.product__img {
+    width: px(582);
+    max-width: 120%;
+    position: absolute;
+    top: auto;
+    bottom: px(-155);
+    left: auto;
+    right: px(-121);
+    z-index: -1;
+
+    @include tablet1024 {
+        width: px(360);
+        max-width: none;
+        bottom: px(-104);
+        right: px(-85);
+    }
 
     @include tablet {
+        bottom: px(-65);
+    }
+}
+
+/* Numbers */
+.numbers {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.numbers__title {
+    margin-bottom: px(48);
+    padding-left: px(48);
+
+    @include tablet1024 {
         padding-left: px(32);
     }
 
-    @include mobile {
+    @include tablet {
         padding-left: px(16);
+        margin-bottom: px(57);
+    }
+}
+
+.numbers__scroll {
+    position: relative;
+}
+
+.numbers__line {
+    min-height: px(340);
+    overflow: hidden;
+    justify-content: stretch;
+
+    z-index: 2;
+
+    padding: 0 px(48);
+
+    @include tablet1024 {
+        padding: 0 px(32);
     }
 
-    @include big-mobile {
-        height: auto;
+    @include tablet {
+        padding: 0 px(16);
+        min-height: auto;
         overflow: visible;
     }
 }
 
 .indices {
-    height: px(158);
+    min-height: px(158);
+    flex: 0 0 37.5%;
+    padding-right: px(53);
 
-    @include big-mobile {
-        height: auto;
+    z-index: 2;
+
+    @include tablet {
+        min-height: auto;
+        padding-right: 0;
+        padding-bottom: px(55);
     }
 
     &:nth-child(even) {
         align-self: flex-end;
 
-        @include big-mobile {
+        @include tablet {
             align-self: flex-start;
         }
     }
@@ -561,31 +670,44 @@ header, footer {
     margin-bottom: px(12);
     position: relative;
 
-    @include big-mobile {
+    @include tablet {
         font-size: px(72);
         line-height: px(64);
         max-width: max-content;
     }
 
-    &.bill-rub::after {
-        content: 'млрд ₽';
-
-        position: absolute;
-        right: px(-50);
-        bottom: px(20);
-
-        font-size: px(20);
-        line-height: px(22);
+    span {
         opacity: 0.5;
+        margin-bottom: px(3);
+        margin-left: px(8);
+    }
+}
 
-        @include tablet {
-            font-size: px(16);
-            line-height: px(19.8);
-        }
+.indices__desc {
+    max-width: px(222);
 
-        @include big-mobile {
-            bottom: 0;
-        }
+    @include tablet {
+        max-width: px(340);
+    }
+}
+
+.numbers__video {
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: auto;
+    bottom: -20vw;
+    left: 0%;
+    right: 0%;
+
+    video {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    @include tablet1024 {
+        bottom: 0;
     }
 }
 
@@ -593,32 +715,39 @@ header, footer {
 .cabinet {
     padding-top: px(51);
     padding-bottom: px(50);
+    position: relative;
+    z-index: 2;
 }
 
 .cabinet__tabs {
     gap: px(20);
-    align-items: center;
 
     @include tablet {
         flex-direction: column-reverse;
-        align-items: stretch;
-        justify-content: stretch;
         gap: px(40);
     }
 }
 
 .cabinet__img {
-    flex: 0 0 49%;
+    flex: 1;
+    padding-right: px(62);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     @include tablet {
         flex: 100%;
-        width: 60%;
         margin: 0 auto;
+        padding-right: 0;
     }
 
     img {
         max-width: 100%;
         height: auto;
+
+        @include tablet {
+            width: px(334); 
+        }
     }
 }
 
@@ -631,26 +760,32 @@ header, footer {
 }
 
 .cabinet__content {
-    flex: 0 0 49%;
+    width: px(483);
+    flex: 0 auto;
+    padding-top: px(43);
 
+    @include tablet {
+        padding-top: 0;
+        padding-bottom: px(40);
+        width: auto;
+    }
 }
 
 .cabinet__title {
     margin-bottom: px(24);
-
-    @include tablet {
-        margin-bottom: px(20);
-    }
 }
 
 .tabs__headlines {
     gap: px(16);
-    margin-bottom: px(64);
+    margin-bottom: px(48);
+
+    @include tablet1024 {
+        margin-bottom: px(30);
+    }
 
     @include tablet {
         flex-direction: row;
-        gap: px(10);
-        margin-bottom: px(32);
+        margin-bottom: px(18);
         flex-wrap: wrap;
     }
 }
@@ -686,6 +821,10 @@ header, footer {
             }
         }
     }
+
+    @include tablet {
+        padding-right: px(18);
+    }
 }
 
 .tabs__content {
@@ -699,10 +838,18 @@ header, footer {
 .tabs__list {
     gap: px(8);
     display: none;
+    margin-bottom: px(48);
 
     li {
         &::before {
             background-color: $c-deep-dive;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include tablet {
+                transform: translateY(0);
+                top: px(6);
+            }
         }
 
         @include tablet {
@@ -713,10 +860,21 @@ header, footer {
     &.active {
         display: flex;
     }
+
+    @include tablet {
+        margin-bottom: px(32);
+    }
 }
 
-.tabs__button {
+.tabs__button.button-l {
     display: none;
+    background-color: $c-deep-dive;
+    color: $c-white;
+
+    &:hover {
+        background-color: $c-white;
+        color: $c-deep-dive;
+    }
 
     &.active {
         display: inline-block;
@@ -934,11 +1092,23 @@ header, footer {
 }
 
 /* Staff */
+.staff {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .staff__title {
-    margin-bottom: px(98);
+    margin-bottom: px(66);
+    max-width: px(380);
+    padding-left: px(48);
+
+    @include tablet1024 {
+        padding-left: px(32);
+    }
 
     @include tablet {
         margin-bottom: px(10);
+        padding-left: px(16);
     }
 }
 
@@ -963,11 +1133,6 @@ header, footer {
         border-bottom: none;
     }
 
-    svg {
-        float: right;
-
-    }
-
     path {
         transition: stroke $var-base-animation-time linear,
         fill $var-base-animation-time linear;
@@ -976,6 +1141,11 @@ header, footer {
 
 .staff__svg {
     flex: 0 0 5%;
+    align-self: stretch;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .staff__content {
@@ -1095,15 +1265,37 @@ header, footer {
     background: $c-background;
     border-radius: px(12);
     min-height: px(600);
+    padding-bottom: px(34);
+    position: relative;
+    overflow: hidden;
 
     @include mobile {
         min-height: px(508);
     }
 }
 
+.slogan__video {
+    border-radius: px(12);
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    overflow: hidden;
+    z-index: 1;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .slogan__content {
     max-width: px(782);
     text-align: center;
+    position: relative;
+    z-index: 2;
 
     @include tablet1024 {
         max-width: px(650);
@@ -1140,20 +1332,18 @@ header, footer {
 }
 
 .mm__slider {
-    padding: px(48);
     border-top: 1px solid $c-light-gray;
     column-gap: px(52);
     align-items: stretch;
     min-width: 100%;
+    padding: px(48) 0;
 
     @include tablet {
-        padding-left: px(32);
         padding-bottom: 0;
     }
 
     @include mobile {
         padding-top: 0;
-        padding-left: px(16);
         border-top: 0;
     }
 }
@@ -1198,7 +1388,7 @@ header, footer {
 .footer {
     padding-top: px(64);
     padding-bottom: px(56);
-    background-color: #F5F5F5;
+    background-color: $c-whity;
 }
 
 @include tablet1024 {

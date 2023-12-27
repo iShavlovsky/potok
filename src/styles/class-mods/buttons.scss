@@ -11,11 +11,7 @@
     transition: color $var-base-animation-time linear,
     background-color $var-base-animation-time linear;
     
-    @include tablet {
-        padding: px(14) px(26);
-    }
-
-    @include tablet {
+    @include tablet1024 {
         padding: px(14) px(26);
     }
 

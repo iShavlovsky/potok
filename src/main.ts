@@ -2,8 +2,34 @@ import './main.scss';
 // import './scripts/cookies';
 // import './scripts/marquee';
 // import './scripts/slider';
+import Swiper from 'swiper';
+import 'swiper/css';
 
 window.addEventListener('load', function () {
+  let numbersTranslatePersantages: number = 0;
+  let viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  if (viewportWidth > 1250) {
+    numbersTranslatePersantages = 100;
+  } else if (viewportWidth <= 1024 && viewportWidth >= 768) {
+    numbersTranslatePersantages = 150;
+  } else if (viewportWidth <= 1250 && viewportWidth > 1024) {
+    numbersTranslatePersantages = 120;
+  }
+
+  const breakpoints = () => {
+    viewportWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+    if (viewportWidth > 1250) {
+      numbersTranslatePersantages = 100;
+    } else if (viewportWidth <= 1024 && viewportWidth >= 768) {
+      numbersTranslatePersantages = 150;
+    } else if (viewportWidth <= 1250 && viewportWidth > 1024) {
+      numbersTranslatePersantages = 120;
+    }
+  };
+
+  window.addEventListener('resize', breakpoints);
+
   const html: HTMLHtmlElement = document.querySelector('html')!;
 
   // Cabinet
@@ -59,17 +85,41 @@ window.addEventListener('load', function () {
   });
 
   // Numbers
-  const numbers: Element = document.querySelector('.numbers')!;
-  const numbersScroll: Element = document.querySelector('.numbers__scroll')!;
+  const numbers: HTMLHtmlElement = document.querySelector('.numbers')!;
+  const numbersScroll: HTMLHtmlElement = document.querySelector('.numbers__line')!;
 
   const { top: numbersY } = numbers.getBoundingClientRect();
-  const numbersTop = numbersY + this.window.scrollY;
+  const numbersTop: number = numbersY + this.window.scrollY;
+  const numbersHeight: number = numbers.offsetHeight;
+  const numbersBottom: number = numbersTop + numbersHeight;
 
   window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY;
-
-    if (numbersTop < scrollTop) {
-      console.log('it works');
+    if (numbersTop < scrollTop && numbersBottom > scrollTop) {
+      numbersScroll.style.transform = `translateX(${
+        ((scrollTop - numbersTop) / numbersHeight) * numbersTranslatePersantages * -1
+      }%)`;
     }
+  });
+
+  const swiper = new Swiper('.mm__swiper', {
+    slidesPerView: 2,
+    spaceBetween: 10,
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2.7,
+        spaceBetween: 52,
+      },
+
+      1024: {
+        slidesPerView: 3,
+      },
+    },
   });
 });

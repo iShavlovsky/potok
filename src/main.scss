@@ -164,13 +164,16 @@ header, footer {
     }
 }
 
-.login-popup {
+.login-popup-block {
     position: absolute;
-
-    padding: px(24) px(20);
     right: 0;
-    top: calc(100% + px(10));
-    width: 200%;
+    top: 100%;
+    padding-top: px(12);
+}
+
+.login-popup {
+    width: px(187);
+    padding: px(10) px(12);
 
     background: $c-white;
     border-radius: px(12);
@@ -182,16 +185,12 @@ header, footer {
 
     a {
         display: block;
-        margin-bottom: px(10);
-
-        &:last-child {
-            margin-bottom: 0;
-        }
+        padding: px(8) px(12);
     }
 }
 
 .login:hover .login-popup,
-.login-popup:hover {
+.login-popup-block:hover .login-popup {
     display: flex;
 }
 
@@ -410,6 +409,8 @@ header, footer {
 /* Partners */
 .partners {
     padding-top: px(80);
+    padding-left: 0;
+    padding-right: 0;
     overflow: hidden;
 
     @include mobile {
@@ -419,22 +420,72 @@ header, footer {
 
 .partners__title {
     margin-bottom: px(64);
+    padding-left: px(48);
+
+    @include tablet1024 {
+        padding-left: px(32);
+    }
 
     @include tablet {
         margin-bottom: px(56);
+        padding-left: px(16);
     }
 
     @include mobile {
-        margin-bottom: px(32);
-    }
-
-    &.body-l {
         margin-bottom: px(32);
     }
 }
 
 .partners__scroll {
     gap: px(20);
+    overflow: hidden;
+
+    @include tablet1024 {
+        gap: px(16);
+    }
+
+    @include tablet {
+        gap: px(12);
+    }
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 20px));
+    }
+}
+
+@keyframes scrollReverse {
+    from {
+        transform: translateX(calc(-50% - 20px));
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+
+.partners__marquee {
+    width: max-content;
+    animation: scroll 20s linear infinite;
+
+    gap: px(20);
+
+    &.reverse {
+        animation: scrollReverse 20s linear infinite;
+    }
+
+    @include tablet1024 {
+        gap: px(16);
+    }
+
+    @include tablet {
+        gap: px(12)
+    }
 }
 
 
@@ -446,7 +497,7 @@ header, footer {
     }
 
     @include small-mobile {
-        column-gap: px(10);
+        column-gap: px(12);
     }
 
     &.without-border {
@@ -457,24 +508,31 @@ header, footer {
 }
 
 .partner {
-    flex: 0 0 21%;
-    height: px(160);
     border: 1px solid $c-light-gray;
     border-radius: px(12);
     position: relative;
+    padding: px(57) px(51);
 
     img {
         display: block;
         max-width: 100%;
-        height: auto;
+
+        width: auto;
+        height: px(47);
+        object-fit: contain;
+
+        @include tablet1024 {
+            height: px(34);
+        }
+    }
+
+    @include tablet1024 {
+        padding: px(40) px(32);
     }
 
     @include tablet {
-        height: px(115);
-    }
-
-    @include mobile {
-        flex: 0 0 55%;
+        padding-left: px(16);
+        padding-right: px(16);
     }
 }
 
@@ -623,6 +681,8 @@ header, footer {
     min-height: px(340);
     overflow: hidden;
     justify-content: stretch;
+
+    position: sticky;
 
     z-index: 2;
 
@@ -1092,15 +1152,16 @@ header, footer {
 }
 
 /* Staff */
-.staff {
+section.staff {
     padding-left: 0;
     padding-right: 0;
+
+    position: relative;
 }
 
 .staff__title {
     margin-bottom: px(66);
     max-width: px(380);
-    padding-left: px(48);
 
     @include tablet1024 {
         padding-left: px(32);
@@ -1112,18 +1173,28 @@ header, footer {
     }
 }
 
+.staff__inner {
+    margin-left: px(-48);
+    margin-right: px(-42);
+
+    @include tablet1024 {
+        margin: 0;
+    }
+}
+
 .staff__man {
     align-items: flex-start;
     padding: px(32) px(48);
     border-bottom: 1px solid $c-light-gray;
     background-color: $c-white;
     cursor: pointer;
+    width: 100%;
 
-    @include tablet {
+    @include tablet1024 {
         padding: px(32) px(32);
     }
 
-    @include mobile {
+    @include tablet {
         padding: px(32) px(16);
     }
 
@@ -1195,70 +1266,120 @@ header, footer {
     }
 }
 
-.staff__popup {
-    padding-top: px(72);
-}
 
 .staff__popup-content {
-    width: 90%;
-    background: $c-white;
-    color: $c-popup;
-
+    z-index: 1;
+    width: px(900);
+    max-width: 90%;
+    min-height: px(424);
+    background-color: $c-white;
+    flex: none;
+    padding-left: px(80);
     padding-right: px(80);
-    padding-top: px(100);
-    padding-bottom: px(24);
+    display: flex;
+    position: relative;
+
+    @media(min-width: 1920px) {
+        width: px(1080);
+    }
 
 
     @include tablet1024 {
+        width: px(584);
+        min-height: px(396);
+        padding-left: 0;
         padding-right: px(47);
-        padding-top: px(32);
-        padding-bottom: px(32);
     }
 
-    >img {
-        flex: 0 0 55%;
-        height: auto;
-        display: block;
+    @include tablet {
+        width: auto;
         max-width: 100%;
+        min-height: 0;
+        padding-right: px(24);
+    }
 
-        @include tablet {
-            width: 50%;
-        }
+    @include mobile {
+        min-height: 0;
+        flex-direction: column;
+        padding-right: 0;
+    }
+}
 
-        @include big-mobile {
-            width: 100%;
-            flex: 0 0 100%;
-            margin: 0 auto;
+.staff__popup-img {
+    width: px(358);
+    flex-direction: column;
+    flex: 0 auto;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-right: px(24);
+    display: flex;
+
+    img {
+        max-height: 100%;
+        width: auto;
+        max-width: -webkit-fill-available;
+    
+        @include tablet1024 {
+            width: px(168);
         }
     }
 
-    @include big-mobile {
-        gap: px(28);
-        flex-direction: column;
-        padding: px(40) px(28);
+    &._3 {
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    @include tablet1024 {
+        width: px(294);
+        margin-right: px(6);
+    }
+
+    @include tablet {
+        width: 56%;
+    }
+
+    @include mobile {
+        width: auto;
+        height: 300px;
+        background-color: $c-whity;
+        align-self: stretch;
+        align-items: center;
+        margin-right: 0;
     }
 }
 
 .staff__popup-text {
-    flex: 0 0 43%;
+    padding-top: px(100);
+    padding-bottom: px(24);
+    flex: 1;
 
-    @include big-mobile {
-        flex: 0 0 100%;
+    @include tablet1024 {
+        padding-top: px(72);
     }
-}
 
-.staff__popup-title {
-    margin-bottom: px(4);
+    @include tablet {
+        padding-top: px(24);
+    }
+
+    @include mobile {
+        padding: px(28) px(28) px(40);
+    }
 }
 
 .staff__popup-prof {
     opacity: 0.5;
-    margin-bottom: px(50);
+    margin-bottom: px(48);
+    margin-top: px(4);
 
-    @include big-mobile {
+    @include tablet1024 {
+        margin-top: px(8);
+    }
+
+    @include tablet {
         margin-bottom: px(24);
     }
-}
+}   
 
 /* Slogan */
 .slogan__inner {

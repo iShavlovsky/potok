@@ -46,9 +46,11 @@
             <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1L6 6L1 1" stroke="white" />
             </svg>
-            <div class="login-popup flex-column">
-              <a href="#" aria-label="как инвестор" class="link btn-text">как инвестор</a>
-              <a href="#" aria-label="как заемщик" class="link btn-text">как заемщик</a>
+            <div class="login-popup-block">
+              <div class="login-popup flex-column">
+                <a href="#" aria-label="как инвестор" class="link btn-text">как инвестор</a>
+                <a href="#" aria-label="как заемщик" class="link btn-text">как заемщик</a>
+              </div>
             </div>
           </div>
           <div class="header__navigation-menu">
@@ -116,41 +118,81 @@
         </h2>
       </div>
       <div class="partners__scroll flex-column">
-        <div class="partners__list wm-flex-row">
-          <div class="partner flex-center flex-wrap">
-            <p class="partner__desc descriptor">стратегический партнер</p>
-            <img src="./src/assets/img/svg/partners/moex.svg" alt="moex">
+        <div class="wm-flex-row partners__marquee">
+          <div class="partners__list wm-flex-row">
+            <div class="partner flex-center flex-wrap">
+              <p class="partner__desc descriptor">стратегический партнер</p>
+              <img src="./src/assets/img/svg/partners/moex.svg" alt="moex">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/ozon.svg" alt="ozon">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/wildberries.svg" alt="wb">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/tochka.svg" alt="tochka">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/bankiru.svg" alt="banki">
+            </div>
           </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/ozon.svg" alt="ozon">
-          </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/wildberries.svg" alt="wb">
-          </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/tochka.svg" alt="tochka">
-          </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/bankiru.svg" alt="banki">
+          <div class="partners__list wm-flex-row">
+            <div class="partner flex-center flex-wrap">
+              <p class="partner__desc descriptor">стратегический партнер</p>
+              <img src="./src/assets/img/svg/partners/moex.svg" alt="moex">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/ozon.svg" alt="ozon">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/wildberries.svg" alt="wb">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/tochka.svg" alt="tochka">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/bankiru.svg" alt="banki">
+            </div>
           </div>
         </div>
-        <div class="partners__list wm-flex-row">
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/1c.svg" alt="1c">
+
+        <div class="partners__marquee wm-flex-row reverse">
+          <div class="partners__list wm-flex-row">
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/1c.svg" alt="1c">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/fintender.svg" alt="fintender">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/png/partners/sravni.png" alt="sravni">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/tinkoff.svg" alt="tinkoff">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/razvivai.svg" alt="razvivai">
+            </div>
           </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/fintender.svg" alt="fintender">
+          <div class="partners__list wm-flex-row">
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/1c.svg" alt="1c">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/fintender.svg" alt="fintender">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/png/partners/sravni.png" alt="sravni">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/tinkoff.svg" alt="tinkoff">
+            </div>
+            <div class="partner flex-center">
+              <img src="./src/assets/img/svg/partners/razvivai.svg" alt="razvivai">
+            </div>
           </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/png/partners/sravni.png" alt="sravni">
-          </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/tinkoff.svg" alt="tinkoff">
-          </div>
-          <div class="partner flex-center">
-            <img src="./src/assets/img/svg/partners/razvivai.svg" alt="razvivai">
-          </div>
-        </div>
+      </div>
       </div>
     </section>
 
@@ -413,14 +455,14 @@
               </defs>
             </svg>
 
-            <div class="staff__popup-content align-items-center justify-end wm-flex-row">
-              <img src="./src/assets/img/png/staff-popup-content/1.png">
+            <div class="staff__popup-content wm-flex-row">
+              <div class="staff__popup-img">
+                <img src="./src/assets/img/png/staff-popup-content/1.png">
+              </div>
               <div class="staff__popup-text">
                 <h4 class="h4 staff__popup-title">Юрий Попов</h4>
                 <p class="body-s staff__popup-prof">генеральный директор Поток.Холдинг</p>
-                <p class="body-m staff__popup-desc">ранее занимали руководящие должности в Эльбрус Капитал, Ренессанс
-                  Капитал и PwC. Член ассоциаций Chartered Financial Analyst (CFA) и Association of Chartered Certified
-                  Accountants (ACCA).</p>
+                <p class="body-m staff__popup-desc">Ранее занимал руководящие должности в Эльбрус Капитал, Ренессанс Капитал и PwC. Член ассоциаций Chartered Financial Analyst (CFA) и Association of Chartered Certified Accountants (ACCA).</p>
               </div>
             </div>
           </div>
@@ -438,8 +480,10 @@
               </defs>
             </svg>
 
-            <div class="staff__popup-content align-items-center justify-end wm-flex-row">
-              <img src="./src/assets/img/png/staff-popup-content/2.png">
+            <div class="staff__popup-content wm-flex-row">
+              <div class="staff__popup-img">
+                <img src="./src/assets/img/png/staff-popup-content/2.png">
+              </div>
               <div class="staff__popup-text">
                 <h4 class="h4 staff__popup-title">Антон Еременко</h4>
                 <p class="body-s staff__popup-prof">генеральный директор Поток.Диджитал</p>
@@ -463,8 +507,10 @@
               </defs>
             </svg>
 
-            <div class="staff__popup-content align-items-center justify-end wm-flex-row">
-              <img src="./src/assets/img/png/staff-popup-content/3.png">
+            <div class="staff__popup-content wm-flex-row">
+              <div class="staff__popup-img _3">
+                <img src="./src/assets/img/png/staff-popup-content/3.svg">
+              </div>
               <div class="staff__popup-text">
                 <h4 class="h4 staff__popup-title">Московская биржа</h4>
                 <p class="body-s staff__popup-prof">стратегический партнёр </p>

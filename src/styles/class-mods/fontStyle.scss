@@ -288,4 +288,45 @@
 
 }
 
+@media screen and (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+
+  .h1 {
+    font-size: 84px;
+  }
+
+  .h2 {
+    font-size: 72px;
+  }
+
+  .h3 {
+    font-size: 50.4px;
+  }
+
+  .h4 {
+    font-size: 36px;
+  }
+
+  .accent-l {
+    font-size: 252px;
+  }
+
+  .accent-m {
+    font-size: 168px;
+  }
+
+  .body-l {
+    font-size: 24px;
+  }
+
+  .body-m {
+    font-size: 20px;
+  }
+
+  .descriptor {
+    font-size: 14.4px;
+  }
+}
 

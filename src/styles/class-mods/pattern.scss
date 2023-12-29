@@ -20,18 +20,31 @@
 
 
 .popup {
-    min-height: 100vh;
-    width: 100%;
     background-color: $c-background-popup;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 100%;
+    width: 100%;
 
     justify-content: center;
     align-items: center;
 
+    flex-direction: column;
+
+    z-index: 1000;
+
     display: none;
 
-    padding: px(32);
-    overflow-y: scroll;
+    @include tablet {
+        justify-content: flex-start;
+        padding: px(80) px(16) px(24);
+        overflow: auto;
+    }
+
 
     .popup-cross {
         content: '';
@@ -47,6 +60,10 @@
     &.active {
         display: flex;
     }
+}
+
+html.no-scroll {
+    overflow: hidden;
 }
 
 .document {

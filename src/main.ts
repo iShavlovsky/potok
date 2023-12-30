@@ -2,8 +2,9 @@ import './main.scss';
 // import './scripts/cookies';
 // import './scripts/marquee';
 // import './scripts/slider';
-import Swiper from 'swiper';
 import 'swiper/css';
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
 
 window.addEventListener('load', function () {
   let numbersTranslatePersantages: number = 0;
@@ -103,6 +104,7 @@ window.addEventListener('load', function () {
   });
 
   const swiper = new Swiper('.mm__swiper', {
+    modules: [Navigation],
     slidesPerView: 2,
     spaceBetween: 10,
 
@@ -114,11 +116,11 @@ window.addEventListener('load', function () {
     breakpoints: {
       768: {
         slidesPerView: 2.7,
-        spaceBetween: 52,
       },
 
       1024: {
         slidesPerView: 3,
+        spaceBetween: 52,
       },
     },
   });

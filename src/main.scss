@@ -964,12 +964,8 @@ header, footer {
     margin-bottom: px(20);
 
     @include tablet {
-        padding: 0 px(32);
+        padding: 0;
         gap: px(80);
-    }
-
-    @include mobile {
-        padding: 0 px(16);
     }
 }
 
@@ -1096,19 +1092,23 @@ header, footer {
     padding-left: 0;
     padding-right: 0;
 }
-
-.staff__title {
-    margin-bottom: px(66);
-    max-width: px(380);
-    padding-left: px(48);
+.staff-h2-w {
+    padding: 0 px(48);
 
     @include tablet1024 {
-        padding-left: px(32);
+        padding: 0 px(32);
     }
 
     @include tablet {
+        padding: 0 px(16);
+    }
+}
+.staff__title {
+    margin-bottom: px(66);
+    max-width: px(380);
+
+    @include tablet {
         margin-bottom: px(10);
-        padding-left: px(16);
     }
 }
 
@@ -1119,11 +1119,11 @@ header, footer {
     background-color: $c-white;
     cursor: pointer;
 
-    @include tablet {
+    @include tablet1024 {
         padding: px(32) px(32);
     }
 
-    @include mobile {
+    @include tablet {
         padding: px(32) px(16);
     }
 
@@ -1150,12 +1150,17 @@ header, footer {
 
 .staff__content {
     flex: 0 0 95%;
+    max-width: 1534px;
 
     @include tablet1024 {
         align-items: flex-start;
         flex-direction: column;
         gap: px(16);
     }
+
+    @media(max-width: 1920px) {
+        max-width: 1264px;
+      }
 
 }
 

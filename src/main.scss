@@ -735,9 +735,12 @@ header, footer {
             bottom: -20vw;
             left: 0%;
             right: 0%;
-            @include tablet {
-                bottom: 0%;  
-                position: relative;      
+            
+            @include tablet1024 {
+                bottom: 0%;
+            } 
+            @include tablet { 
+                position: relative;   
             }
         }
     }

@@ -998,21 +998,50 @@ header, footer {
 /* Develop */
 .develop {
     margin-top: px(97);
+    height: 400vh;
+    padding: 0;
+    @include tablet {
+        height: auto;
+    }
+}
+
+.timeline-w {
+    justify-self: flex-end;
+}
+.develop-sticky-block {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    padding: px(70) px(48);
+    height: 100vh;
+
+    @include tablet1024 {
+        padding: px(60) px(32);
+    }
+
+    @include tablet {
+        padding: px(50) px(16);
+        height: auto;
+    }
+
 }
 
 .develop__title {
     margin-bottom: px(32);
 }
+.develop-sloder-w {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}
 
 .develop__slider {
     gap: px(161);
     align-items: stretch;
-    padding-left: px(48);
-    overflow: hidden;
     margin-bottom: px(20);
+    height: 100%;
 
     @include tablet {
-        padding: 0;
         gap: px(80);
     }
 }
@@ -1045,9 +1074,11 @@ header, footer {
     img {
         display: block;
         height: auto;
+        object-fit: cover;
 
         @include tablet {
             max-width: 100%;
+            height: px(260);
         }
     }
 
@@ -1086,7 +1117,9 @@ header, footer {
 
     @include tablet {
         font-size: px(128);
-        line-height: 1;
+        line-height: 100%;
+        left: 0;
+        transform: translateX(0);
     }
 }
 
@@ -1113,7 +1146,7 @@ header, footer {
 }
 
 .timeline {
-    padding: px(20) 0;
+    padding-top: px(40);
     column-gap: 10%;
 
     @include tablet {

@@ -1221,12 +1221,14 @@ header, footer {
 }
 
 .staff__svg {
-    flex: 0 0 5%;
+    flex: 0 0 px(80);
     align-self: stretch;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    @include tablet1024 {
+        flex: 0 0 5%;
+    }
 }
 
 .staff__content {

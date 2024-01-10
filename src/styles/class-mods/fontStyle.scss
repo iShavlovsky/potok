@@ -231,6 +231,12 @@
 @include tablet {
   .h2 {
     font-size: px(30);
+    line-height: 100%;
+  }
+
+  .body-l {
+    font-size: px(16);
+    line-height: px(17.6);
   }
 }
 
@@ -266,10 +272,7 @@
   }
 
   /* Paragraph */
-  .body-l {
-    font-size: px(16);
-    line-height: px(17.6);
-  }
+ 
 
   .body-m {
     font-size: px(14);

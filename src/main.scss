@@ -939,23 +939,32 @@ header, footer {
     margin-bottom: px(28);
     overflow: auto;
 
+    @include tablet1024 {
+        margin: 0 px(-32) px(16) px(-32);
+        padding: 0 px(32) px(16) px(32);
+
+    }
     @include tablet {
+        margin: 0;
+        padding: 0;
         flex-wrap: wrap;
+        gap: px(12);
         margin-bottom: px(12);
     }
 }
 
 .documents__document {
-    flex: 0 0 30%;
+    flex: 0 0 31.9%;
     min-height: 256px;
-
-
     position: relative;
 
+    @include tablet1024 {
+        flex: 0 0 40%;
+    }
     @include tablet {
         flex: 100%;
         min-height: 0;
-        padding: px(20) px(15) px(78);
+        padding: px(20) px(15) px(108);
     }
 
     span {

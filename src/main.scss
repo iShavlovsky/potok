@@ -173,7 +173,7 @@ header, footer {
 
   padding: px(24) px(20);
   right: 0;
-  top: calc(100% + px(10));
+  top: calc(100% + 10px);
   width: 200%;
 
   background: $c-white;
@@ -411,13 +411,41 @@ header, footer {
 
 /* Partners */
 .partners {
-
   padding-top: px(80);
+  padding-left: 0;
+  padding-right: 0;
   overflow: hidden;
 
   @include mobile {
     margin-bottom: px(64);
   }
+}
+
+
+.marquee {
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.marquee-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  will-change: transform;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  white-space: nowrap;
+  padding: 0;
+  display: inline-block;
+  margin-right: 20px
 }
 
 .partners__title {
@@ -460,7 +488,8 @@ header, footer {
 }
 
 .partner {
-  flex: 0 0 21%;
+  //flex: 0 0 21%;
+  min-width: 500px;
   height: px(160);
   border: 1px solid $c-light-gray;
   border-radius: px(12);
@@ -1575,7 +1604,7 @@ header, footer {
   @include tablet1024 {
     position: absolute;
     bottom: 12%;
-    left: calc(48% + px(36));
+    left: calc(48% + 36px);
   }
 
   > div {

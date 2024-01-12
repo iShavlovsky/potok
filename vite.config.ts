@@ -14,7 +14,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         faq: resolve(__dirname, 'faq/faq.html'),
         documents: resolve(__dirname, 'documents/documents.html'),
-        partners: resolve(__dirname, 'partners/partners.html')
+        partners: resolve(__dirname, 'partners/partners.html'),
       },
     },
   },

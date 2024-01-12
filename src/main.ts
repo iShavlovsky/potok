@@ -1,4 +1,4 @@
 import './main.scss';
-// import './scripts/cookies';
+import './scripts/firstScreen';
 // import './scripts/marquee';
 // import './scripts/slider';

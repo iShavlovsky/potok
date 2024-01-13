@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
 
     @include mobile {
         flex-direction: column;
@@ -229,10 +229,11 @@
 .app__content {
     align-self: center;
     max-width: px(580);
-    flex: 0 0 50%;
+    flex: 0 0 52%;
 
     @include tablet {
         align-self: flex-start;
+        max-width: 100%;
     }
 }
 
@@ -291,6 +292,8 @@
 
     @include tablet {
         margin-bottom: 0;
+        font-size: 30px;
+        line-height: 100%;
     }
 }
 
@@ -340,7 +343,11 @@
 
 .number-one__number {
     margin-bottom: px(16);
-
+    
+    @include tablet {
+        font-size: 46px;
+        line-height: 90%;
+    }
     span {
         font-weight: 500;
     }

@@ -1369,8 +1369,13 @@ header, footer {
     position: relative;
     overflow: hidden;
 
+    @include tablet {
+        min-height: px(400);
+        padding: px(34);
+    }
     @include mobile {
         min-height: px(508);
+        padding: px(16);
     }
 }
 

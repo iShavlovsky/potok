@@ -681,6 +681,7 @@ header, footer {
 .numbers__scroll {
   position: relative;
   height: 100vh;
+  will-change: auto;
 
   @include tablet {
     height: auto;
@@ -1087,6 +1088,8 @@ header, footer {
   align-items: stretch;
   margin-bottom: px(20);
   height: 100%;
+  width: min-content;
+  will-change: auto;
 
   @include tablet {
     gap: px(80);

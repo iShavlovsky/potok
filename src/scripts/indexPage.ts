@@ -21,4 +21,30 @@ document.addEventListener('DOMContentLoaded', function () {
   /* two Screen - marquee*/
   new Marquee('.marquee-1');
   new Marquee('.marquee-2');
+
+  /* four Screen-left scrolls */
+  gsap.to('#scrollBlockTriggerLeft', {
+    scrollTrigger: {
+      trigger: '#scrollBlockTrigger',
+      start: 'top top',
+      end: '50%',
+      scrub: 1.5,
+      // markers: true,
+    },
+    duration: 1,
+    xPercent: -90,
+  });
+
+  /* seven Screen-left scrolls */
+  gsap.to('#scrollBlockTriggerLeft2', {
+    scrollTrigger: {
+      trigger: '#scrollBlockTrigger2',
+      start: 'top top',
+      end: '80%',
+      scrub: 1.5,
+      // markers: true,
+    },
+    duration: 1,
+    xPercent: -80,
+  });
 });

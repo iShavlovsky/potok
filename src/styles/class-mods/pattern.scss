@@ -1,289 +1,287 @@
 .list-style-disc {
-    li {
-        padding-left: px(10);
-        position: relative;
+  li {
+    padding-left: px(10);
+    position: relative;
 
-        &::before {
-            content: '';
+    &::before {
+      content: '';
 
-            background-color: $c-white;
-            width: px(4);
-            height: px(4);
-            border-radius: 100%;
+      background-color: $c-white;
+      width: px(4);
+      height: px(4);
+      border-radius: 100%;
 
-            position: absolute;
-            left: 0;
-            top: px(6);
-        }
+      position: absolute;
+      left: 0;
+      top: px(6);
     }
+  }
 }
 
 
 .popup {
-    min-height: 100vh;
-    width: 100%;
-    background-color: $c-background-popup;
-    position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-color: $c-background-popup;
+  position: relative;
 
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 
-    display: none;
+  display: none;
 
-    padding: px(32);
-    overflow-y: scroll;
+  padding: px(32);
+  overflow-y: scroll;
 
-    .popup-cross {
-        content: '';
+  .popup-cross {
+    content: '';
 
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
 
-        cursor: pointer;
-    }
+    cursor: pointer;
+  }
 
-    &.active {
-        display: flex;
-    }
+  &.active {
+    display: flex;
+  }
 }
 
 .document {
-    padding: px(24) px(28) px(70) px(28);
-    border: 1px solid $c-light-gray;
-    border-radius: px(12);
-    display: inline-block;
+  padding: px(24) px(28) px(70) px(28);
+  border: 1px solid $c-light-gray;
+  border-radius: px(12);
+  display: inline-block;
 
-    position: relative;
+  position: relative;
 
-    svg {
-        position: absolute;
-        bottom: 28px;
-        right: 28px;
-    }
+  svg {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+  }
 
-    @include tablet {
-        padding: px(20) px(15) px(78);
-    }
+  @include tablet {
+    padding: px(20) px(15) px(78);
+  }
 }
 
 .main-title {
-    text-align: center;
-    margin-bottom: px(140);
+  text-align: center;
 
-    @include tablet {
-        margin-bottom: px(67);
-    }
+  @include tablet {
+    margin-bottom: px(67);
+  }
 
-    @include mobile {
-        margin-bottom: px(80);
-        text-align: left;
-    }
+  @include mobile {
+    margin-bottom: px(80);
+    text-align: left;
+  }
 }
 
 /* Accordion */
 .accordion {
-    gap: px(20);
+  gap: px(20);
 }
 
 .accordion__content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: px(20);
-    display: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: px(20);
 
-    a {
-        color: $c-white;
-        text-decoration: underline;
-    }
+  a {
+    color: $c-white;
+    text-decoration: underline;
+  }
 }
 
 .accordion__title {
-    position: relative;
+  position: relative;
 
-    padding: px(28) px(20);
+  padding: px(28) px(20);
 
-    cursor: pointer;
-    border-bottom: 1px solid $c-light-gray;
+  cursor: pointer;
+  border-bottom: 1px solid $c-light-gray;
 
+  svg {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.active {
     svg {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
+      transform: rotate(180deg);
     }
-
-    &.active {
-        svg {
-            transform: rotate(180deg);
-        }
-    }
+  }
 }
 
 .accordion__title-main {
-    flex: 0 0 70%;
+  flex: 0 0 70%;
 
-    padding-right: px(20);
+  padding-right: px(20);
 
-    @include tablet1024 {
-        flex: 0 0 100%;
-    }
+  @include tablet1024 {
+    flex: 0 0 100%;
+  }
 }
 
 .accordion__title-num {
-    flex: 0 0 30%;
+  flex: 0 0 30%;
 
-    @include tablet1024 {
-        display: none;
-    }
+  @include tablet1024 {
+    display: none;
+  }
 }
 
 .accordion__content-headline {
-    margin-bottom: px(72);
-    display: none;
+  margin-bottom: px(72);
+  display: none;
 
-    &:last-child {
-        margin-bottom: 0;
-    }
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-    >p {
-        margin-bottom: px(28);
-    }
+  > p {
+    margin-bottom: px(28);
+  }
 }
 
 .accordion__item.active {
-    .accordion__content-headline {
-        display: block;
-    }
+  .accordion__content-headline {
+    display: block;
+  }
 
-    .accordion__content {
-        display: flex;
-    }
+  .accordion__content {
+    display: flex;
+  }
 
-    .accordion__title {
-        &::after {
-            transform: rotate(180deg);
-            transform-origin: top;
-        }
+  .accordion__title {
+    &::after {
+      transform: rotate(180deg);
+      transform-origin: top;
     }
+  }
 }
 
 .faq__accordion {
-    flex: 1;
-    gap: px(100);
+  flex: 1;
+  gap: px(100);
 
-    @include tablet {
-        gap: px(64);
-    }
+  @include tablet {
+    gap: px(64);
+  }
 }
 
 .accordion__title-faq {
-    border-top: 1px solid $c-light-gray;
-    transition: color $var-base-animation-time linear,
-    background-color $var-base-animation-time linear;
+  border-top: 1px solid $c-light-gray;
+  transition: color $var-base-animation-time linear,
+  background-color $var-base-animation-time linear;
 
-    svg {
-        right: px(20);
-        transform: translateY(-50%);
-    }
+  svg {
+    right: px(20);
+    transform: translateY(-50%);
+  }
+
+  path {
+    transition: stroke $var-base-animation-time linear;
+  }
+
+  &:hover {
+    background: $c-background;
+    color: $c-white;
 
     path {
-        transition: stroke $var-base-animation-time linear;
+      stroke: $c-white;
     }
-
-    &:hover {
-        background: $c-background;
-        color: $c-white;
-
-        path {
-            stroke: $c-white;
-        }
-    }
+  }
 }
 
 .faq__block {
-    gap: px(-1);
+  gap: px(-1);
 }
 
 .faq__block-title {
-    margin-bottom: px(48);
+  margin-bottom: px(48);
 
-    @include tablet {
-        margin-bottom: px(30);
-        margin-left: px(16);
-    }
+  @include tablet {
+    margin-bottom: px(30);
+    margin-left: px(16);
+  }
 }
 
 .accordion__content-faq {
-    padding: 0 px(20) px(28);
+  padding: 0 px(20) px(28);
 }
 
 .faq__accordion-item {
-    transition: background-color $var-base-animation-time linear,
-    color $var-base-animation-time linear;
+  transition: background-color $var-base-animation-time linear,
+  color $var-base-animation-time linear;
 }
 
 .faq__accordion-item.active {
-    .accordion__title-faq {
-        border: 0;
+  .accordion__title-faq {
+    border: 0;
 
-        svg {
-            transform-origin: center;
-            transform: translateY(-50%) rotate(180deg);
-            top: 50%;
-            
-        }
+    svg {
+      transform-origin: center;
+      transform: translateY(-50%) rotate(180deg);
+      top: 50%;
 
-        path {
-            stroke: $c-white;
-        }
     }
 
-    background: $c-background;
-    color: $c-white;
+    path {
+      stroke: $c-white;
+    }
+  }
+
+  background: $c-background;
+  color: $c-white;
 }
 
 
 .accordion__content-main {
-    max-width: px(582);
-    position: relative;
-    left: 29%;
+  max-width: px(582);
+  position: relative;
+  left: 29%;
 
-    @include tablet1024 {
-        position: static;
-        left: 0;
-    }
+  @include tablet1024 {
+    position: static;
+    left: 0;
+  }
 }
 
 /* Note */
 .note {
-    opacity: 0.5;
-    
-    @include tablet1024 {
-        font-size: px(14);
-    }
+  opacity: 0.5;
 
-    @include tablet {
-        font-size: px(12);
-    }
+  @include tablet1024 {
+    font-size: px(14);
+  }
+
+  @include tablet {
+    font-size: px(12);
+  }
 }
 
 /* Input */
 .input {
-    color: $c-deep-dive;
-    background-color: $c-whity;
-    border: 1px #000;
-    border-radius: px(8);
-    margin-bottom: 0;
-    padding: px(8) px(12);
-    font-size: px(17);
-    line-height: 120%;
-    display: block;
-    height: auto;
-    min-height: 59px;
+  color: $c-deep-dive;
+  background-color: $c-whity;
+  border: 1px #000;
+  border-radius: px(8);
+  margin-bottom: 0;
+  padding: px(8) px(12);
+  font-size: px(17);
+  line-height: 120%;
+  display: block;
+  height: auto;
+  min-height: 59px;
 
-    font-family: $ft-regular;
+  font-family: $ft-regular;
 }
 

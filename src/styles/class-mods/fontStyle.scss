@@ -223,6 +223,17 @@
     font-size: px(52);
     line-height: px(46);
   }
+
+  .font-size-tablet-140px {
+    font-size: 86px;
+    font-weight: 400;
+    line-height: 90%;
+  }
+
+  .font-size-tablet-30px {
+    font-size: 30px;
+    line-height: 100%;
+  }
 }
 
 @include tablet {
@@ -235,11 +246,12 @@
     font-size: px(86);
     line-height: px(77);
   }
-  
+
   .body-l {
     font-size: px(16);
     line-height: px(17.6);
   }
+
 }
 
 
@@ -253,11 +265,21 @@
     font-size: px(46);
     line-height: 1;
   }
+
+
+  .font-size-tablet-140px {
+    font-size: 86px;
+  }
+
+  .font-size-tablet-30px {
+    font-size: 30px;
+    line-height: 100%;
+  }
 }
 
 
 @include mobile {
-  /* Heading */ 
+  /* Heading */
   .h2 {
     font-size: px(30);
     line-height: px(30);
@@ -274,13 +296,13 @@
   }
 
   /* Paragraph */
- 
+
 
   .body-m {
     font-size: px(14);
     line-height: px(16.8);
   }
-  
+
   .body-s {
     font-size: px(12);
     line-height: px(14.4);

@@ -1,334 +1,357 @@
 /* Strategy */
+
+.intro-bottom-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+  @include mobile {
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+}
+
 .strategy__title {
-    max-width: px(780);
-    margin-bottom: px(64);
+  max-width: px(780);
+  margin-bottom: px(64);
 
-    @include tablet {
-        margin-bottom: px(30);
-    }
+  @include tablet {
+    margin-bottom: px(30);
+  }
 
-    @include mobile {
-        &.h3 {
-            font-size: px(30);
-        }
+  @include mobile {
+    &.h3 {
+      font-size: px(30);
     }
+  }
 }
 
 .strategy__block {
-    background-color: $c-light-gray;
-    border-radius: px(24);
-    margin-bottom: 20px;
-    padding: px(50) px(28);
-    align-items: center;
+  background-color: $c-light-gray;
+  border-radius: px(24);
+  margin-bottom: 20px;
+  padding: px(50) px(28);
+  align-items: center;
 
-    &.strategy__block-headlines {
-        background-color: transparent;
-        padding-bottom: 0;
-        padding-top: 0;
+  &.strategy__block-headlines {
+    background-color: transparent;
+    padding-bottom: 0;
+    padding-top: 0;
 
-        .strategy__row {
-            opacity: 0.5;
-        }
-
-        @include tablet {
-            display: none;
-        }
+    .strategy__row {
+      opacity: 0.5;
     }
 
     @include tablet {
-        align-items: flex-start;
-        padding: px(32) px(24);
+      display: none;
     }
+  }
+
+  @include tablet {
+    align-items: flex-start;
+    padding: px(32) px(24);
+  }
 }
 
 
 .table-title-block {
-    opacity: 0.5;
-    font-size: px(12);
+  opacity: 0.5;
+  font-size: px(12);
 }
 
 .strategy__row {
-    flex: 1;
+  flex: 1;
 
-    margin-top: px(8);
+  margin-top: px(8);
 
+  @include tablet {
+    padding-bottom: px(24);
+
+    &.h4 {
+      margin-bottom: px(8);
+      margin-top: 0;
+    }
+  }
+
+  &.body-l {
     @include tablet {
-        padding-bottom: px(24);
-
-        &.h4 {
-            margin-bottom: px(8);
-            margin-top: 0;
-        }
+      font-size: px(20);
+      margin-top: px(6);
     }
+  }
 
-    &.body-l {
-        @include tablet {
-            font-size: px(20);
-            margin-top: px(6);
-        }
-    }
-
-    &._2 {
-        flex: none;
-        width: 19%;
-
-        @include tablet1024 {
-            width: 25%;
-        }
-
-        @include tablet {
-            width: auto;
-        }
-    }
-    
-    &._3 {
-        flex: none;
-        width: 16%;
-        
-        @include tablet1024 {
-            width: 13%;
-        }
-        
-        @include tablet {
-            width: auto;
-        }
-    }
-    
-    &._4 {
-        flex: none;
-        width: 16%;
-
-        @include tablet1024 {
-            width: 15%;
-        }
-
-        @include tablet {
-            width: auto;
-        }
-    }
-    
-    &._5 {
-        flex: none;
-        width: 21.5%;
-        
-        @include tablet1024 {
-            width: 12%;
-        }
-
-        @include tablet {
-            width: auto;
-        }
-    }
+  &._2 {
+    flex: none;
+    width: 19%;
 
     @include tablet1024 {
-        &.h4 {
-            font-size: px(24);
-        }
+      width: 25%;
     }
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &._3 {
+    flex: none;
+    width: 16%;
+
+    @include tablet1024 {
+      width: 13%;
+    }
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &._4 {
+    flex: none;
+    width: 16%;
+
+    @include tablet1024 {
+      width: 15%;
+    }
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &._5 {
+    flex: none;
+    width: 21.5%;
+
+    @include tablet1024 {
+      width: 12%;
+    }
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  @include tablet1024 {
+    &.h4 {
+      font-size: px(24);
+    }
+  }
 }
 
 .strategy__footer {
-    padding-top: px(32);
-    display: flex;
-    align-items: center;
+  padding-top: px(32);
+  display: flex;
+  align-items: center;
 
-    .button-l {
-        background-color: $c-background;
-        color: $c-white;
-        border-color: $c-background;
+  .button-l {
+    background-color: $c-background;
+    color: $c-white;
+    border-color: $c-background;
 
-        &:hover {
-            background-color: transparent;
-            color: $c-background;
-        }
-
-        @include tablet1024 {
-            padding: px(14) px(24) px(17);
-            font-size: px(14);
-        }
-
-        @include tablet {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
+    &:hover {
+      background-color: transparent;
+      color: $c-background;
     }
-    
+
+    @include tablet1024 {
+      padding: px(14) px(24) px(17);
+      font-size: px(14);
+    }
+
     @include tablet {
-        align-items: flex-start;
-        flex-direction: column-reverse;
-        padding-top: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
+  }
+
+  @include tablet {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    padding-top: 0;
+  }
 }
 
 .strategy__footer-content {
-    @include tablet {
-        margin-top: px(24);
-    }
+  @include tablet {
+    margin-top: px(24);
+  }
 }
 
 /* App */
 .app__inner {
-    background-color: $c-light-gray;
-    border-radius: px(24);
-    padding: px(32);
+  background-color: $c-light-gray;
+  border-radius: px(24);
+  padding: px(32);
+  padding-bottom: 0;
+  gap: px(65);
+  display: flex;
+
+  @include tablet1024 {
+    gap: px(40);
+  }
+
+  @include tablet {
+    flex-direction: column-reverse;
+    padding: px(24);
     padding-bottom: 0;
-    gap: px(65);
-    display: flex;
-
-    @include tablet1024 {
-        gap: px(40);
-    }
-
-    @include tablet {
-        flex-direction: column-reverse;
-        padding: px(24);
-        padding-bottom: 0;
-    }
+  }
 }
 
 .app__img {
-    display: flex;
-    justify-content: center;
-    align-self: flex-end;
-    flex: 0 0 44%;
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  flex: 0 0 44%;
+
+  @include tablet {
+    flex: auto;
+    align-self: center;
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  img {
+    width: px(365);
+    max-width: 100%;
+    height: auto;
+    display: block;
 
     @include tablet {
-        flex: auto;
-        align-self: center;
-        justify-content: flex-start;
-        width: auto;
+      width: px(226);
     }
-
-    img {
-        width: px(365);
-        max-width: 100%;
-        height: auto;
-        display: block;
-
-        @include tablet {
-            width: px(226);
-        }
-    }
+  }
 }
 
 .app__content {
-    align-self: center;
-    max-width: px(580);
-    flex: 0 0 50%;
+  align-self: center;
+  max-width: px(580);
+  flex: 0 0 52%;
 
-    @include tablet {
-        align-self: flex-start;
-    }
+  @include tablet {
+    align-self: flex-start;
+    max-width: 100%;
+  }
 }
 
 .app__title {
-    margin-bottom: px(40);
+  margin-bottom: px(40);
 
-    @include tablet1024 {
-        &.h3 {
-            font-size: px(32);
-            line-height: 1;
-        }
+  @include tablet1024 {
+    &.h3 {
+      font-size: px(32);
+      line-height: 1;
     }
+  }
 }
 
 .app__adv.list-style-disc {
-    margin-bottom: px(24);
-    max-width: px(340);
+  margin-bottom: px(24);
+  max-width: px(340);
 
-    li {
-        margin-bottom: px(15);
+  li {
+    margin-bottom: px(15);
 
-        &::before {
-            background-color: $c-deep-dive;
-        }
+    &::before {
+      background-color: $c-deep-dive;
     }
+  }
 }
 
 .app__btns {
-    gap: px(12);
-    width: 70%;
+  gap: px(12);
+  width: 70%;
 
-    @include tablet1024 {
-        width: 100%;
-    }
+  @include tablet1024 {
+    width: 100%;
+  }
+
+  @include tablet {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .button-l {
+    padding: px(10) px(18);
+    width: px(150);
 
     @include tablet {
-        width: 100%;
-        margin: 0 auto;
+      margin: 0 auto;
     }
-
-    .button-l {
-        padding: px(10) px(18);
-        width: px(150);
-
-        @include tablet {
-            margin: 0 auto;
-        }
-    }
+  }
 }
 
 
 /* Number-one */
 .number-one__title {
-    max-width: px(900);
-    margin-bottom: px(56);
+  max-width: px(900);
+  margin-bottom: px(56);
 
-    @include tablet {
-        margin-bottom: 0;
-    }
+  @include tablet {
+    margin-bottom: 0;
+    font-size: 30px;
+    line-height: 100%;
+  }
 }
 
 .number-one__indices {
-    display: flex;
-    margin-bottom: px(48);
+  display: flex;
+  margin-bottom: px(48);
 
-    @include tablet1024 {
-        margin-bottom: px(28);
-    }
+  @include tablet1024 {
+    margin-bottom: px(28);
+  }
 
-    @include tablet {
-        margin-bottom: 0;
-    }
+  @include tablet {
+    margin-bottom: 0;
+  }
 
-    @include tablet {
-        flex-direction: column;
-        align-items: center;
-    }
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .number-one__index {
-    width: 33.3%;
-    padding: px(26) px(16);
-    text-align: center;
+  width: 33.3%;
+  padding: px(26) px(16);
+  text-align: center;
 
-    &.center {
-        border-left: 1px solid $c-light-gray;
-        border-right: 1px solid $c-light-gray;
-
-        @include tablet {
-            border: 0;
-            border-top: 1px solid $c-light-gray;
-            border-bottom: 1px solid $c-light-gray;
-        }
-    }
+  &.center {
+    border-left: 1px solid $c-light-gray;
+    border-right: 1px solid $c-light-gray;
 
     @include tablet {
-        padding: px(40) 0;
-        width: 100%;
+      border: 0;
+      border-top: 1px solid $c-light-gray;
+      border-bottom: 1px solid $c-light-gray;
     }
+  }
 
-    >div {
-        width: px(220);
-    }
+  @include tablet {
+    padding: px(40) 0;
+    width: 100%;
+  }
+
+  > div {
+    width: px(220);
+  }
 }
 
 .number-one__number {
-    margin-bottom: px(16);
+  margin-bottom: px(16);
 
-    span {
-        font-weight: 500;
-    }
+  @include tablet {
+    font-size: 46px;
+    line-height: 90%;
+  }
+
+  span {
+    font-weight: 500;
+  }
 }
 

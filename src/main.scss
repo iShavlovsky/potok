@@ -53,6 +53,21 @@ header, footer {
   }
 }
 
+.list-disc {
+  li {
+    list-style-type: disc;
+  }
+}
+
+.list-decimal {
+  li {
+    list-style-type: decimal;
+  }
+}
+
+.no-padding-top {
+  padding-top: 0;
+}
 
 .header {
   position: absolute;
@@ -219,6 +234,7 @@ header, footer {
   position: relative;
   background-color: transparent;
   overflow: hidden;
+  display: flex;
 
   .container {
     position: relative;
@@ -227,14 +243,14 @@ header, footer {
 }
 
 .intro__video {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
   right: 0;
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
+  z-index: 0;
 
   video {
     object-fit: cover;
@@ -345,9 +361,6 @@ header, footer {
 }
 
 .intro__img-abs {
-  position: absolute;
-  bottom: px(64);
-  right: px(48);
   width: px(165);
   color: $c-white;
   text-align: right;
@@ -412,8 +425,6 @@ header, footer {
 /* Partners */
 .partners {
   padding-top: px(80);
-  padding-left: 0;
-  padding-right: 0;
   overflow: hidden;
 
   @include mobile {
@@ -979,10 +990,11 @@ header, footer {
 
   }
   @include tablet {
+    margin: 0;
     padding: 0;
     flex-wrap: wrap;
     gap: px(12);
-    margin: 0 0 px(12);
+    margin-bottom: px(12);
   }
 }
 
@@ -1394,8 +1406,13 @@ header, footer {
   position: relative;
   overflow: hidden;
 
+  @include tablet {
+    min-height: px(400);
+    padding: px(34);
+  }
   @include mobile {
     min-height: px(508);
+    padding: px(16);
   }
 }
 
@@ -1458,7 +1475,6 @@ header, footer {
 
 .mm__slider {
   border-top: 1px solid $c-light-gray;
-  column-gap: px(52);
   align-items: stretch;
   min-width: 100%;
   padding: px(48) 0;
@@ -1474,8 +1490,9 @@ header, footer {
 }
 
 .mm__news {
-  flex: 0 0 30%;
-
+  flex: 0 0 33.3%;
+  padding-bottom: 70px;
+  padding-right: 52px;
 }
 
 .mm__date {
@@ -1555,19 +1572,6 @@ header, footer {
   flex: 0 0 35%;
 }
 
-.footer__social-without {
-  flex: 0 0 60%;
-
-  @include tablet1024 {
-    flex: 0 0 100%;
-    flex-wrap: wrap;
-    gap: px(36);
-  }
-
-  @include tablet {
-    gap: px(20);
-  }
-}
 
 .footer__join {
   opacity: 0.5;
@@ -1575,13 +1579,12 @@ header, footer {
 }
 
 .footer__copyright {
+  flex: 0 0 32%;
+  padding-right: 24px;
+
   > div {
     gap: px(16);
     margin-bottom: px(20);
-  }
-
-  @include tablet1024 {
-    flex: 0 0 35%;
   }
 }
 
@@ -1594,17 +1597,18 @@ header, footer {
 
     @include tablet1024 {
       position: relative;
+      row-gap: px(36);
     }
   }
 }
 
 .footer__social {
-  flex: 0 0 35%;
+  flex: 0 0 32%;
+  padding-right: px(24);
 
   @include tablet1024 {
-    position: absolute;
-    bottom: 12%;
-    left: calc(48% + 36px);
+    width: 50%;
+    order: 4;
   }
 
   > div {
@@ -1612,14 +1616,18 @@ header, footer {
   }
 }
 
+
 .footer__nav {
   display: flex;
   flex-direction: column;
   gap: px(12);
 
+
   &.to {
+    margin-top: px(-6);
     gap: px(6);
-    flex: 0 0 50%;
+    flex: 1;
+    padding-right: px(24);
 
     @include tablet1024 {
       flex: 0 0 45%;
@@ -1627,7 +1635,12 @@ header, footer {
   }
 
   &.where {
-    flex: 0 0 25%;
+    width: 19.5%;
+    flex: 0 auto;
+
+    @media(max-width: 1920px) {
+      width: 15%;
+    }
 
     @include tablet1024 {
       flex: 0 0 45%;
@@ -1635,7 +1648,8 @@ header, footer {
   }
 
   &.how {
-    flex: 0 0 25%;
+    width: px(204);
+    flex: 0 auto;
 
     @include tablet1024 {
       flex: 0 0 45%;
@@ -1644,16 +1658,17 @@ header, footer {
 }
 
 .footer__text {
+  gap: px(20);
   @include tablet {
     flex-direction: column;
   }
 }
 
 .footer__desc {
-  flex: 0 0 60%;
+  flex: 1;
 
   @include tablet {
-    flex: 0 0 100%;
+    flex: 0 0 65%;
   }
 }
 
@@ -1661,6 +1676,14 @@ header, footer {
   gap: px(12);
   margin-bottom: px(40);
   opacity: 0.5;
+}
+
+.underline-link {
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .footer__btns {
@@ -1846,7 +1869,7 @@ header, footer {
     display: flex;
     padding: px(32) 0;
     width: min-content;
-    gap: px(206);
+    gap: px(26);
   }
 
   @include mobile {
@@ -1880,7 +1903,9 @@ header, footer {
 .variants {
   padding-top: px(100);
   padding-bottom: px(100);
-  background: $c-background url('../src/assets/img/webp/images/variants/variants-background.webp') center;
+  background-color: $c-background;
+  background: url('../src/assets/img/webp/images/variants/variants-background.webp');
+  background-position: center;
   background-size: cover;
 }
 
@@ -1896,14 +1921,16 @@ header, footer {
 }
 
 .variants__card {
-  flex: 0 0 49%;
+  flex: 0 0 48.6%;
   min-height: 440px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: px(40) px(28);
   border-radius: px(24);
-
+  @include tablet1024 {
+    flex: 0 0 48%;
+  }
   @include big-mobile {
     flex: 0 0 100%;
   }

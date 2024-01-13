@@ -1832,7 +1832,7 @@ header, footer {
         display: flex;
         padding: px(32) 0;
         width: min-content;
-        gap: px(206);
+        gap: px(26);
     }
 
     @include mobile {
@@ -1884,14 +1884,16 @@ header, footer {
 }
 
 .variants__card {
-    flex: 0 0 49%;
+    flex: 0 0 48.6%;
     min-height: 440px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     padding: px(40) px(28);
     border-radius: px(24);
-
+    @include tablet1024 {
+        flex: 0 0 48%;
+    }
     @include big-mobile {
         flex: 0 0 100%;
     }

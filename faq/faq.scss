@@ -13,10 +13,27 @@
 .faq {
     gap: px(32);
     align-items: stretch;
+    margin-top: px(85);
+    @include tablet {
+        margin-top: px(64);
+    }
 }
+.accordion__content-faq {
+    ul, ol {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
 
+        li {
+            margin-bottom: px(6);
+        }
+    }
+}
 .faq__nav {
-    flex: 0 0 34%;
+    flex: 0 0 32%;
     
     ul {
         position: sticky;

@@ -1,4 +1,18 @@
 /* Strategy */
+
+.intro-bottom-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+    @include mobile {
+        flex-direction: column;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0%;
+    }
+}
 .strategy__title {
     max-width: px(780);
     margin-bottom: px(64);

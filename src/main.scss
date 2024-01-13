@@ -988,14 +988,16 @@ header, footer {
   @include tablet1024 {
     margin: 0 px(-32) px(16) px(-32);
     padding: 0 px(32) px(16) px(32);
-
   }
   @include tablet {
-    margin: 0;
-    padding: 0;
     flex-wrap: wrap;
     gap: px(12);
-    margin-bottom: px(12);
+    margin: 0 px(-16) px(16) px(-16);
+    padding: 0 px(16) px(16) px(16);
+  }
+
+  @include big-mobile {
+
   }
 }
 
@@ -1813,33 +1815,60 @@ header, footer {
 }
 
 /* Benefits */
-.benefits {
-  overflow: auto;
-}
+.benefits-container {
+  @include tablet1024 {
+    overflow: auto;
+    width: 100vw;
+    margin: 0 px(-32);
+    padding: 0 px(32);
+    display: flex;
+    flex-direction: row;
 
-@include tablet1024 {
-  .benefits__inner {
-    display: none;
+    @include tablet {
+      margin: 0 px(-16);
+      padding: 0 px(16);
+    }
   }
 }
 
-.benefits__images {
-  flex: 0 0 50%;
-  cursor: pointer;
+
+.benefits__image {
+  position: absolute;
+  width: 50%;
+  top: 0;
+  left: 0;
+  bottom: 0;
 
   img {
-    display: none;
     max-width: 100%;
-    height: auto;
+  }
 
-    &.active {
-      display: block;
+  @include tablet1024 {
+    position: static;
+    width: 100%;
+
+    img {
+      height: px(250);
     }
   }
 }
 
 .benefits__content {
-  flex: 0 0 43%;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+
+  @include tablet1024 {
+    flex-direction: row;
+    height: auto;
+    align-items: stretch;
+    gap: 16px;
+    padding-bottom: 16px;
+  }
+
 }
 
 .benefits__headline {
@@ -1847,21 +1876,21 @@ header, footer {
 }
 
 .benefits__benefit {
-  opacity: 0.3;
+  width: 45%;
+  opacity: 1;
   padding: px(20) 0;
   cursor: pointer;
 
-  p {
-    margin-top: px(20);
-    display: none;
+  @include tablet1024 {
+    border-radius: 12px;
+    flex-direction: column;
+    padding: 0 22px 34px;
+    display: flex;
+    background-color: $c-light-gray;
+    min-width: px(410);
   }
-
-  &.active {
-    opacity: 1;
-
-    p {
-      display: block;
-    }
+  @include mobile {
+    min-width: px(310);
   }
 }
 
@@ -1906,9 +1935,7 @@ header, footer {
 .variants {
   padding-top: px(100);
   padding-bottom: px(100);
-  background-color: $c-background;
-  background: url('../src/assets/img/webp/images/variants/variants-background.webp');
-  background-position: center;
+  background: $c-background url('../src/assets/img/webp/images/variants/variants-background.webp') center;
   background-size: cover;
 }
 

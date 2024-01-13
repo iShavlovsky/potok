@@ -77,17 +77,15 @@
 
 <main>
   <section class="intro">
-    <div class="intro__video investors-page">
+    <figure class="intro__video investors-page">
       <video autoplay height="auto" loop muted playsinline width="auto">
         <source src="../src/assets/video/zaem-new-opt.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="container">
+    </figure>
+
+    <div class="container flex-column justify-space-between height-100prc">
       <div class="intro__inner">
-        <h3 class="intro__title h3">возьмите онлайн-заем для&nbsp;бизнеса без залога на&nbsp;любые
-          цели</h3>
-      </div>
-      <div class="intro__btns investors-page flex-column">
+        <h1 class="intro__title h3">возьмите заем до 5 млн ₽ в&nbsp;январе с комиссией 0%</h1>
         <a aria-label="хочу инвестировать" class="btn-text button-l" href="#">узнать лимит</a>
       </div>
       <div class="intro__yield">
@@ -96,56 +94,58 @@
         <div class="accent-m"><span class="h4">от</span>16%</div>
       </div>
     </div>
+
   </section>
 
-  <section class="benefits">
-    <div class="container">
+  <section>
+    <div class="container benefits-container">
       <div class="benefits__inner wm-flex-row align-items-center justify-space-between">
-        <div class="benefits__images">
-          <img alt="decorative" class="active"
-               data-benefit="1" src="../src/assets/img/png/benefits/br_tab1-p-800.png">
-          <img alt="decorative" data-benefit="2"
-               src="../src/assets/img/png/benefits/br_tab2-p-800.png">
-          <img alt="decorative" data-benefit="3"
-               src="../src/assets/img/png/benefits/br_tab3-p-800.png">
-        </div>
-        <div class="benefits__content">
-          <div class="benefits__benefit active" data-benefit="1">
+
+        <div class="benefits__content relative">
+
+          <div class="benefits__benefit" data-benefit="1">
+            <div class="benefits__image flex-center">
+              <img class="active" data-benefit="1"
+                   src="../src/assets/img/png/benefits/br_tab1-p-800.png">
+            </div>
             <h3 class="h3">высокий процент одобрений</h3>
-            <p class="body-m">Выдаем деньги в ситуациях, когда банк не смог помочь.</p>
+
+            <div class="mt-16">
+              <p class="body-m">Выдаем деньги в ситуациях, когда банк не смог помочь.</p>
+            </div>
+
           </div>
+
           <div class="benefits__benefit" data-benefit="2">
+            <div class="benefits__image flex-center">
+              <img data-benefit="2" src="../src/assets/img/png/benefits/br_tab2-p-800.png">
+            </div>
             <h3 class="h3">моментальное автоматическое рассмотрение</h3>
-            <p class="body-m">От вас нужна только выписка из банка и короткая анкета. Вы сразу
-              получите подробный анализ вашего бизнеса и одобренную сумму.</p>
+
+            <div class="mt-16">
+              <p class="body-m">От вас нужна только выписка из банка и короткая анкета. Вы сразу
+                получите подробный анализ вашего бизнеса и одобренную сумму.</p>
+            </div>
+
           </div>
+
           <div class="benefits__benefit" data-benefit="3">
+            <div class="benefits__image flex-center">
+              <img data-benefit="3" src="../src/assets/img/png/benefits/br_tab3-p-800.png">
+            </div>
             <h3 class="h3">полностью онлайн</h3>
-            <p class="body-m">Никаких походов в офис и бюрократии&nbsp;- отправим деньги на р/с в
-              любой банк</p>
+
+            <div class="mt-16">
+              <p class="body-m">Никаких походов в офис и бюрократии&nbsp;- отправим деньги на р/с в
+                любой банк</p>
+            </div>
+
           </div>
+
         </div>
       </div>
     </div>
-    <div class="benefits__cards">
-      <div class="benefits__card">
-        <img alt="decorative" src="../src/assets/img/png/benefits/br_tab1-p-800.png">
-        <h3 class="h3">достойное вознаграждение</h3>
-        <p class="body-m">Зарабатывай от 1% по всем сделкам и выше</p>
-      </div>
-      <div class="benefits__card">
-        <img alt="decorative" src="../src/assets/img/png/benefits/br_tab2-p-800.png">
-        <h3 class="h3">удобный вывод средств для партнера</h3>
-        <p class="body-m">Получай вознаграждение каждую по всем заявкам и переводи на любую карту в
-          личном кабинете Партнёра</p>
-      </div>
-      <div class="benefits__card">
-        <img alt="decorative" src="../src/assets/img/png/benefits/br_tab3-p-800.png">
-        <h3 class="h3">полностью онлайн</h3>
-        <p class="body-m">Подписание договора с партнером без бумаг. Весть процесс подачи заявки
-          также онлайн</p>
-      </div>
-    </div>
+
   </section>
 
   <section>
@@ -153,7 +153,7 @@
       <h2 class="h2 limit__title">узнайте какой объем финансирования и&nbsp;на&nbsp;какой срок вы
         можете получить в&nbsp;Потоке</h2>
       <form class="limit__form">
-        <p class="descriptor">название компании или ИНН</p>
+        <label class="descriptor">название компании или ИНН</label>
         <div class="flex-row-w-tablet-column">
           <div class="limit__input-col">
             <label>
@@ -179,13 +179,12 @@
         <div class="num__block-img">
           <div class="num__number">7554</div>
           <div class="desctop-block">
-            <img alt="decorative" class="num__img front" src="../src/assets/img/png/front.png">
-            <img alt="decorative" class="num__img back" src="../src/assets/img/png/back.png">
+            <img class="num__img front" src="../src/assets/img/png/front.png">
+            <img class="num__img back" src="../src/assets/img/png/back.png">
           </div>
           <div class="tablet-block">
-            <img alt="decorative" class="num__img front" src="../src/assets/img/png/front_768.png">
-            <img alt="decorative" class="num__img back" src="../src/assets/img/png/back_768.png"
-                 width="769">
+            <img class="num__img front" src="../src/assets/img/png/front_768.png">
+            <img class="num__img back" src="../src/assets/img/png/back_768.png" width="769">
           </div>
         </div>
       </div>
@@ -252,7 +251,7 @@
         <div class="know__content">
           <h3 class="h3 know__title">получите финансирование для&nbsp;своего бизнеса уже сейчас</h3>
           <form>
-            <p class="descriptor know__label">название компании или ИНН</p>
+            <label class="descriptor know__label">название компании или ИНН</label>
             <div class="w380">
               <label>
                 <input class="input know__input" placeholder="ИП Ферхудиянов" type="text">
@@ -262,7 +261,7 @@
           </form>
         </div>
         <div class="know__img">
-          <img alt="decorative" class="know__img-img"
+          <img alt="" class="know__img-img"
                sizes="(max-width: 479px) 100vw, (max-width: 767px) 760px, (max-width: 991px) 812px, (max-width: 1919px) 87vw, 1094.5px"
                src="../src/assets/img/png/cta2-p-1600.png"
                width="1094.5">
@@ -272,7 +271,7 @@
   </section>
 </main>
 
-<footer class="footer constant-section-margin-top">
+<footer class="footer">
   <div class="container">
     <div class="footer__inner">
       <a aria-label="logo" class="footer__logo" href="#">
@@ -294,8 +293,11 @@
             fill="#10273D" />
         </svg>
       </a>
+
       <div class="footer__navigation">
-        <nav class="flex-wrap wm-flex-row justify-space-between">
+
+        <nav class="flex-wrap wm-flex-row">
+
           <div class="footer__social flex-column">
             <p class="body-s footer__join">Присоединяйтесь</p>
             <div class="wm-flex-row">
@@ -354,29 +356,30 @@
               </a>
             </div>
           </div>
-          <div class="footer__social-without wm-flex-row justify-space-between">
-            <ul class="footer__nav to">
-              <li><a aria-label="инвесторам" class="h4 link" href="#">инвесторам</a></li>
-              <li><a aria-label="заемщикам" class="h4 link" href="#">заемщикам</a></li>
-              <li><a aria-label="партнерам" class="h4 link" href="#">партнерам</a></li>
-            </ul>
-            <ul class="footer__nav where">
-              <li><a aria-label="faq" class="btn-text link" href="/">faq</a></li>
-              <li><a aria-label="блог" class="btn-text link" href="#">блог</a></li>
-              <li><a aria-label="документы" class="btn-text link" href="..
-                      /documents">документы</a>
-              </li>
-            </ul>
-            <ul class="footer__nav how">
-              <li><a aria-label="ok@potok.tem" class="btn-text link" href="mailto:ok@potok.tem">ok@potok.tem</a>
-              </li>
-              <li><a aria-label="поддержка в telegram" class="btn-text link" href="#">поддержка в
-                telegram</a></li>
-              <li><a aria-label="для предложений по рекламе" class="btn-text link" href="#">для
-                предложений
-                по рекламе</a></li>
-            </ul>
-          </div>
+
+
+          <ul class="footer__nav to">
+            <li><a aria-label="инвесторам" class="h4 link" href="#">инвесторам</a></li>
+            <li><a aria-label="заемщикам" class="h4 link" href="#">заемщикам</a></li>
+            <li><a aria-label="партнерам" class="h4 link" href="#">партнерам</a></li>
+          </ul>
+          <ul class="footer__nav where">
+            <li><a aria-label="faq" class="btn-text link" href="./faq">faq</a></li>
+            <li><a aria-label="блог" class="btn-text link" href="#">блог</a></li>
+            <li><a aria-label="документы" class="btn-text link" href="./documents">документы</a>
+            </li>
+          </ul>
+          <ul class="footer__nav how">
+            <li><a aria-label="ok@potok.tem" class="btn-text link" href="mailto:ok@potok.tem">ok@potok.tem</a>
+            </li>
+            <li><a aria-label="поддержка в telegram" class="btn-text link" href="#">поддержка в
+              telegram</a></li>
+            <li><a aria-label="для предложений по рекламе" class="btn-text link" href="#">для
+              предложений
+              по рекламе</a></li>
+          </ul>
+
+
         </nav>
       </div>
     </div>
@@ -428,19 +431,18 @@
           </div>
         </div>
         <div class="footer__desc flex-column">
-          <div class="footer__descriptors">
+          <div class="footer__descriptors flex-column ">
             <p class="descriptor">Инвестиционная платформа Поток предоставляет возможность частным
-              инвесторам выдавать
-              займы малому и среднему бизнесу России. Оператором инвестиционной платформы Поток
-              является ООО
-              «Поток.Диджитал».</p>
-            <p class="descriptor">ООО «Поток.Диджитал» включено Банком России в реестр операторов
-              инвестиционных
-              платформ. ООО “Поток.Диджитал” участвует в программе субсидирования для субъектов МСП,
-              реализуемой
+              инвесторам выдавать займы малому и среднему бизнесу России. Оператором инвестиционной
+              платформы Поток является ООО «Поток.Диджитал».</p>
+            <p class="descriptor">ООО «Поток.Диджитал» включено Банком России в <a
+              class="underline-link" href="http://cbr.ru/finorg/foinfo/?ogrn=1167746721735"
+              target="_blank">реестр операторов инвестиционных платформ</a>. ООО
+              “Поток.Диджитал” участвует в программе субсидирования для субъектов МСП, реализуемой
               Министерством экономического развития Российской Федерации в соответствии с
-              Постановлением Правительства
-              РФ от 27.12.2019 г. № 1898</p>
+              Постановлением Правительства РФ от 27.12.2019 г. № 1898</p>
+            <p class="descriptor">Место нахождения: г. Москва, адрес: 105066, г. Москва, ул.
+              Ольховская, д. 4, к. 1, офис 128</p>
           </div>
           <div class="footer__btns wm-flex-row flex-wrap">
             <a class="button-l outline" href="#">
@@ -524,4 +526,3 @@
 <script src="./borrowers.ts" type="module"></script>
 </body>
 </html>
-

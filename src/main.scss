@@ -1693,14 +1693,13 @@ header, footer {
  }
 
  .card-desc {
-    width: 33.3%;
     border: 1px solid $c-light-gray;
     border-radius: px(16);
     flex: 1;
     padding: px(24) px(45) px(50) px(28);
 
     @include tablet1024 {
-        width: 62.5vw;
+        min-width: 62.5vw;
     }
 
     @include tablet {

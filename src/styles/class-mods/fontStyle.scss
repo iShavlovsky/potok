@@ -4,8 +4,21 @@
   font-style: normal;
   font-size: px(70);
   font-weight: 500;
-  line-height: px(63);
+  line-height: 90%;
   letter-spacing: -0.01em;
+}
+
+.intro__title {
+  margin-bottom: px(40);
+
+  @include tablet1024 {
+    font-size: px(42);
+  }
+
+  @include mobile {
+      margin-bottom: px(24);
+      font-size: px(32);
+  }
 }
 
 .h2 {
@@ -22,7 +35,7 @@
   font-style: normal;
   font-size: px(42);
   font-weight: 500;
-  line-height: px(42);
+  line-height: 100%;
 }
 
 .h4 {
@@ -99,7 +112,7 @@
 
 .accent-m {
   font-size: px(140);
-  line-height: px(126);
+  line-height: 90%;
   font-family: $ft-regular;
   letter-spacing: -0.01%;
 }
@@ -157,7 +170,6 @@
   /* ------------ Heading ------------ */
   .h1 {
     font-size: px(52);
-    line-height: px(46);
   }
 
   .h2 {
@@ -167,7 +179,6 @@
 
   .h3 {
     font-size: px(32);
-    line-height: px(32);
   }
 
   .h4 {
@@ -220,8 +231,7 @@
   }
 
   .accent-m {
-    font-size: px(52);
-    line-height: px(46);
+    font-size: px(86);
   }
 
   .font-size-tablet-140px {
@@ -258,12 +268,10 @@
 @include big-mobile {
   .h1 {
     font-size: px(46);
-    line-height: px(41);
   }
 
   .accent-m {
-    font-size: px(46);
-    line-height: 1;
+    font-size: px(72);
   }
 
   
@@ -287,7 +295,6 @@
 
   .h3 {
     font-size: px(24);
-    line-height: px(24);
   }
 
   .h4 {

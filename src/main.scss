@@ -229,7 +229,6 @@ header, footer {
     position: relative;
     background: $c-background;
     overflow: hidden;
-    display: flex;
 
     .container {
         position: relative;
@@ -280,7 +279,7 @@ header, footer {
     max-width: px(740);
 
     @include tablet1024 {
-        max-width: 85%;
+        max-width: px(570);
     }
 
     @include tablet {
@@ -292,20 +291,6 @@ header, footer {
     }
 }
 
-.intro__title {
-    margin-bottom: px(40);
-    letter-spacing: px(-1);
-
-    @include tablet1024 {
-        font-size: px(52);
-        line-height: 0.9;
-    }
-
-    @include mobile {
-        margin-bottom: px(24);
-        font-size: px(32);
-    }
-}
 
 .intro__desc {
     max-width: px(330);

@@ -1,5 +1,66 @@
 /* Strategy */
 
+.advantages__content {
+    display: flex;
+    flex-direction: column;
+    gap: px(12);
+    width: px(438);
+    margin-top: px(64);
+
+    @include tablet1024 {
+        flex-direction: row;
+        width: auto;
+        margin: px(54) px(-32) px(16) px(-32);
+        padding: 0 px(32) px(16) px(32);
+        overflow: auto;
+    }
+
+    @include tablet {
+        margin: px(32) px(-16) px(16) px(-16);
+        padding: 0 px(16) px(16) px(16);
+    }
+
+    @include mobile {
+        flex-direction: column;
+        gap: px(32);
+    }
+}
+
+.advantages__info-w {
+    @include tablet1024 {
+        padding-right: px(24);
+    }
+}
+.advantages__img-w {
+    margin-left: px(502);
+    transition: all .3s;
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        object-fit: cover;
+        border-radius: px(12);
+        display: block;
+    }
+
+    @include tablet1024 {
+        position: static;
+        margin-left: 0;
+        padding-bottom: px(24);
+        img {
+
+            aspect-ratio: 4 / 3;
+            border-radius: px(9);
+        }
+    }
+}
+
 .intro-bottom-content {
     display: flex;
     flex-direction: row;
@@ -22,9 +83,7 @@
     }
 
     @include mobile {
-        &.h3 {
-            font-size: px(30);
-        }
+
     }
 }
 

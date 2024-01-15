@@ -940,8 +940,6 @@ header, footer {
         padding: 0 px(32) px(16) px(32);
     }
     @include tablet {
-        margin: 0;
-        padding: 0;
         flex-wrap: wrap;
         gap: px(12);
         margin-bottom: px(12);
@@ -1658,20 +1656,11 @@ header, footer {
 
 /* Advantages */
 @include tablet1024 {
-    .advantages {
-        display: none;
-    }
+
 }
 
-.advantages__title {
-    max-width: px(654);
-    margin-bottom: px(64);
-}
 
-.advantages__content {
-    gap: px(12);
-    flex: 0 0 48%;
-}
+
 
 .advantages__advantage {
     border-radius: px(12);
@@ -1687,12 +1676,23 @@ header, footer {
         color: $c-white;
         background-color: $c-background;
     }
+
+    @include tablet1024 {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        min-width: 39%;
+    }
+
+    @include tablet {
+        min-width: 45%;
+    }
+
+    @include big-mobile {
+        min-width: 55%;
+    }
 }
 
-.advantage__title {
-    margin-bottom: px(10);
-    font-weight: 500;
-}
 
 .advantages__img {
     flex: 0 0 48%;

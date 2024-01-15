@@ -82,9 +82,7 @@
 }
 
 /* Accordion */
-.accordion {
-    gap: px(20);
-}
+
 
 .accordion__content {
     display: flex;
@@ -124,15 +122,17 @@
 .accordion__title-main {
     flex: 0 0 70%;
 
-    padding-right: px(20);
+    padding-right: px(120);
 
     @include tablet1024 {
         flex: 0 0 100%;
+        padding-right: px(32);
     }
 }
 
 .accordion__title-num {
-    flex: 0 0 30%;
+    flex: 0 0 33%;
+    margin-right: px(12);
 
     @include tablet1024 {
         display: none;
@@ -172,12 +172,27 @@
 .faq__accordion {
     flex: 1;
     gap: px(100);
+    margin-top: px(92);
 
-    @include tablet {
+    @include tablet1024 {
         gap: px(64);
+        margin-top: px(52)
+    }
+    @include mobile{
+        margin-top: px(32)
     }
 }
 
+.fag-accordion-container {
+
+    @include tablet1024 {
+        padding: 0 px(16);
+    }
+
+    @include tablet {
+        padding: 0;
+    }
+}
 .accordion__title-faq {
     border-top: 1px solid $c-light-gray;
     transition: color $var-base-animation-time linear,
@@ -248,7 +263,7 @@
 .accordion__content-main {
     max-width: px(582);
     position: relative;
-    left: 29%;
+    left: 33%;
 
     @include tablet1024 {
         position: static;

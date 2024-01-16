@@ -459,14 +459,22 @@ header, footer {
 
 
 .partners__list {
-    column-gap: px(20);
+
+    .partner {
+        min-width: px(210);
+        margin-right: px(20);
+    }
 
     @include tablet {
-        column-gap: px(16);
+        .partner {
+            margin-right: px(16);
+        }
     }
 
     @include small-mobile {
-        column-gap: px(10);
+        .partner {
+            margin-right: px(10);
+        }
     }
 
     &.without-border {

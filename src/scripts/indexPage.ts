@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Marquee from './utils/Marquee';
+import Marquee from './utils/Marguee';
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -184,7 +184,7 @@
 }
 
 .fag-accordion-container {
-
+    gap: px(1);
     @include tablet1024 {
         padding: 0 px(16);
     }
@@ -218,7 +218,7 @@
 }
 
 .faq__block {
-    gap: px(-1);
+    gap: px(1);
 }
 
 .faq__block-title {

@@ -10,3 +10,16 @@ document.addEventListener('DOMContentLoaded', function () {
   new Marquee('.marquee-1');
   new Marquee('.marquee-2');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const accordionTitles = document.querySelectorAll('.accordion__title-faq');
+
+  accordionTitles.forEach((title) => {
+    title.addEventListener('click', () => {
+      const accordionItem = title.closest('.faq__accordion-item');
+      if (accordionItem) {
+        accordionItem.classList.toggle('active');
+      }
+    });
+  });
+});

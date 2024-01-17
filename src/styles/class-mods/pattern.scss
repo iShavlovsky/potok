@@ -84,18 +84,7 @@
 /* Accordion */
 
 
-.accordion__content {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: px(20);
-    display: none;
 
-    a {
-        color: $c-white;
-        text-decoration: underline;
-    }
-}
 
 .accordion__title {
     position: relative;
@@ -103,7 +92,6 @@
     padding: px(28) px(20);
 
     cursor: pointer;
-    border-bottom: 1px solid $c-light-gray;
 
     svg {
         position: absolute;
@@ -139,6 +127,8 @@
     }
 }
 
+
+
 .accordion__content-headline {
     margin-bottom: px(72);
     display: none;
@@ -152,13 +142,29 @@
     }
 }
 
+.accordion__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: px(20);
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+    a {
+        color: $c-white;
+        text-decoration: underline;
+    }
+}
+
 .accordion__item.active {
     .accordion__content-headline {
         display: block;
     }
 
     .accordion__content {
-        display: flex;
+        max-height: 3000px;
+        transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
     }
 
     .accordion__title {
@@ -185,6 +191,7 @@
 
 .fag-accordion-container {
     gap: px(1);
+
     @include tablet1024 {
         padding: 0 px(16);
     }
@@ -198,6 +205,10 @@
     transition: color $var-base-animation-time linear,
     background-color $var-base-animation-time linear;
 
+    .body-m {
+        padding-right: px(35);
+    }
+
     svg {
         right: px(20);
         transform: translateY(-50%);
@@ -207,14 +218,7 @@
         transition: stroke $var-base-animation-time linear;
     }
 
-    &:hover {
-        background: $c-background;
-        color: $c-white;
 
-        path {
-            stroke: $c-white;
-        }
-    }
 }
 
 .faq__block {
@@ -231,12 +235,32 @@
 }
 
 .accordion__content-faq {
-    padding: 0 px(20) px(28);
+    padding: 0 px(20);
+}
+
+.accordion__content-faq :last-child {
+        margin-bottom: px(32);
+
+        li:last-child {
+            margin-bottom: 0;
+          }
 }
 
 .faq__accordion-item {
     transition: background-color $var-base-animation-time linear,
     color $var-base-animation-time linear;
+
+    &:hover {
+        background: $c-background;
+        color: $c-white;
+        .accordion__title-faq{
+            border-top: 1px solid transparent;
+        }
+
+        path {
+            stroke: $c-white;
+        }
+    }
 }
 
 .faq__accordion-item.active {

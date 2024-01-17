@@ -1071,9 +1071,11 @@ header, footer {
     align-items: stretch;
     margin-bottom: px(20);
     height: 100%;
+    width: max-content;
 
     @include tablet {
         gap: px(80);
+        width: auto;
     }
 }
 

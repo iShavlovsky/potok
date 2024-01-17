@@ -10,6 +10,15 @@
   }
 }
 
+.minus-100vh {
+  margin-top: -100vh;
+  background-color: white;
+  @extend .relative;
+}
+.bg-collor-white {
+  background-color: white;
+  @extend .relative;
+}
 .relative {
   position: relative;
 }

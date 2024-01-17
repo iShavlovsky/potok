@@ -72,15 +72,10 @@
   </header>
 
     <main>
-        <section class="intro flex-column">
-          
-            <figure class="intro__video investors-page">
-                <video height="auto" width="auto" autoplay loop muted playsinline>
-                    <source src="../src/assets/video/investors-intro-bg.mp4" type="video/mp4">
-                </video>
-            </figure>
+      <section class="intro" id="firstScreenSection2">
 
-            <div class="container flex-column justify-space-between wm-grow-if-possible">
+          <div style="height: calc(100vh - 128px); display: flex; padding-bottom: 64px;" id="firstScreenContainer2">
+            <div class="container flex-column justify-space-between wm-grow-if-possible intro-margine-left-right">
                 <div class="intro__inner">
                     <h1 class="intro__title h3">увеличивайте капитал, инвестируя в&nbsp;займы бизнесам, которые прошли
                         тщательный отбор</h1>
@@ -93,7 +88,7 @@
                 <div class="intro-bottom-content">
                   <div class="intro__yield">
                       <p class="btn-text">доходность за 12 месяцев</p>
-                      <span class="accent-m">22,1%</span>
+                      <span class="accent-m">21,3%</span>
                   </div>
 
                   <div class="intro__img-abs">
@@ -102,9 +97,15 @@
                   </div>
                 </div>
             </div>
+            <figure style="margin-top: -128px;" class="intro__video investors-page">
+              <video height="auto" width="auto" autoplay loop muted playsinline>
+                  <source src="../src/assets/video/investors-intro-bg.mp4" type="video/mp4">
+              </video>
+          </figure>
+          </div>
         </section>
 
-        <section class="advantages">
+        <section class="advantages minus-100vh">
             <div class="container">
                 <h2 class="h2 advantages__title">преимущества работы с Потоком</h2>
                 <div class="advantages__tabs relative">
@@ -162,7 +163,7 @@
             </div>
         </section>
 
-        <section>
+        <section class="bg-collor-white">
             <div class="container">
                 <h2 class="h3 strategy__title">возможность выбрать стратегию инвестирования и уровень риска</h2>
                 <div class="strategy__blocks">

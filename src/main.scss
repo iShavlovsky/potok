@@ -515,13 +515,12 @@ header, footer {
 
 /* Products */
 .products__inner {
-    gap: px(20);
-    align-items: stretch;
-    margin-right: px(-20);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 
     @include tablet {
-        gap: px(16);
-        margin-right: px(-16);
+        grid-template-columns: 1fr;
     }
 }
 

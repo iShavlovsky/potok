@@ -181,10 +181,10 @@ header, footer {
     }
 
     svg {
-        transition: transform $var-base-animation-time linear;
+        transition: transform $var-base-animation-time $var-transition-timing;
 
         path {
-            transition: stroke $var-base-animation-time linear;
+            transition: stroke $var-base-animation-time $var-transition-timing;
         }
     }
 
@@ -843,7 +843,7 @@ header, footer {
 .tabs__img {
     display: none;
     opacity: 0;
-    transition: opacity $var-base-animation-time linear;
+    transition: opacity $var-base-animation-time $var-transition-timing;
 
     &.active {
         display: block;
@@ -1270,15 +1270,15 @@ header, footer {
         padding: px(32) px(16);
     }
 
-    transition: background-color $var-base-animation-time linear;
+    transition: background-color $var-base-animation-time $var-transition-timing;
 
     &:last-child {
         border-bottom: none;
     }
 
     path {
-        transition: stroke $var-base-animation-time linear,
-        fill $var-base-animation-time linear;
+        transition: stroke $var-base-animation-time $var-transition-timing,
+        fill $var-base-animation-time $var-transition-timing;
     }
 }
 
@@ -1311,7 +1311,7 @@ header, footer {
 
 .staff__name {
     flex: 0 0 55%;
-    transition: color $var-base-animation-time linear;
+    transition: color $var-base-animation-time $var-transition-timing;
 
     @include tablet1024 {
         flex: 0 0 100%;
@@ -1321,7 +1321,7 @@ header, footer {
 .staff__prof {
     flex: 0 0 45%;
     opacity: 0.9;
-    transition: color $var-base-animation-time linear;
+    transition: color $var-base-animation-time $var-transition-timing;
 
     @include tablet1024 {
         flex: 0 0 100%;
@@ -1866,17 +1866,17 @@ header, footer {
     opacity: .5;
     padding: px(20) 0;
     cursor: pointer;
-    transition: opacity $var-base-animation-time linear;;
+    transition: opacity $var-base-animation-time $var-transition-timing;;
 
     .mt-16 {
         overflow: hidden;
         max-height: 0px;
-        transition: all $var-base-animation-time linear;;
+        transition: max-height $var-base-animation-time $var-transition-timing;;
     }
 
     img {
         opacity: 0;
-        transition: opacity $var-base-animation-time linear;;
+        transition: opacity $var-base-animation-time $var-transition-timing;;
     }
 
     &.active {
@@ -2026,8 +2026,8 @@ header, footer {
 
     align-self: center;
 
-    transition: border-color $var-base-animation-time linear,
-    color $var-base-animation-time linear;
+    transition: border-color $var-base-animation-time $var-transition-timing,
+    color $var-base-animation-time $var-transition-timing;
 
     &:hover {
         background: $c-background;

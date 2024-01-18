@@ -202,8 +202,8 @@
 }
 .accordion__title-faq {
     border-top: 1px solid $c-light-gray;
-    transition: color $var-base-animation-time linear,
-    background-color $var-base-animation-time linear;
+    transition: color $var-base-animation-time $var-transition-timing,
+    background-color $var-base-animation-time $var-transition-timing;
 
     .body-m {
         padding-right: px(35);
@@ -215,7 +215,7 @@
     }
 
     path {
-        transition: stroke $var-base-animation-time linear;
+        transition: stroke $var-base-animation-time $var-transition-timing;
     }
 
 
@@ -247,8 +247,8 @@
 }
 
 .faq__accordion-item {
-    transition: background-color $var-base-animation-time linear,
-    color $var-base-animation-time linear;
+    transition: background-color $var-base-animation-time $var-transition-timing,
+    color $var-base-animation-time $var-transition-timing;
 
     &:hover {
         background: $c-background;
@@ -265,7 +265,7 @@
 
 .faq__accordion-item.active {
     .accordion__title-faq {
-        border: 0;
+        border-top: 1px solid transparent;
 
         svg {
             transform-origin: center;

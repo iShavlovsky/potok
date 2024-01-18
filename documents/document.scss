@@ -16,8 +16,8 @@
     flex: 0 0 48%;
     width: 48%;
 
-    transition: border-color $var-base-animation-time linear,
-    color $var-base-animation-time linear;
+    transition: border-color $var-base-animation-time $var-transition-timing,
+    color $var-base-animation-time $var-transition-timing;
 
     &:hover  {
         color: $c-accent;

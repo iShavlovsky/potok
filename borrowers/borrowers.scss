@@ -3,6 +3,14 @@
     max-width: px(580);
 }
 
+.benefits-sticy-rail-section {
+    height: 300vh;
+}
+
+.benefits-container {
+    position: sticky;
+    top: 0;
+}
 .intro__video {
     background-position: 50% 50%;
 }

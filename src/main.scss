@@ -1851,23 +1851,64 @@ header, footer {
         margin-left: -16px;
         padding: px(32) px(16);
     }
+
+    @include mobile {
+        flex-direction: column;
+        margin-left: 0;
+        padding: px(32) px(8);
+    }
 }
 .benefits__headline {
     margin-bottom: px(28);
 }
 
 .benefits__benefit {
-    opacity: 1;
+    opacity: .5;
     padding: px(20) 0;
     cursor: pointer;
+    transition: opacity $var-base-animation-time linear;;
+
+    .mt-16 {
+        overflow: hidden;
+        max-height: 0px;
+        transition: all $var-base-animation-time linear;;
+    }
+
+    img {
+        opacity: 0;
+        transition: opacity $var-base-animation-time linear;;
+    }
+
+    &.active {
+        opacity: 1;
+
+        .mt-16 {
+            overflow: hidden;
+            max-height: 3000px;
+        }
+
+        img {
+            opacity: 1;
+        }
+    }
 
     @include tablet1024 {
+        opacity: 1;
         border-radius: 12px;
         flex-direction: column;
         padding: 0 22px 34px;
         display: flex;
         background-color: $c-light-gray;
         min-width: px(360);
+
+        .mt-16 {
+            overflow: hidden;
+            max-height: 3000px;
+        }
+
+        img {
+            opacity: 1;
+        }
     }
     @include mobile {
         min-width: px(310);

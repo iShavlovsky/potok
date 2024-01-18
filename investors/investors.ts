@@ -2,6 +2,7 @@ import '../src/main.scss';
 import './investors.scss';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Marquee from '../src/scripts/utils/Marguee';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,4 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     },
     opacity: 0,
   });
+
+  /* Our partners Screen - marquee*/
+  new Marquee('.marquee-1');
 });

@@ -1777,6 +1777,18 @@ header, footer {
 
  /* Benefits */
  
+ .benefit-anchors-w {
+    position: absolute;
+    gap: 10vh;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+
+    @include tablet1024 {
+        display: none;
+    }
+ }
+
  .benefits-container {
     position: sticky;
     top: 0;
@@ -1841,6 +1853,9 @@ header, footer {
     
 }
 .benefits__content-w{
+    display: flex;
+    flex-direction: column;
+
     @include tablet1024 {
     display: flex;
     flex-direction: row;

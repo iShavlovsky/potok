@@ -1,3 +1,12 @@
+.benefits-partners-sticy-rail-section {
+    height: 400vh;
+    @include tablet1024 {
+        height: auto;
+        overflow: hidden;
+    }
+}
+
+
 /* Slogan */
 .slogan-partners {
     padding-top: 0;

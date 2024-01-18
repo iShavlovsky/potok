@@ -1776,6 +1776,12 @@ header, footer {
  }
 
  /* Benefits */
+ 
+ .benefits-container {
+    position: sticky;
+    top: 0;
+}
+
  .benefits-container {
     @include tablet1024 {
         

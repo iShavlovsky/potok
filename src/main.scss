@@ -822,6 +822,7 @@ header, footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 
     @include tablet {
         flex: 100%;
@@ -841,9 +842,12 @@ header, footer {
 
 .tabs__img {
     display: none;
+    opacity: 0;
+    transition: opacity $var-base-animation-time linear;
 
     &.active {
         display: block;
+        opacity: 1;
     }
 }
 
@@ -852,7 +856,12 @@ header, footer {
     flex: 0 auto;
     padding-top: px(43);
 
+    @include tablet1024 {
+        width: 45%;
+    }
+
     @include tablet {
+        width: px(300);
         padding-top: 0;
         padding-bottom: px(40);
         width: auto;
@@ -923,9 +932,16 @@ header, footer {
     }
 }
 
+.tabs-content-w {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
 .tabs__list {
     gap: px(8);
-    display: none;
     margin-bottom: px(48);
 
     li {
@@ -945,27 +961,19 @@ header, footer {
         }
     }
 
-    &.active {
-        display: flex;
-    }
-
     @include tablet {
         margin-bottom: px(32);
     }
 }
 
 .tabs__button.button-l {
-    display: none;
+    display: inline-block;
     background-color: $c-deep-dive;
     color: $c-white;
 
     &:hover {
         background-color: $c-white;
         color: $c-deep-dive;
-    }
-
-    &.active {
-        display: inline-block;
     }
 }
 

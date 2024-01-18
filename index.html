@@ -266,27 +266,39 @@
             <img src="./src/assets/img/png/invest.png" alt="investros" data-tab="2" class="tabs__img" width="441">
           </div>
           <div class="cabinet__content">
-            <p class="cabinet__title body-l">личный кабинет</p>
+            <h2 class="cabinet__title body-l">личный кабинет</h2>
             <div class="tabs__headlines flex-column">
-              <div class="h2 tabs__tab active" data-tab="1">заемщика</div>
-              <div class="h2 tabs__tab" data-tab="2">инвестора</div>
+              <div class="h2 tabs__tab active" data-tab="1" type="button">заемщика</div>
+              <div class="h2 tabs__tab" data-tab="2" type="button">инвестора</div>
             </div>
             <div class="tabs__content">
-              <ul class="tabs__list flex-column list-style-disc active" data-tab="1">
-                <li class="body-m">получение заема онлайн</li>
-                <li class="body-m">автоматический скоринг привлечения заема</li>
-                <li class="body-m">полное и частичное досрочное погашение</li>
-              </ul>
-              <ul class="tabs__list flex-column list-style-disc" data-tab="2">
-                <li class="body-m">контроль распределения инвестированных средств</li>
-                <li class="body-m">инвестирование с возможностью настройки кастомных параметров</li>
-                <li class="body-m">готовые стратегии инвестирования от экспертов Потока </li>
-              </ul>
+              <div class="tabs-content-w active" data-tab="1">
+                <ul class="tabs__list flex-column list-style-disc active" data-tab="1">
+                  <li class="body-m">получение заема онлайн</li>
+                  <li class="body-m">автоматический скоринг привлечения заема</li>
+                  <li class="body-m">полное и частичное досрочное погашение</li>
+                </ul>
+
+                <a  href="https://b.potok.digital/registration" 
+                    target="_blank" 
+                    class="btn-text tabs__button button-l outline"
+                  aria-label="стать заемщиком">стать заемщиком</a>
+              </div>
+              <div class="tabs-content-w" data-tab="2">
+                <ul class="tabs__list flex-column list-style-disc" data-tab="2">
+                  <li class="body-m">контроль распределения инвестированных средств</li>
+                  <li class="body-m">инвестирование с возможностью настройки кастомных параметров</li>
+                  <li class="body-m">готовые стратегии инвестирования от экспертов Потока </li>
+                </ul>
+
+                <a  href="https://i.potok.digital/#/" 
+                    target="_blank" 
+                    class="btn-text tabs__button button-l outline" 
+                    aria-label="стать инвестором">стать инвестором</a>
+
+              </div>
+
             </div>
-            <a href="#" class="btn-text tabs__button button-l outline active" data-tab="1"
-              aria-label="стать заемщиком">стать заемщиком</a>
-            <a href="#" class="btn-text tabs__button button-l outline" data-tab="2" aria-label="стать инвестором">стать
-              инвестором</a>
           </div>
         </div>
       </div>

@@ -67,4 +67,38 @@ document.addEventListener('DOMContentLoaded', function () {
       gsap.killTweensOf('#scrollBlockTriggerLeft2');
     };
   });
+
+  const tabs: NodeListOf<Element> = document.querySelectorAll('.tabs__tab');
+  const tabContents: NodeListOf<Element> = document.querySelectorAll('.tabs-content-w');
+  const images: NodeListOf<Element> = document.querySelectorAll('.tabs__img');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', function () {
+      const tabNumber: string = this.getAttribute('data-tab') || '1';
+
+      // Переключаем класс "active" для всех элементов
+      tabs.forEach((tab) => tab.classList.remove('active'));
+      tabContents.forEach((content) => content.classList.remove('active'));
+      images.forEach((image) => image.classList.remove('active'));
+
+      // Добавляем класс "active" только к элементам с выбранным data-tab
+      tabs.forEach((tab) => {
+        if (tab.getAttribute('data-tab') === tabNumber) {
+          tab.classList.add('active');
+        }
+      });
+
+      tabContents.forEach((content) => {
+        if (content.getAttribute('data-tab') === tabNumber) {
+          content.classList.add('active');
+        }
+      });
+
+      images.forEach((image) => {
+        if (image.getAttribute('data-tab') === tabNumber) {
+          image.classList.add('active');
+        }
+      });
+    });
+  });
 });

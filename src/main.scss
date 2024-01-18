@@ -1779,7 +1779,8 @@ header, footer {
  
  .benefit-anchors-w {
     position: absolute;
-    gap: 10vh;
+    padding: 7vh;
+    gap: 5vh;
     top: 0;
     bottom: 0;
     z-index: -1;
@@ -1823,6 +1824,7 @@ header, footer {
     top: 0;
     left: 0;
     bottom: 0;
+    pointer-events: none;
 
     img {
         max-width: 100%;

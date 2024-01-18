@@ -5,6 +5,9 @@
 
 .benefits-sticy-rail-section {
     height: 300vh;
+    @include tablet1024 {
+        height: auto;
+    }
 }
 
 .benefits-container {

@@ -137,8 +137,31 @@
         margin-bottom: 0;
     }
 
+    &.documents {
+        padding-top: px(48);
+
+        @include tablet1024 {
+            padding-top: px(20);
+        }
+
+        @include tablet {
+            padding-top: px(24);
+        }
+
+        .accordion__content {
+            padding-top: 0;
+        }
+    }
+
     >p {
         margin-bottom: px(28);
+
+        max-width: 50%;
+
+        @include tablet {
+            margin-bottom: px(16);
+            max-width: 100%;
+        }
     }
 }
 
@@ -154,6 +177,27 @@
     a {
         color: $c-white;
         text-decoration: underline;
+    }
+
+    &.documents {
+        padding-top: px(48);
+
+        @include tablet1024 {
+            padding-top: px(20);
+        }
+
+        @include tablet {
+            padding-top: px(24);
+        }
+
+        a {
+            color: $c-deep-dive;
+            text-decoration: none;
+
+            &:hover {
+                color: $c-accent;
+            }
+        }
     }
 }
 
@@ -171,6 +215,13 @@
         &::after {
             transform: rotate(180deg);
             transform-origin: top;
+        }
+
+        &.documents {
+            svg {
+                transform: rotate(180deg);
+                top: calc(50% - 5px);
+            }
         }
     }
 }

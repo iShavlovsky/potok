@@ -1,7 +1,13 @@
 .main-title {
     text-align: center;
+    margin-bottom: px(112);
+
+    @include tablet1024 {
+        font-size: px(52);
+    }
 
     @include tablet {
+        font-size: px(46);
         margin-bottom: px(67);
     }
 
@@ -11,13 +17,13 @@
 }
 
 .main-documents__document {
-    padding-bottom: px(68);
-    min-height: px(140);
+    padding-bottom: px(100);
     flex: 0 0 48%;
     width: 48%;
+    align-self: stretch;
 
-    transition: border-color $var-base-animation-time $var-transition-timing,
-    color $var-base-animation-time $var-transition-timing;
+    transition: border-color $var-base-animation-time linear,
+    color $var-base-animation-time linear;
 
     &:hover  {
         color: $c-accent;
@@ -29,5 +35,7 @@
         width: 100%;
     }
 }
+
+
 
 

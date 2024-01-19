@@ -6,9 +6,14 @@
     border-radius: 8px;
     border: 1px solid $c-white;
     background-color: $c-white;
+    cursor: pointer;
 
-    transition: color $var-base-animation-time linear,
-    background-color $var-base-animation-time linear;
+    transition: color $var-base-animation-time $var-transition-timing,
+    background-color $var-base-animation-time $var-transition-timing;
+    
+    @include tablet1024 {
+        padding: px(14) px(26);
+    }
 
     @include tablet {
         padding: px(14) px(26);

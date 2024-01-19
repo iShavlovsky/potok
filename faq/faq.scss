@@ -1,0 +1,47 @@
+@include tablet {
+    section {
+        padding: px(40) 0;
+    }
+}
+
+@include mobile {
+    .main-title {
+        padding-left: 16px;
+    }
+}
+
+
+
+.faq__nav {
+    flex: 0 0 32%;
+    
+    ul {
+        position: sticky;
+        top: px(85);
+        left: px(48);
+        gap: px(12);
+
+        @include tablet {
+            flex-direction: row;
+            position: static;
+            padding: 0 px(16);
+        }
+
+        a {
+            text-decoration: underline;
+            max-width: max-content;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            &.active {
+                color: $c-accent;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+

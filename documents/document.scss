@@ -1,0 +1,43 @@
+.main-title {
+    text-align: center;
+    margin-bottom: px(112);
+
+    @include tablet1024 {
+        font-size: px(52);
+    }
+
+    @include tablet {
+        font-size: px(46);
+        margin-bottom: px(67);
+    }
+
+    @include mobile {
+        margin-bottom: px(80);
+    }
+}
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include big-mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main-documents__document {
+    padding-bottom: px(100);
+    align-self: stretch;
+    transition: border-color $var-base-animation-time linear,
+    color $var-base-animation-time linear;
+
+    &:hover  {
+        color: $c-accent;
+        border-color: $c-deep-dive;
+    }
+
+}
+
+
+
+

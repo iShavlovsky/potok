@@ -6,12 +6,89 @@ body {
     background: $c-white;
     color: $c-deep-dive;
     font-family: $ft-regular;
+    font-weight: 450;
+    font-size: px(15);
 }
 
 a, button {
     color: $c-deep-dive
 }
 
+section, header, footer {
+    padding: px(70) px(48);
+
+    @include tablet1024 {
+        padding: px(60) px(32);
+    }
+
+    @include tablet {
+        padding: px(50) px(16);
+    }
+}
+
+header, footer {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    @include tablet {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @include mobile {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
+.main {
+    padding-top: px(160);
+
+    @include tablet {
+        padding-top: px(140);
+    }
+}
+
+.list-disc {
+    li {
+        list-style-type: disc;
+    }
+}
+
+.list-decimal {
+    li {
+        list-style-type: decimal;
+    }
+}
+
+.accordion__content-faq {
+    ul, ol {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+
+        li {
+            margin-bottom: px(6);
+        }
+    }
+}
+
+.faq {
+    gap: px(32);
+    align-items: stretch;
+    margin-top: px(85);
+    max-width: 100vw;
+    @include tablet {
+        margin-top: px(64);
+    }
+}
+
+.no-padding-top {
+    padding-top: 0;
+}
 .header {
     position: absolute;
     top: 0;
@@ -19,13 +96,39 @@ a, button {
     width: 100%;
     height: px(76);
 
-    padding: px(28) 0;
+    padding-top: px(28);
+    padding-bottom: px(28);
 
     letter-spacing: px(1);
     color: $c-white;
-    background: $c-background;
+    background: transparent;
 
     z-index: 1000;
+
+    &.transparent {
+        background: $c-white;
+        color: $c-background;
+
+        a {
+            color: $c-deep-dive;
+
+            &:hover:not(.header__logo) {
+                color: $c-accent;
+            }
+        }
+
+        .logo {
+            color: $c-deep-dive;
+        }
+
+        path {
+            stroke: $c-deep-dive;
+        }
+
+        circle {
+            stroke: $c-deep-dive;
+        }
+    }
 }
 
 .header__inner {
@@ -37,9 +140,13 @@ a, button {
 
     a {
         color: $c-white;
+
+        &.active {
+            color: $c-accent;
+        }
     }
 
-    @include tablet {
+    @include tablet1024 {
         top: 0;
         left: 0;
         right: 0;
@@ -74,10 +181,10 @@ a, button {
     }
 
     svg {
-        transition: transform $var-base-animation-time linear;
+        transition: transform $var-base-animation-time $var-transition-timing;
 
         path {
-            transition: stroke $var-base-animation-time linear;
+            transition: stroke $var-base-animation-time $var-transition-timing;
         }
     }
 
@@ -134,41 +241,91 @@ a, button {
 .header__navigation-menu {
     display: none;
 
-    @include tablet {
+    @include tablet1024 {
         display: block;
     }
 }
 
-/* Main */
-.main {
-    padding-top: px(76);
-}
-
 /* Intro */
 .intro {
-    padding-top: px(42);
-    padding-bottom: px(183);
-    min-height: calc(100vh - px(76));
+    padding-top: px(128);
+    padding-bottom: px(64);
+    padding-left: 0;
+    padding-right: 0;
+    min-height: 100vh;
     position: relative;
     background: $c-background;
+    overflow: hidden;
 
-    @include big-mobile {
-        padding-top: px(32);
-        padding-bottom: px(240);
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.intro-margine-left-right {
+
+    @media (max-width: 1440px) {
+        margin: 0 px(48);
+    }
+
+    @include tablet1024 {
+        margin: 0 px(32);
+    }
+
+    @include tablet {
+        margin: 0 px(16);
+    }
+}
+
+.intro-container-w {
+    height: calc(100vh - 128px);
+}
+
+.intro__video {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin-top: -128px;
+
+    video {
+        object-fit: cover;
+        object-position: 0% 95%;
+        vertical-align: baseline;
+        overflow: clip;
+        overflow-clip-margin: content-box;
+        height: 100%;
+        width: 100%;
+
+        @include tablet {
+            object-position: 50% 0%;
+        }
+    }
+
+    &.investors-page {
+        video {
+            object-position: 50% 50%;
+        }
     }
 
     @include mobile {
-        padding-bottom: px(188);
+        width: 200%;
+        left: -100%;
     }
 }
 
 .intro__inner {
     color: $c-white;
 
-    max-width: 70%;
+    max-width: px(740);
 
     @include tablet1024 {
-        max-width: 85%;
+        max-width: px(570);
     }
 
     @include tablet {
@@ -180,24 +337,13 @@ a, button {
     }
 }
 
-.intro__title {
-    margin-bottom: px(40);
-    letter-spacing: px(-1);
-
-    @include mobile {
-        margin-bottom: px(28);
-    }
-}
 
 .intro__desc {
-    max-width: 45%;
+    max-width: px(330);
 
-    @include tablet {
-        max-width: 60%;
-    }
+    @include tablet1024 {
+        font-size: px(18);
 
-    @include big-mobile {
-        max-width: 100%;
     }
 
     @include mobile {
@@ -213,46 +359,99 @@ a, button {
     column-gap: px(1);
     justify-content: flex-end;
 
-    @include mobile {
-        display: none;
+    @include tablet {
+        position: static;
+        right: auto;
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: px(32);
+        padding-left: px(16);
+        gap: px(8);
+
     }
 }
 
 .intro__btns {
-    display: none;
+    display: inline-block;
+}
 
-    a {
-        max-width: max-content;
+.intro__yield {
+    color: $c-white;
+    p {
+        opacity: 0.5;
+        margin-bottom: px(8);
+        margin-top: px(40);
     }
+}
 
-    @include mobile {
-        display: flex;
-        gap: px(8);
+.intro__img-abs {
+    width: px(165);
+    color: $c-white;
+    text-align: right;
+    align-self: flex-end;
+    line-height: 1.2;
+
+    img {
+        margin-bottom: px(10);
     }
 }
 
 /* Card */
 .card {
     padding: px(28);
+    padding-right: px(56);
     padding-bottom: px(32);
     background: $c-gray-100;
     cursor: pointer;
-    width: 40%;
+    width: px(265);
     position: relative;
+    display: inline-block;
+
+    @include tablet1024 {
+        width: px(248);
+        padding-left: px(25);
+        padding-top: px(25);
+    }
+
+    @include tablet {
+        width: auto;
+        min-width: px(190);
+        text-align: center;
+        letter-spacing: px(0.01);
+        border-radius: px(8);
+        padding: px(14) px(24) px(16);
+        font-size: px(14);
+        line-height: 110%;
+        display: inline-block;
+
+        svg {
+            display: none;
+        }
+    }
 }
 
 .card__title {
     margin-bottom: px(10);
+    font-weight: 600;
+
+    @include tablet {
+        margin-bottom: 0;
+    }
 }
 
 .card__desc {
     color: $c-gray-50;
     margin-bottom: px(24);
+
+    @include tablet {
+        display: none;
+    }
 }
 
 /* Partners */
 .partners {
-    margin-top: px(80);
+    padding-top: px(80);
     overflow: hidden;
 
     @include mobile {
@@ -270,6 +469,10 @@ a, button {
     @include mobile {
         margin-bottom: px(32);
     }
+
+    &.body-l {
+        margin-bottom: px(32);
+    }
 }
 
 .partners__scroll {
@@ -278,14 +481,28 @@ a, button {
 
 
 .partners__list {
-    column-gap: px(20);
+
+    .partner {
+        min-width: px(210);
+        margin-right: px(20);
+    }
 
     @include tablet {
-        column-gap: px(16);
+        .partner {
+            margin-right: px(16);
+        }
     }
 
     @include small-mobile {
-        column-gap: px(10);
+        .partner {
+            margin-right: px(10);
+        }
+    }
+
+    &.without-border {
+        .partner {
+            border: 0;
+        }
     }
 }
 
@@ -307,7 +524,7 @@ a, button {
     }
 
     @include mobile {
-        flex: 0 0 45%;
+        flex: 0 0 55%;
     }
 }
 
@@ -320,11 +537,12 @@ a, button {
 
 /* Products */
 .products__inner {
-    gap: px(20);
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 
     @include tablet {
-        gap: px(16);
+        grid-template-columns: 1fr;
     }
 }
 
@@ -347,24 +565,36 @@ a, button {
     border-radius: px(24);
     min-height: px(595);
 
-    @include big-mobile {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    @include tablet1024 {
+        min-height: px(464);
+        padding-top: px(32);
+        padding-bottom: px(33);
+        padding-left: px(24);
+    }
+
+    @include tablet {
+        min-height: px(447);
         flex: 0 0 100%;
         justify-content: flex-start;
         gap: px(24);
-        min-height: auto;
     }
 }
 
 .product__content {
-    max-width: 78%;
+    max-width: px(372);
+    margin-bottom: px(24);
 
     .descriptor {
         color: $c-white;
         opacity: 0.5;
     }
 
-    @include big-mobile {
-        max-width: 100%;
+    @include tablet {
+        max-width: px(290);
     }
 }
 
@@ -388,42 +618,109 @@ a, button {
     }
 }
 
+.product__button {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+}
+
+.product__img {
+    width: px(582);
+    max-width: 120%;
+    position: absolute;
+    top: auto;
+    bottom: px(-155);
+    left: auto;
+    right: px(-121);
+    z-index: -1;
+
+    @include tablet1024 {
+        width: px(360);
+        max-width: none;
+        bottom: px(-104);
+        right: px(-85);
+    }
+
+    @include tablet {
+        bottom: px(-65);
+    }
+}
+
 /* Numbers */
+.numbers {
+    padding-left: 0;
+    padding-right: 0;
+    height: 200vh;
+    position: relative;
+
+    @include tablet {
+        height: auto;
+
+    }
+}
+.numbers-sticky-block{
+    padding: 0 px(48);
+    position: sticky;
+    top: px(90);
+    overflow: hidden;
+    z-index: 2;
+
+    @include tablet1024 {
+        padding: 0 px(32);
+    }
+
+    @include tablet {
+        padding: 0 px(16);
+        position: relative;
+    }
+}
+
 .numbers__title {
     margin-bottom: px(48);
+
+    @include tablet {
+        margin-bottom: px(57);
+    }
+}
+
+.numbers__scroll {
+    position: relative;
+    height: 100vh;
+
+    @include tablet {
+        height: auto;
+
+    }
 }
 
 .numbers__line {
-    height: px(340);
-    padding-left: px(48);
-    overflow: hidden;
-    gap: px(58);
+    min-height: px(340);
+    justify-content: stretch;
+
 
     @include tablet {
-        padding-left: px(32);
-    }
+        min-height: auto;
 
-    @include mobile {
-        padding-left: px(16);
-    }
-
-    @include big-mobile {
-        height: auto;
-        overflow: visible;
     }
 }
 
 .indices {
-    height: px(158);
+    min-height: px(158);
+    flex: 0 0 37.5%;
+    padding-right: px(53);
 
-    @include big-mobile {
-        height: auto;
+    z-index: 2;
+
+    @include tablet {
+        min-height: auto;
+        padding-right: 0;
+        padding-bottom: px(55);
     }
 
     &:nth-child(even) {
         align-self: flex-end;
 
-        @include big-mobile {
+        @include tablet {
             align-self: flex-start;
         }
     }
@@ -438,31 +735,67 @@ a, button {
     margin-bottom: px(12);
     position: relative;
 
-    @include big-mobile {
+    @include tablet {
         font-size: px(72);
         line-height: px(64);
         max-width: max-content;
     }
 
-    &.bill-rub::after {
-        content: 'млрд ₽';
-
-        position: absolute;
-        right: px(-50);
-        bottom: px(20);
-
-        font-size: px(20);
-        line-height: px(22);
+    span {
         opacity: 0.5;
+        margin-bottom: px(3);
+        margin-left: px(8);
+    }
+}
 
+.indices__desc {
+    max-width: px(222);
+
+    @include tablet {
+        max-width: px(340);
+    }
+}
+
+.numbers__video {
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: auto;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    @include tablet {
+        position: relative;
+        width: auto;
+
+    }
+    .bg-video-sticky{
+        height: 100vh;
+        position: sticky;
+        top: px(90);
         @include tablet {
-            font-size: px(16);
-            line-height: px(19.8);
+            height: auto;
         }
+        video {
+            width: 100%;
+            position: absolute;
+            top: auto;
+            bottom: -20vw;
+            left: 0%;
+            right: 0%;
 
-        @include big-mobile {
-            bottom: 0;
+            @include tablet1024 {
+                bottom: 0%;
+            }
+            @include tablet {
+                position: relative;
+            }
         }
+    }
+
+    @include tablet1024 {
+        bottom: 0;
     }
 }
 
@@ -470,64 +803,86 @@ a, button {
 .cabinet {
     padding-top: px(51);
     padding-bottom: px(50);
+    position: relative;
+    z-index: 2;
 }
 
 .cabinet__tabs {
     gap: px(20);
-    align-items: center;
 
     @include tablet {
         flex-direction: column-reverse;
-        align-items: stretch;
-        justify-content: stretch;
         gap: px(40);
     }
 }
 
 .cabinet__img {
-    flex: 0 0 49%;
+    flex: 1;
+    padding-right: px(62);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 
     @include tablet {
         flex: 100%;
-        width: 60%;
         margin: 0 auto;
+        padding-right: 0;
     }
 
     img {
         max-width: 100%;
         height: auto;
+
+        @include tablet {
+            width: px(334);
+        }
     }
 }
 
 .tabs__img {
     display: none;
+    opacity: 0;
+    transition: opacity $var-base-animation-time $var-transition-timing;
 
     &.active {
         display: block;
+        opacity: 1;
     }
 }
 
 .cabinet__content {
-    flex: 0 0 49%;
+    width: px(483);
+    flex: 0 auto;
+    padding-top: px(43);
 
+    @include tablet1024 {
+        width: 45%;
+    }
+
+    @include tablet {
+        width: px(300);
+        padding-top: 0;
+        padding-bottom: px(40);
+        width: auto;
+    }
 }
 
 .cabinet__title {
     margin-bottom: px(24);
-
-    @include tablet {
-        margin-bottom: px(20);
-    }
 }
 
 .tabs__headlines {
     gap: px(16);
-    margin-bottom: px(64);
+    margin-bottom: px(48);
+
+    @include tablet1024 {
+        margin-bottom: px(30);
+    }
 
     @include tablet {
         flex-direction: row;
-        gap: px(10);
-        margin-bottom: px(32);
+        margin-bottom: px(18);
         flex-wrap: wrap;
     }
 }
@@ -563,6 +918,10 @@ a, button {
             }
         }
     }
+
+    @include tablet {
+        padding-right: px(18);
+    }
 }
 
 .tabs__content {
@@ -573,13 +932,28 @@ a, button {
     }
 }
 
+.tabs-content-w {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
 .tabs__list {
     gap: px(8);
-    display: none;
+    margin-bottom: px(48);
 
     li {
         &::before {
             background-color: $c-deep-dive;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include tablet {
+                transform: translateY(0);
+                top: px(6);
+            }
         }
 
         @include tablet {
@@ -587,16 +961,19 @@ a, button {
         }
     }
 
-    &.active {
-        display: flex;
+    @include tablet {
+        margin-bottom: px(32);
     }
 }
 
-.tabs__button {
-    display: none;
+.tabs__button.button-l {
+    display: inline-block;
+    background-color: $c-deep-dive;
+    color: $c-white;
 
-    &.active {
-        display: inline-block;
+    &:hover {
+        background-color: $c-white;
+        color: $c-deep-dive;
     }
 }
 
@@ -619,33 +996,35 @@ a, button {
     margin-bottom: px(28);
     overflow: auto;
 
+    @include tablet1024 {
+        margin: 0 px(-32) px(16) px(-32);
+        padding: 0 px(32) px(16) px(32);
+    }
     @include tablet {
         flex-wrap: wrap;
+        gap: px(12);
         margin-bottom: px(12);
+        margin: 0 px(-16) px(16) px(-16);
+        padding: 0 px(16) px(16) px(16);
+    }
+
+    @include big-mobile {
+
     }
 }
 
 .documents__document {
-    flex: 0 0 30%;
-    padding: px(24) px(28) px(70) px(28);
-    border: 1px solid $c-light-gray;
-    border-radius: px(12);
+    flex: 0 0 31.9%;
     min-height: 256px;
-    display: inline-block;
-
-
     position: relative;
 
-    svg {
-        position: absolute;
-        bottom: 28px;
-        right: 28px;
+    @include tablet1024 {
+        flex: 0 0 40%;
     }
-
     @include tablet {
         flex: 100%;
         min-height: 0;
-        padding: px(20) px(15) px(78);
+        padding: px(20) px(15) px(108);
     }
 
     span {
@@ -679,26 +1058,53 @@ a, button {
 /* Develop */
 .develop {
     margin-top: px(97);
+    height: 400vh;
+    padding: 0;
+    @include tablet {
+        height: auto;
+    }
+}
+
+.timeline-w {
+    justify-self: flex-end;
+}
+.develop-sticky-block {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    padding: px(70) px(48);
+    height: 100vh;
+
+    @include tablet1024 {
+        padding: px(60) px(32);
+    }
+
+    @include tablet {
+        padding: px(50) px(16);
+        height: auto;
+    }
+
 }
 
 .develop__title {
     margin-bottom: px(32);
 }
+.develop-sloder-w {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+}
 
 .develop__slider {
     gap: px(161);
     align-items: stretch;
-    padding-left: px(48);
-    overflow: hidden;
     margin-bottom: px(20);
+    height: 100%;
+    width: max-content;
 
     @include tablet {
-        padding: 0 px(32);
         gap: px(80);
-    }
-
-    @include mobile {
-        padding: 0 px(16);
+        width: auto;
     }
 }
 
@@ -708,6 +1114,7 @@ a, button {
 
     @include big-mobile {
         gap: px(12);
+        flex-wrap: wrap;
     }
 
     &:nth-child(even) {
@@ -729,9 +1136,11 @@ a, button {
     img {
         display: block;
         height: auto;
+        object-fit: cover;
 
         @include tablet {
             max-width: 100%;
+            height: px(260);
         }
     }
 
@@ -770,7 +1179,9 @@ a, button {
 
     @include tablet {
         font-size: px(128);
-        line-height: 1;
+        line-height: 100%;
+        left: 0;
+        transform: translateX(0);
     }
 }
 
@@ -797,7 +1208,7 @@ a, button {
 }
 
 .timeline {
-    padding: px(20) 0;
+    padding-top: px(40);
     column-gap: 10%;
 
     @include tablet {
@@ -820,8 +1231,24 @@ a, button {
 }
 
 /* Staff */
+.staff {
+    padding-left: 0;
+    padding-right: 0;
+}
+.staff-h2-w {
+    padding: 0 px(48);
+
+    @include tablet1024 {
+        padding: 0 px(32);
+    }
+
+    @include tablet {
+        padding: 0 px(16);
+    }
+}
 .staff__title {
-    margin-bottom: px(98);
+    margin-bottom: px(66);
+    max-width: px(380);
 
     @include tablet {
         margin-bottom: px(10);
@@ -835,37 +1262,40 @@ a, button {
     background-color: $c-white;
     cursor: pointer;
 
-    @include tablet {
+    @include tablet1024 {
         padding: px(32) px(32);
     }
 
-    @include mobile {
+    @include tablet {
         padding: px(32) px(16);
     }
 
-    transition: background-color $var-base-animation-time linear;
+    transition: background-color $var-base-animation-time $var-transition-timing;
 
     &:last-child {
         border-bottom: none;
     }
 
-    svg {
-        float: right;
-
-    }
-
     path {
-        transition: stroke $var-base-animation-time linear,
-        fill $var-base-animation-time linear;
+        transition: stroke $var-base-animation-time $var-transition-timing,
+        fill $var-base-animation-time $var-transition-timing;
     }
 }
 
 .staff__svg {
-    flex: 0 0 5%;
+    flex: 0 0 px(80);
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include tablet1024 {
+        flex: 0 0 5%;
+    }
 }
 
 .staff__content {
     flex: 0 0 95%;
+    max-width: 1534px;
 
     @include tablet1024 {
         align-items: flex-start;
@@ -873,11 +1303,15 @@ a, button {
         gap: px(16);
     }
 
+    @media(max-width: 1920px) {
+        max-width: 1264px;
+      }
+
 }
 
 .staff__name {
     flex: 0 0 55%;
-    transition: color $var-base-animation-time linear;
+    transition: color $var-base-animation-time $var-transition-timing;
 
     @include tablet1024 {
         flex: 0 0 100%;
@@ -887,7 +1321,7 @@ a, button {
 .staff__prof {
     flex: 0 0 45%;
     opacity: 0.9;
-    transition: color $var-base-animation-time linear;
+    transition: color $var-base-animation-time $var-transition-timing;
 
     @include tablet1024 {
         flex: 0 0 100%;
@@ -977,25 +1411,59 @@ a, button {
 }
 
 /* Slogan */
-.slogan {
-    margin-top: px(140);
-}
-
 .slogan__inner {
     background: $c-background;
     border-radius: px(12);
     min-height: px(600);
-    text-align: center;
+    padding-bottom: px(34);
+    position: relative;
+    overflow: hidden;
 
+    @include tablet {
+        min-height: px(400);
+        padding: px(34);
+    }
     @include mobile {
         min-height: px(508);
+        padding: px(16);
+    }
+}
+
+.slogan__video {
+    border-radius: px(12);
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    overflow: hidden;
+    z-index: 1;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.slogan__content {
+    max-width: px(782);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+    @include tablet1024 {
+        max-width: px(650);
     }
 }
 
 .slogan__title {
-    max-width: 70%;
     color: $c-white;
     margin-bottom: px(40);
+
+    @include tablet {
+        font-size: px(30);
+    }
 }
 
 .slogan__btns {
@@ -1006,9 +1474,8 @@ a, button {
 
 /* Mass Media */
 .mm {
-    margin-top: px(140);
-    margin-bottom: px(100);
     overflow: hidden;
+    padding-bottom: px(100);
 }
 
 .mm__title {
@@ -1020,27 +1487,25 @@ a, button {
 }
 
 .mm__slider {
-    padding: px(48);
     border-top: 1px solid $c-light-gray;
-    column-gap: px(52);
     align-items: stretch;
     min-width: 100%;
+    padding: px(48) 0;
 
     @include tablet {
-        padding-left: px(32);
         padding-bottom: 0;
     }
 
     @include mobile {
         padding-top: 0;
-        padding-left: px(16);
         border-top: 0;
     }
 }
 
 .mm__news {
-    flex: 0 0 30%;
-
+    flex: 0 0 33.3%;
+    padding-bottom: 70px;
+    padding-right: 52px;
 }
 
 .mm__date {
@@ -1078,7 +1543,7 @@ a, button {
 .footer {
     padding-top: px(64);
     padding-bottom: px(56);
-    background-color: #F5F5F5;
+    background-color: $c-whity;
 }
 
 @include tablet1024 {
@@ -1120,19 +1585,7 @@ a, button {
     flex: 0 0 35%;
 }
 
-.footer__social-without {
-    flex: 0 0 60%;
 
-    @include tablet1024 {
-        flex: 0 0 100%;
-        flex-wrap: wrap;
-        gap: px(36);
-    }
-
-    @include tablet {
-        gap: px(24);
-    }
-}
 
 .footer__join {
     opacity: 0.5;
@@ -1140,13 +1593,11 @@ a, button {
 }
 
 .footer__copyright {
+    flex: 0 0 32%;
+    padding-right: 24px;
     >div {
         gap: px(16);
         margin-bottom: px(20);
-    }
-
-    @include tablet1024 {
-        flex: 0 0 35%;
     }
 }
 
@@ -1159,17 +1610,18 @@ a, button {
 
         @include tablet1024 {
             position: relative;
+            row-gap: px(36);
         }
     }
 }
 
 .footer__social {
-    flex: 0 0 35%;
+    flex: 0 0 32%;
+    padding-right: px(24);
 
     @include tablet1024 {
-        position: absolute;
-        bottom: 12%;
-        left: calc(48% + px(36));
+        width: 50%;
+        order: 4;
     }
 
     > div {
@@ -1177,14 +1629,18 @@ a, button {
     }
 }
 
+
 .footer__nav {
     display: flex;
     flex-direction: column;
     gap: px(12);
 
+
     &.to {
+        margin-top: px(-6);
         gap: px(6);
-        flex: 0 0 50%;
+        flex: 1;
+        padding-right: px(24);
 
         @include tablet1024 {
             flex: 0 0 45%;
@@ -1192,7 +1648,12 @@ a, button {
     }
 
     &.where {
-        flex: 0 0 25%;
+        width: 19.5%;
+        flex: 0 auto;
+
+        @media(max-width: 1920px) {
+            width: 15%;
+          }
 
         @include tablet1024 {
             flex: 0 0 45%;
@@ -1200,7 +1661,8 @@ a, button {
     }
 
     &.how {
-        flex: 0 0 25%;
+        width: px(204);
+        flex: 0 auto;
 
         @include tablet1024 {
             flex: 0 0 45%;
@@ -1209,16 +1671,17 @@ a, button {
 }
 
 .footer__text {
+    gap: px(20);
     @include tablet {
         flex-direction: column;
     }
 }
 
 .footer__desc {
-    flex: 0 0 60%;
+    flex: 1;
 
     @include tablet {
-        flex: 0 0 100%;
+        flex: 0 0 65%;
     }
 }
 
@@ -1228,12 +1691,23 @@ a, button {
     opacity: 0.5;
 }
 
+.underline-link {
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
 .footer__btns {
     gap: px(10);
 
     a {
         padding: px(10) px(17);
-        width: 100%;
+
+        @include tablet {
+            width: 100%;
+        }
     }
 }
 
@@ -1243,3 +1717,343 @@ a, button {
     }
 }
 
+
+
+
+
+
+
+
+/* Cards Desc */
+.cards__title {
+    margin-bottom: px(64);
+
+    @include tablet1024 {
+        margin-bottom: px(54);
+    }
+
+    @include tablet {
+        margin-bottom: px(47);
+    }
+}
+
+ .cards-desc {
+    overflow: auto;
+
+    >div {
+        gap: px(20);
+
+        @include tablet1024 {
+            width: max-content;
+            gap: px(16);
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+    }
+
+ }
+
+ .card-desc {
+    border: 1px solid $c-light-gray;
+    border-radius: px(16);
+    flex: 1;
+    padding: px(24) px(45) px(50) px(28);
+
+    @include tablet1024 {
+        min-width: 62.5vw;
+    }
+
+    @include tablet {
+        width: 100%;
+    }
+ }
+
+ .card-desc-title {
+    margin-bottom: px(16);
+    font-weight: 600;
+ }
+
+ /* Benefits */
+
+ .benefit-anchors-w {
+    position: absolute;
+    padding: 7vh;
+    gap: 5vh;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+
+    @include tablet1024 {
+        display: none;
+    }
+ }
+
+ .benefits-container {
+    position: sticky;
+    top: 0;
+}
+
+ .benefits-container {
+    @include tablet1024 {
+
+        width: 100vw;
+        margin: 0 px(-32);
+        padding: 0 px(32);
+        display: flex;
+        flex-direction: row;
+
+        @include tablet {
+            margin: 0 px(-16);
+            padding: 0 px(16);
+        }
+    }
+}
+
+.benefits__content-right-side-w {
+    width: 45%;
+    @include tablet1024 {
+        width: 100%;
+    }
+}
+
+.benefits__image {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+
+    img {
+        max-width: 100%;
+    }
+
+    @include tablet1024 {
+        position: static;
+        width: 100%;
+
+        img {
+            height: px(250);
+        }
+    }
+}
+
+.benefits__content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+
+    @include tablet1024 {
+        display: block;
+        height: auto;
+    }
+
+}
+.benefits__content-w{
+    display: flex;
+    flex-direction: column;
+
+    @include tablet1024 {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    align-items: stretch;
+    gap: 16px;
+    padding-bottom: 16px;
+    overflow: auto;
+    max-width: 100vw;
+    margin-left: -32px;
+    padding: px(32);
+    }
+    @include tablet {
+        margin-left: -16px;
+        padding: px(32) px(16);
+    }
+
+    @include mobile {
+        flex-direction: column;
+        margin-left: 0;
+        padding: px(32) px(8);
+    }
+}
+.benefits__headline {
+    margin-bottom: px(28);
+}
+
+.benefits__benefit {
+    opacity: .5;
+    padding: px(20) 0;
+    cursor: pointer;
+    transition: opacity $var-base-animation-time $var-transition-timing;;
+
+    .mt-16 {
+        overflow: hidden;
+        max-height: 0px;
+        transition: max-height $var-base-animation-time $var-transition-timing;;
+    }
+
+    img {
+        opacity: 0;
+        transition: opacity $var-base-animation-time $var-transition-timing;;
+    }
+
+    &.active {
+        opacity: 1;
+
+        .mt-16 {
+            overflow: hidden;
+            max-height: 3000px;
+        }
+
+        img {
+            opacity: 1;
+        }
+    }
+
+    @include tablet1024 {
+        opacity: 1;
+        border-radius: 12px;
+        flex-direction: column;
+        padding: 0 22px 34px;
+        display: flex;
+        background-color: $c-light-gray;
+        min-width: px(360);
+
+        .mt-16 {
+            overflow: hidden;
+            max-height: 3000px;
+        }
+
+        img {
+            opacity: 1;
+        }
+    }
+    @include mobile {
+        min-width: px(310);
+    }
+}
+
+.benefits__cards {
+    display: none;
+
+    @include tablet1024 {
+        display: flex;
+        padding: px(32) 0;
+        width: min-content;
+        gap: px(26);
+    }
+
+    @include mobile {
+        padding: px(16) 0;
+    }
+}
+
+.benefits__card {
+    border-radius: 12px;
+    flex-direction: column;
+    padding: 0 22px 34px;
+    display: flex;
+    background-color: $c-light-gray;
+    width: px(310);
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        align-self: center;
+    }
+
+    h3 {
+        font-size: px(32);
+        line-height: 1;
+        margin-bottom: px(16);
+    }
+}
+
+/* Variants */
+.variants {
+    padding-top: px(100);
+    padding-bottom: px(100);
+    background-color: $c-background;
+    background: url('../src/assets/img/webp/images/variants/variants-background.webp');
+    background-position: center;
+    background-size: cover;
+}
+
+.variants__title {
+    color: $c-white;
+    margin-bottom: px(64);
+}
+
+.variants__cards {
+    gap: px(20);
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.variants__card {
+    flex: 0 0 48.6%;
+    min-height: 440px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: px(40) px(28);
+    border-radius: px(24);
+    @include tablet1024 {
+        flex: 0 0 48%;
+    }
+    @include big-mobile {
+        flex: 0 0 100%;
+    }
+
+    &:nth-child(1) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg1.webp');
+    }
+
+    &:nth-child(2) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg2.webp');
+    }
+
+    &:nth-child(3) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg3.webp');
+    }
+
+    &:nth-child(4) {
+        background-image: url('../src/assets/img/webp/images/variants/variants-card-bg4.webp');
+    }
+}
+
+.variants__text {
+    max-width: px(345);
+
+    h3 {
+        margin-bottom: px(28);
+
+        @include tablet {
+            font-size: px(24);
+        }
+    }
+
+    p {
+        opacity: 0.5;
+    }
+}
+
+.variants__button {
+    margin-top: px(60);
+
+    align-self: center;
+
+    transition: border-color $var-base-animation-time $var-transition-timing,
+    color $var-base-animation-time $var-transition-timing;
+
+    &:hover {
+        background: $c-background;
+        border-color: $c-background;
+    }
+}

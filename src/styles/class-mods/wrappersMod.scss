@@ -2,6 +2,23 @@
 @import '../scss/breakpoints';
 
 /* ----------------------- main ------------------------------ */
+.mob {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.minus-100vh {
+  margin-top: -80vh;
+  background-color: white;
+  @extend .relative;
+}
+.bg-collor-white {
+  background-color: white;
+  @extend .relative;
+}
 .relative {
   position: relative;
 }
@@ -71,6 +88,10 @@
   align-self: flex-start;
 }
 
+.aling-self-end {
+  align-self: flex-end;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -81,6 +102,10 @@
 
 .justify-self-stretch {
   justify-self: stretch;
+}
+
+.justify-self-end {
+  justify-self: end;
 }
 
 .height-100vh {
@@ -108,17 +133,16 @@
 }
 
 .container {
-  padding: 0 px(48);
-  max-width: 1200px;
+  max-width: 1614px;
   width: 100%;
   margin: 0 auto;
 
-  @include tablet {
-    padding: 0 px(32);
+  &.container-small {
+    max-width: 782px;
   }
 
-  @include mobile {
-    padding: 0 px(16);
+  @media(max-width: 1920px) {
+    max-width: 1344px;
   }
 }
 
@@ -154,4 +178,8 @@
   .mobile-hide {
     display: none;
   }
+}
+
+.w380 {
+  max-width: px(380);
 }

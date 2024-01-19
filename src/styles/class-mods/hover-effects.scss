@@ -2,7 +2,7 @@
 @import '../scss/color';
 
 .link {
-    transition: color $var-base-animation-time linear;
+    transition: color $var-base-animation-time $var-transition-timing;
 
     &:hover {
         color: $c-accent;

@@ -16,10 +16,17 @@
     }
 }
 
+.documents-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include big-mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
 .main-documents__document {
     padding-bottom: px(100);
-    flex: 0 0 48%;
-    width: 48%;
     align-self: stretch;
 
     transition: border-color $var-base-animation-time linear,
@@ -30,10 +37,6 @@
         border-color: $c-deep-dive;
     }
 
-    @include tablet {
-        flex: 0 0 100%;
-        width: 100%;
-    }
 }
 
 

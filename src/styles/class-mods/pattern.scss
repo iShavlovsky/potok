@@ -88,10 +88,13 @@
 
 .accordion__title {
     position: relative;
-
     padding: px(28) px(20);
-
     cursor: pointer;
+
+    &.documents {
+        border-bottom: 1px solid $c-light-gray;
+        padding-left: 0;
+    }
 
     svg {
         position: absolute;

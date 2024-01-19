@@ -12,9 +12,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        faq: resolve(__dirname, 'faq/faq.html'),
-        documents: resolve(__dirname, 'documents/documents.html'),
-        partners: resolve(__dirname, 'partners/partners.html'),
+        faq: resolve(__dirname, 'faq/index.html'),
+        documents: resolve(__dirname, 'documents/index.html'),
+        partners: resolve(__dirname, 'partners/index.html'),
       },
     },
   },

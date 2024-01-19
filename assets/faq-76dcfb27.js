@@ -1,1 +1,0 @@
-import"./main-6a65ce80.js";console.log(2);document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".accordion__title-faq").forEach(o=>{o.addEventListener("click",()=>{const c=o.closest(".faq__accordion-item");c&&c.classList.toggle("active")})})});

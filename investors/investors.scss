@@ -1,3 +1,44 @@
+/* Slider */
+.slider-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.slider-title-and-arrows-w {
+    flex: 0 0 33%;
+    margin-right: px(4);
+    padding-right: px(40);
+}
+
+.slick-slide {
+    width: px(482);
+    height: 100%;
+    border: 1px solid $c-light-gray;
+    border-radius: px(24);
+    flex-direction: column;
+    padding: 24px 38px 40px 28px;
+    transition: all .3s;
+    display: flex;
+    margin-right: px(24);
+}
+.slide-author-w {
+    gap: px(2);
+    margin-top: 40px;
+}
+
+.slider-arrow-2 {
+    width: 64px;
+    height: 64px;
+    color: #10273d;
+    background-color: #f2f4f8;
+    border-radius: 50%;
+    flex-direction: row;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    display: flex;
+}
 /* Strategy */
 .advantages{
     padding-top: px(80);

@@ -147,10 +147,10 @@ header, footer {
     }
 
     @include tablet1024 {
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        bottom: 0%;
         position: fixed;
         background: $c-background-popup;
         z-index: 1000;
@@ -1262,6 +1262,10 @@ header, footer {
     background-color: $c-white;
     cursor: pointer;
 
+    .popup {
+        display: none;
+    }
+
     @include tablet1024 {
         padding: px(32) px(32);
     }
@@ -1279,6 +1283,35 @@ header, footer {
     path {
         transition: stroke $var-base-animation-time $var-transition-timing,
         fill $var-base-animation-time $var-transition-timing;
+    }
+
+    &.active {
+        .popup {
+            display: flex;
+            flex-direction: column;
+            background-color: $c-background-popup;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: px(32);
+            overflow-y: scroll;
+            z-index: 99;
+            .popup-cross {
+                content: '';
+        
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+        
+                cursor: pointer;
+            }
+        
+        }
     }
 }
 
@@ -1349,10 +1382,22 @@ header, footer {
     padding-top: px(72);
 }
 
+.close-staff-pop-up {
+    z-index: 1;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+}
+
 .staff__popup-content {
     width: 90%;
+    max-width: px(1080);
     background: $c-white;
     color: $c-popup;
+    z-index: 2;
+    cursor: auto;
 
     padding-right: px(80);
     padding-top: px(100);
@@ -1368,8 +1413,8 @@ header, footer {
     >img {
         flex: 0 0 55%;
         height: auto;
-        display: block;
         max-width: 100%;
+        object-fit: cover;
 
         @include tablet {
             width: 50%;
@@ -1377,7 +1422,7 @@ header, footer {
 
         @include big-mobile {
             width: 100%;
-            flex: 0 0 100%;
+            flex: auto;
             margin: 0 auto;
         }
     }
@@ -1393,7 +1438,7 @@ header, footer {
     flex: 0 0 43%;
 
     @include big-mobile {
-        flex: 0 0 100%;
+        flex: auto;
     }
 }
 

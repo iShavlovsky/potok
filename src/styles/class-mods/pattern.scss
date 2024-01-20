@@ -19,35 +19,6 @@
 }
 
 
-.popup {
-    min-height: 100vh;
-    width: 100%;
-    background-color: $c-background-popup;
-    position: relative;
-
-    justify-content: center;
-    align-items: center;
-
-    display: none;
-
-    padding: px(32);
-    overflow-y: scroll;
-
-    .popup-cross {
-        content: '';
-
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        cursor: pointer;
-    }
-
-    &.active {
-        display: flex;
-    }
-}
 
 .document {
     padding: px(24) px(28) px(70) px(28);

@@ -101,4 +101,32 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+
+  // Получаем все элементы с классом "staff__man"
+  const staffManElements = document.querySelectorAll<HTMLElement>('.staff__man');
+
+  // Назначаем обработчик события клика для каждого элемента
+  staffManElements.forEach(function (element) {
+    element.addEventListener('click', function () {
+      // Удаляем класс "active" со всех элементов
+      staffManElements.forEach(function (el) {
+        el.classList.remove('active');
+      });
+
+      // Добавляем класс "active" к текущему элементу
+      element.classList.add('active');
+    });
+
+    // Находим блок с классом "close-staff-pop-up" внутри каждого элемента
+    const closePopupElement = element.querySelector<HTMLElement>('.close-staff-pop-up');
+
+    // Назначаем обработчик события клика для закрытия попапа
+    closePopupElement.addEventListener('click', function (event) {
+      // Отменяем всплытие события, чтобы не срабатывал клик на родительском элементе
+      event.stopPropagation();
+
+      // Удаляем класс "active" у текущего элемента
+      element.classList.remove('active');
+    });
+  });
 });

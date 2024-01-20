@@ -36,14 +36,23 @@
     border: 1px solid $c-light-gray;
     padding: px(24) px(28);
     cursor: pointer;
+    transition: background-color $var-base-animation-time $var-transition-timing;
 
     p {
         opacity: 0.5;
     }
 
+    img {
+        opacity: 0;
+        transition: opacity $var-base-animation-time $var-transition-timing;
+    }
     &.active {
         color: $c-white;
         background-color: $c-background;
+
+        img {
+            opacity: 1;
+        }
     }
 
     @include tablet1024 {
@@ -51,6 +60,17 @@
         border: 0;
         border-radius: 0;
         min-width: 41%;
+        img {
+            opacity: 1;
+        }
+        &.active {
+            color: currentColor;
+            background-color: transparent;
+    
+            img {
+                opacity: 1;
+            }
+        }
     }
 
     @include tablet {

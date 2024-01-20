@@ -23,3 +23,21 @@ document.addEventListener('DOMContentLoaded', function () {
   /* Our partners Screen - marquee*/
   new Marquee('.marquee-1');
 });
+
+const tabs: NodeListOf<Element> = document.querySelectorAll('.advantages__advantage');
+
+tabs.forEach((tab) => {
+  tab.addEventListener('click', function () {
+    const tabNumber: string = this.getAttribute('data-adv') || '1';
+
+    // Переключаем класс "active" для всех элементов
+    tabs.forEach((tab) => tab.classList.remove('active'));
+
+    // Добавляем класс "active" только к элементам с выбранным data-adv
+    tabs.forEach((tab) => {
+      if (tab.getAttribute('data-adv') === tabNumber) {
+        tab.classList.add('active');
+      }
+    });
+  });
+});

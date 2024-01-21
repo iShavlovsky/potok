@@ -1,25 +1,83 @@
 /* Slider */
 .slider-wrapper {
+    display: grid;
+    grid-template-columns: 33.3% 67.7%;
+
+    @include tablet1024 {
+        grid-template-columns: 1fr;
+        gap: px(50);
+    }
+
+    @include tablet {
+        gap: px(32);
+    }
+}
+.slick-list{
+    max-width: 100%;
+    overflow: hidden;
+}
+.slick-track {
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .slider-title-and-arrows-w {
-    flex: 0 0 33%;
     margin-right: px(4);
     padding-right: px(40);
+
+    @include tablet1024 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .investors-slider-title {
+            max-width: px(284);
+        }
+    }
+
+    @include tablet {
+        .investors-slider-title {
+            max-width: px(220);
+        }
+    }
+}
+
+.slider-arrows-w {
+    margin-top: px(48);
+    gap: px(8);
+
+    @include tablet1024 {
+        margin-top: 0;
+    }
+
+    @include tablet{
+        display: none;
+    }
 }
 
 .slick-slide {
     width: px(482);
-    height: 100%;
+    min-height: 100%;
     border: 1px solid $c-light-gray;
     border-radius: px(24);
     flex-direction: column;
-    padding: 24px 38px 40px 28px;
+    padding: px(24) px(38) px(40) px(28);
     transition: all .3s;
     display: flex;
     margin-right: px(24);
+    justify-content: space-between;
+
+    @include tablet1024 {
+        width: auto;
+        padding-bottom: px(28);
+        padding-left: px(24);
+        padding-right: px(32);
+    }
+
+    @include tablet {
+        padding: px(20) px(16);
+    }
 }
 .slide-author-w {
     gap: px(2);
@@ -36,8 +94,18 @@
     flex: none;
     justify-content: center;
     align-items: center;
-    margin-right: 8px;
     display: flex;
+}
+
+.slider-gradient {
+    z-index: 2;
+    width: 100px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .04), #fff 90%);
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: auto;
+    right: -2px;
 }
 /* Strategy */
 .advantages{
@@ -478,12 +546,9 @@
     }
 
     @include tablet {
-        margin-bottom: 0;
-    }
-
-    @include tablet {
         flex-direction: column;
         align-items: center;
+        margin-bottom: 0;
     }
 }
 
@@ -505,7 +570,7 @@
 
     @include tablet {
         padding: px(40) 0;
-        width: 100%;
+        width: max-content;
     }
 
     >div {

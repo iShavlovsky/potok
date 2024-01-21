@@ -38,6 +38,10 @@
   line-height: 100%;
 }
 
+.h3-3 {
+  @extend .h3;
+}
+
 .h4 {
   font-family: $ft-medium;
   font-style: normal;
@@ -248,6 +252,10 @@
     line-height: px(17.6);
   }
   
+
+  .h3-3 {
+    font-size: px(24);
+  }
 }
 
 

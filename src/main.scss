@@ -148,9 +148,31 @@ header, footer {
 .header__inner {
     align-items: center;
 }
+.show-tablet-navbar-elements {
+    display: none;
+
+    @include tablet1024 {
+        display: flex;
+    }
+}
+.close-navbar {
+    width: 36px;
+    height: 36px;
+    border: 1px solid white;
+    border-radius: 100%;
+    flex-direction: column;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    display: flex;
+    background-color: transparent;
+}
 
 .header__navbar{
-    column-gap: px(40);
+    gap: px(40);
+    display: flex;
+    flex-direction: row;
 
     a {
         color: $c-white;
@@ -166,18 +188,57 @@ header, footer {
         right: 0%;
         bottom: 0%;
         position: fixed;
-        background: $c-background-popup;
+        background: $c-background;
         z-index: 1000;
-
-        align-items: center;
-        justify-content: center;
-        row-gap: px(40);
-
+        flex-direction: column;
         display: none;
 
+        padding: 28px 32px 100px;
+        gap: px(20);
+
+        li:nth-child(2) {
+            margin-top: px(176);
+
+            @include tablet {
+                margin-top: px(40);
+            }
+
+            @include mobile {
+                margin-top: px(106);
+            }
+        }
+
+        .lk-tablet-buttons-w {
+            align-items: flex-end;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0%;
+        }
+
+        .lk-tablet-buttons-holder {
+            gap: 10px;
+        }
+        .mob-lk-link {
+            border-bottom: 1px solid white;
+            padding-bottom: 2px;
+        }
+        .btn-text {
+            letter-spacing: -.01em;
+            font-size: 52px;
+            line-height: 90%;
+
+            @include tablet {
+                font-size: 46px;
+            }
+        }
         &.active {
             display: flex;
         }
+    }
+
+    @include tablet {
+        padding-left: 16px;
+        padding-right: 16px;
     }
 }
 
@@ -218,24 +279,26 @@ header, footer {
 }
 
 .login-popup {
-    position: absolute;
-
-    padding: px(24) px(20);
-    right: 0;
-    top: calc(100% + px(10));
+    padding-top: px(20);
+    position: absolute; 
+    display: none;
     width: 200%;
+    right: 0;
+}
+
+.login-pop-up-w {
+    padding: px(16) px(20);
+    width: 100%;
 
     background: $c-white;
     border-radius: px(12);
-
     line-height: px(18);
     box-shadow: 0px 2px 22px 0px rgba(13, 39, 65, 0.12);
-
-    display: none;
 
     a {
         display: block;
         margin-bottom: px(10);
+        padding: px(8) px(0);
 
         &:last-child {
             margin-bottom: 0;

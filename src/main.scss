@@ -49,6 +49,20 @@ header, footer {
     }
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn $var-base-animation-time $var-transition-timing;
+}
+
 .list-disc {
     li {
         list-style-type: disc;
@@ -2090,8 +2104,6 @@ header, footer {
 }
 
 .variants__button {
-    margin-top: px(60);
-
     align-self: center;
 
     transition: border-color $var-base-animation-time $var-transition-timing,

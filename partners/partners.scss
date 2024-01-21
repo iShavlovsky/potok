@@ -6,6 +6,25 @@
     }
 }
 
+.variants__input {
+    color: $c-white;
+    background-color: $c-background;
+    border-color: $c-white;
+    width: px(400);
+    border-style: solid;
+
+    margin-bottom: px(12);
+
+    &::placeholder {
+        color: $c-deep-dive;
+    }
+
+    @include tablet {
+        width: auto;
+        height: px(49);
+    }
+}
+
 
 /* Slogan */
 .slogan-partners {

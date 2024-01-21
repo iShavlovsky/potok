@@ -5,6 +5,22 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Marquee from '../src/scripts/utils/Marguee';
 gsap.registerPlugin(ScrollTrigger);
 
+const button = document.getElementById(
+  'Landing_Partner_Page_MoreInfo_Button_Click',
+) as HTMLButtonElement;
+const form = document.getElementById('wf-form-Partners-Phone-or-Email') as HTMLFormElement;
+
+button.addEventListener('click', () => {
+  // Используем CSS-класс с анимацией для плавного появления
+  form.classList.add('fade-in');
+
+  // Через 0.3 секунды после начала анимации, меняем стили
+  setTimeout(() => {
+    button.style.display = 'none';
+    form.style.display = 'block';
+  }, 300);
+});
+
 document.addEventListener('DOMContentLoaded', function () {
   /* two Screen - marquee*/
   new Marquee('.marquee-1');

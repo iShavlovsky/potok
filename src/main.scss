@@ -103,15 +103,24 @@ header, footer {
 .no-padding-top {
     padding-top: 0;
 }
-.header {
+
+.navbar-change-trigger{
     position: absolute;
+    z-index: -1;
+    height: 120vh;
+    width: 100%;
+}
+
+.header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     color: $c-white;
     padding-top: px(28);
     padding-bottom: px(28);
-
+    transform: translateY(0);
+    transition: transform $var-base-animation-time $var-transition-timing;
     letter-spacing: px(1);
     background: transparent;
 
@@ -181,7 +190,8 @@ header, footer {
         top: 0%;
         left: 0%;
         right: 0%;
-        bottom: 0%;
+        height: calc(100vh - env(safe-area-inset-bottom));
+        overflow-y: auto;
         position: fixed;
         background: $c-background;
         z-index: 1000;

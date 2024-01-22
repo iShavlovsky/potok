@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const mm = gsap.matchMedia();
 
   mm.add('(min-width: 768px)', () => {
-    // Код анимации, который будет выполнен только при разрешении экрана не ниже 768px
     gsap.to('#scrollBlockTriggerLeft', {
       scrollTrigger: {
         trigger: '#scrollBlockTrigger',
@@ -39,35 +38,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     return () => {
-      // Опциональный пользовательский код очистки (выполняется, когда условие больше не соответствует)
       gsap.killTweensOf('#scrollBlockTriggerLeft');
     };
   });
 
   /* seven Screen-left scrolls */
-
   const mm2 = gsap.matchMedia();
 
   mm2.add('(min-width: 768px)', () => {
-    // Код анимации, который будет выполнен только при разрешении экрана не ниже 768px
     gsap.to('#scrollBlockTriggerLeft2', {
       scrollTrigger: {
         trigger: '#scrollBlockTrigger2',
         start: 'top top',
         end: '80%',
         scrub: 1.5,
-        // markers: true,
       },
       duration: 1,
       xPercent: -80,
     });
 
     return () => {
-      // Опциональный пользовательский код очистки (выполняется, когда условие больше не соответствует)
       gsap.killTweensOf('#scrollBlockTriggerLeft2');
     };
   });
 
+  /* tabs */
   const tabs: NodeListOf<Element> = document.querySelectorAll('.tabs__tab');
   const tabContents: NodeListOf<Element> = document.querySelectorAll('.tabs-content-w');
   const images: NodeListOf<Element> = document.querySelectorAll('.tabs__img');
@@ -76,12 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
     tab.addEventListener('click', function () {
       const tabNumber: string = this.getAttribute('data-tab') || '1';
 
-      // Переключаем класс "active" для всех элементов
       tabs.forEach((tab) => tab.classList.remove('active'));
       tabContents.forEach((content) => content.classList.remove('active'));
       images.forEach((image) => image.classList.remove('active'));
 
-      // Добавляем класс "active" только к элементам с выбранным data-tab
       tabs.forEach((tab) => {
         if (tab.getAttribute('data-tab') === tabNumber) {
           tab.classList.add('active');
@@ -102,31 +95,63 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Получаем все элементы с классом "staff__man"
+  /* popup "staff__man" */
   const staffManElements = document.querySelectorAll<HTMLElement>('.staff__man');
 
-  // Назначаем обработчик события клика для каждого элемента
   staffManElements.forEach(function (element) {
     element.addEventListener('click', function () {
-      // Удаляем класс "active" со всех элементов
       staffManElements.forEach(function (el) {
         el.classList.remove('active');
       });
 
-      // Добавляем класс "active" к текущему элементу
       element.classList.add('active');
     });
 
-    // Находим блок с классом "close-staff-pop-up" внутри каждого элемента
     const closePopupElement = element.querySelector<HTMLElement>('.close-staff-pop-up');
 
-    // Назначаем обработчик события клика для закрытия попапа
     closePopupElement.addEventListener('click', function (event) {
-      // Отменяем всплытие события, чтобы не срабатывал клик на родительском элементе
       event.stopPropagation();
-
-      // Удаляем класс "active" у текущего элемента
       element.classList.remove('active');
     });
   });
+
+  /* hide and show navbar */
+  let prevScrollPos = window.pageYOffset;
+
+  window.onscroll = function () {
+    const currentScrollPos = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+      document.querySelector('.header').style.transform = 'translateY(0)';
+    } else {
+      document.querySelector('.header').style.transform = 'translateY(-150px)';
+    }
+
+    prevScrollPos = currentScrollPos;
+  };
+
+  /* change navbar collors */
+  const navbarChangeTrigger = document.querySelector('.navbar-change-trigger');
+  const header = document.querySelector('.header');
+
+  const isElementInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+  };
+
+  const handleScroll = () => {
+    if (!isElementInViewport(navbarChangeTrigger)) {
+      header.classList.add('transparent');
+    } else {
+      header.classList.remove('transparent');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    handleScroll();
+  });
+
+  window.addEventListener('resize', handleScroll);
 });

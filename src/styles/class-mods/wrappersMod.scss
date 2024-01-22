@@ -2,6 +2,14 @@
 @import '../scss/breakpoints';
 
 /* ----------------------- main ------------------------------ */
+.overflow-hiden {
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
 .mob {
   display: none;
 

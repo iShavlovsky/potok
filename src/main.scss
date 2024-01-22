@@ -530,7 +530,34 @@ header, footer {
         display: none;
     }
 }
+/* slider */
+.slider-arrows-w {
+    margin-top: px(48);
+    gap: px(8);
 
+    @include tablet1024 {
+        margin-top: 0;
+    }
+
+    @include tablet{
+        display: none;
+    }
+}
+
+
+.slider-arrow-2 {
+    width: 64px;
+    height: 64px;
+    color: #10273d;
+    background-color: #f2f4f8;
+    border-radius: 50%;
+    flex-direction: row;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+}
 /* Partners */
 .partners {
     padding-top: px(80);

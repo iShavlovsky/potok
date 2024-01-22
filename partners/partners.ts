@@ -68,8 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
       },
     });
   });
-});
 
+
+  
 /* Open navBar */
 const menuButton = document.querySelector('.header__navigation-menu');
 const navbar = document.querySelector('.header__navbar');
@@ -104,3 +105,5 @@ window.onscroll = function () {
 
   prevScrollPos = currentScrollPos;
 };
+});
+

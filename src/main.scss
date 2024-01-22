@@ -537,7 +537,7 @@ header, footer {
     overflow: hidden;
 
     @include mobile {
-        margin-bottom: px(64);
+        padding-bottom: px(64);
     }
 }
 

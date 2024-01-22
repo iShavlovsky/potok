@@ -15,7 +15,9 @@
         margin-bottom: px(80);
     }
 }
-
+.documents {
+    transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+}
 .documents-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;

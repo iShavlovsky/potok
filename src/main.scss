@@ -108,28 +108,23 @@ header, footer {
     top: 0;
     left: 0;
     width: 100%;
-    height: px(76);
-
+    color: $c-white;
     padding-top: px(28);
     padding-bottom: px(28);
 
     letter-spacing: px(1);
-    color: $c-white;
     background: transparent;
 
+    .logo {
+        color: $c-white;
+    }
     z-index: 1000;
 
     &.transparent {
         background: $c-white;
         color: $c-background;
 
-        a {
-            color: $c-deep-dive;
 
-            &:hover:not(.header__logo) {
-                color: $c-accent;
-            }
-        }
 
         .logo {
             color: $c-deep-dive;
@@ -175,14 +170,14 @@ header, footer {
     flex-direction: row;
 
     a {
-        color: $c-white;
-
+        color: currentColor;
         &.active {
             color: $c-accent;
         }
     }
 
     @include tablet1024 {
+        color: $c-white;
         top: 0%;
         left: 0%;
         right: 0%;

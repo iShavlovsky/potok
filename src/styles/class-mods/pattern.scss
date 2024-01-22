@@ -203,11 +203,9 @@
 .faq__accordion {
     flex: 1;
     gap: px(100);
-    margin-top: px(92);
 
     @include tablet1024 {
         gap: px(64);
-        margin-top: px(52)
     }
     @include mobile{
         margin-top: px(32)

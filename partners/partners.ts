@@ -69,36 +69,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* Open navBar */
-  const menuButton = document.querySelector('.header__navigation-menu');
-  const navbar = document.querySelector('.header__navbar');
-  const closeNavbarButton = navbar.querySelector('.close-navbar');
+/* Open navBar */
+const menuButton = document.querySelector('.header__navigation-menu') as HTMLElement;
+const navbar = document.querySelector('.header__navbar') as HTMLElement;
+const closeNavbarButton = navbar.querySelector('.close-navbar') as HTMLElement;
 
-  menuButton.addEventListener('click', () => {
-    // Проверяем разрешение экрана
-    if (window.innerWidth <= 1024) {
-      // Добавляем классы и анимацию
-      navbar.classList.add('active', 'fade-in');
-      document.body.style.overflow = 'hidden'; // Задаем overflow: hidden для body
-    }
-  });
+menuButton.addEventListener('click', () => {
+  if (window.innerWidth <= 1024) {
+    navbar.classList.add('active', 'fade-in');
+    document.body.style.overflow = 'hidden';
+  }
+});
 
-  closeNavbarButton.addEventListener('click', () => {
-    // Убираем класс active и анимацию
-    navbar.classList.remove('active', 'fade-in');
-    document.body.style.overflow = 'visible'; // Восстанавливаем исходный overflow: visible для body
-  });
+closeNavbarButton.addEventListener('click', () => {
+  navbar.classList.remove('active', 'fade-in');
+  document.body.style.overflow = 'visible';
+});
 
   /* hide and show navbar */
-  let prevScrollPos = window.pageYOffset;
+  let prevScrollPos: number = window.pageYOffset;
 
   window.onscroll = function () {
-    const currentScrollPos = window.pageYOffset;
+    const currentScrollPos: number = window.pageYOffset;
 
     if (prevScrollPos > currentScrollPos) {
-      document.querySelector('.header').style.transform = 'translateY(0)';
+      const header = document.querySelector('.header') as HTMLElement;
+      if (header) {
+        header.style.transform = 'translateY(0)';
+      }
     } else {
-      document.querySelector('.header').style.transform = 'translateY(-150px)';
+      const header = document.querySelector('.header') as HTMLElement;
+      if (header) {
+        header.style.transform = 'translateY(-150px)';
+      }
     }
 
     prevScrollPos = currentScrollPos;

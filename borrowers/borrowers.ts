@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 /* Open navBar */
-const menuButton = document.querySelector('.header__navigation-menu');
-const navbar = document.querySelector('.header__navbar');
-const closeNavbarButton = navbar.querySelector('.close-navbar');
+const menuButton = document.querySelector('.header__navigation-menu') as HTMLElement;
+const navbar = document.querySelector('.header__navbar') as HTMLElement;
+const closeNavbarButton = navbar.querySelector('.close-navbar') as HTMLElement;
 
 menuButton.addEventListener('click', () => {
   if (window.innerWidth <= 1024) {
@@ -68,30 +68,36 @@ closeNavbarButton.addEventListener('click', () => {
 });
 
 /* hide and show navbar */
-let prevScrollPos = window.pageYOffset;
+let prevScrollPos: number = window.pageYOffset;
 
 window.onscroll = function () {
-  const currentScrollPos = window.pageYOffset;
+  const currentScrollPos: number = window.pageYOffset;
 
   if (prevScrollPos > currentScrollPos) {
-    document.querySelector('.header').style.transform = 'translateY(0)';
+    const header = document.querySelector('.header') as HTMLElement;
+    if (header) {
+      header.style.transform = 'translateY(0)';
+    }
   } else {
-    document.querySelector('.header').style.transform = 'translateY(-150px)';
+    const header = document.querySelector('.header') as HTMLElement;
+    if (header) {
+      header.style.transform = 'translateY(-150px)';
+    }
   }
 
   prevScrollPos = currentScrollPos;
 };
 
-/* change navbar collors */
-const navbarChangeTrigger = document.querySelector('.navbar-change-trigger');
-const header = document.querySelector('.header');
+/* change navbar colors */
+const navbarChangeTrigger = document.querySelector('.navbar-change-trigger') as HTMLElement;
+const header = document.querySelector('.header') as HTMLElement;
 
-const isElementInViewport = (el) => {
+const isElementInViewport = (el: HTMLElement): boolean => {
   const rect = el.getBoundingClientRect();
   return rect.top <= window.innerHeight && rect.bottom >= 0;
 };
 
-const handleScroll = () => {
+const handleScroll = (): void => {
   if (!isElementInViewport(navbarChangeTrigger)) {
     header.classList.add('transparent');
   } else {

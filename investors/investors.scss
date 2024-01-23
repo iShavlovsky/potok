@@ -395,6 +395,7 @@ td {
     @include tablet1024 {
         grid-template-columns: 1fr;
         gap: px(50);
+        overflow: hidden;
     }
 
     @include tablet {

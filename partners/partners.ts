@@ -39,8 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const benefitsSection = document.querySelector('.benefits-partners-sticy-rail-section');
-  const benefitsBlocks = document.querySelectorAll('.benefits__benefit');
+  /* Scroll section */
+
+  const benefitsSection = document.querySelector(
+    '.benefits-partners-sticy-rail-section',
+  ) as HTMLElement;
+  const benefitsBlocks = document.querySelectorAll('.benefits__benefit') as NodeListOf<HTMLElement>;
 
   const sectionHeight = benefitsSection.clientHeight;
   const blockHeight = sectionHeight / benefitsBlocks.length;
@@ -51,59 +55,55 @@ document.addEventListener('DOMContentLoaded', () => {
       start: `${((index * blockHeight) / sectionHeight) * 100}% top`,
       end: `${(((index + 1) * blockHeight) / sectionHeight) * 50}% 50%`,
       onEnter: () => {
-        // Снимаем класс "active" со всех блоков
         benefitsBlocks.forEach((b) => b.classList.remove('active'));
 
-        // Добавляем класс "active" к текущему блоку
         block.classList.add('active');
       },
       onLeaveBack: () => {
-        // Снимаем класс "active" со всех блоков при возврате скролла назад
         benefitsBlocks.forEach((b) => b.classList.remove('active'));
 
-        // Добавляем класс "active" к предыдущему блоку при возврате скролла назад
         if (index > 0) {
           benefitsBlocks[index - 1].classList.add('active');
         }
       },
     });
+
+    /* Open navBar */
+    const menuButton = document.querySelector('.header__navigation-menu') as HTMLElement;
+    const navbar = document.querySelector('.header__navbar') as HTMLElement;
+    const closeNavbarButton = navbar.querySelector('.close-navbar') as HTMLElement;
+
+    menuButton.addEventListener('click', () => {
+      if (window.innerWidth <= 1024) {
+        navbar.classList.add('active', 'fade-in');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    closeNavbarButton.addEventListener('click', () => {
+      navbar.classList.remove('active', 'fade-in');
+      document.body.style.overflow = 'visible';
+    });
+
+    /* hide and show navbar */
+    let prevScrollPos: number = window.pageYOffset;
+
+    window.onscroll = function () {
+      const currentScrollPos: number = window.pageYOffset;
+
+      if (prevScrollPos > currentScrollPos) {
+        const header = document.querySelector('.header') as HTMLElement;
+        if (header) {
+          header.style.transform = 'translateY(0)';
+        }
+      } else {
+        const header = document.querySelector('.header') as HTMLElement;
+        if (header) {
+          header.style.transform = 'translateY(-150px)';
+        }
+      }
+
+      prevScrollPos = currentScrollPos;
+    };
   });
-
-/* Open navBar */
-const menuButton = document.querySelector('.header__navigation-menu') as HTMLElement;
-const navbar = document.querySelector('.header__navbar') as HTMLElement;
-const closeNavbarButton = navbar.querySelector('.close-navbar') as HTMLElement;
-
-menuButton.addEventListener('click', () => {
-  if (window.innerWidth <= 1024) {
-    navbar.classList.add('active', 'fade-in');
-    document.body.style.overflow = 'hidden';
-  }
-});
-
-closeNavbarButton.addEventListener('click', () => {
-  navbar.classList.remove('active', 'fade-in');
-  document.body.style.overflow = 'visible';
-});
-
-  /* hide and show navbar */
-  let prevScrollPos: number = window.pageYOffset;
-
-  window.onscroll = function () {
-    const currentScrollPos: number = window.pageYOffset;
-
-    if (prevScrollPos > currentScrollPos) {
-      const header = document.querySelector('.header') as HTMLElement;
-      if (header) {
-        header.style.transform = 'translateY(0)';
-      }
-    } else {
-      const header = document.querySelector('.header') as HTMLElement;
-      if (header) {
-        header.style.transform = 'translateY(-150px)';
-      }
-    }
-
-    prevScrollPos = currentScrollPos;
-  };
 });

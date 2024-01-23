@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
   /* popup "staff__man" */
   const staffManElements = document.querySelectorAll<HTMLElement>('.staff__man');
 
-  staffManElements.forEach(function (element) {
-    element.addEventListener('click', function () {
-      staffManElements.forEach(function (el) {
+  staffManElements.forEach((element) => {
+    element.addEventListener('click', () => {
+      staffManElements.forEach((el) => {
         el.classList.remove('active');
       });
 
@@ -109,72 +109,74 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const closePopupElement = element.querySelector<HTMLElement>('.close-staff-pop-up');
 
-    closePopupElement.addEventListener('click', function (event) {
-      event.stopPropagation();
-      element.classList.remove('active');
-    });
-
-    /* Open navBar */
-    const menuButton = document.querySelector('.header__navigation-menu') as HTMLElement;
-    const navbar = document.querySelector('.header__navbar') as HTMLElement;
-    const closeNavbarButton = navbar.querySelector('.close-navbar') as HTMLElement;
-
-    menuButton.addEventListener('click', () => {
-      if (window.innerWidth <= 1024) {
-        navbar.classList.add('active', 'fade-in');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-
-    closeNavbarButton.addEventListener('click', () => {
-      navbar.classList.remove('active', 'fade-in');
-      document.body.style.overflow = 'visible';
-    });
-
-    /* hide and show navbar */
-    let prevScrollPos: number = window.pageYOffset;
-
-    window.onscroll = function () {
-      const currentScrollPos: number = window.pageYOffset;
-
-      if (prevScrollPos > currentScrollPos) {
-        const header = document.querySelector('.header') as HTMLElement;
-        if (header) {
-          header.style.transform = 'translateY(0)';
-        }
-      } else {
-        const header = document.querySelector('.header') as HTMLElement;
-        if (header) {
-          header.style.transform = 'translateY(-150px)';
-        }
-      }
-
-      prevScrollPos = currentScrollPos;
-    };
-
-    /* change navbar colors */
-    const navbarChangeTrigger = document.querySelector('.navbar-change-trigger') as HTMLElement;
-    const header = document.querySelector('.header') as HTMLElement;
-
-    const isElementInViewport = (el: HTMLElement): boolean => {
-      const rect = el.getBoundingClientRect();
-      return rect.top <= window.innerHeight && rect.bottom >= 0;
-    };
-
-    const handleScroll = (): void => {
-      if (!isElementInViewport(navbarChangeTrigger)) {
-        header.classList.add('transparent');
-      } else {
-        header.classList.remove('transparent');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    document.addEventListener('DOMContentLoaded', () => {
-      handleScroll();
-    });
-
-    window.addEventListener('resize', handleScroll);
+    if (closePopupElement) {
+      closePopupElement.addEventListener('click', (event) => {
+        event.stopPropagation();
+        element.classList.remove('active');
+      });
+    }
   });
+
+  /* Open navBar */
+  const menuButton = document.querySelector('.header__navigation-menu') as HTMLElement;
+  const navbar = document.querySelector('.header__navbar') as HTMLElement;
+  const closeNavbarButton = navbar.querySelector('.close-navbar') as HTMLElement;
+
+  menuButton.addEventListener('click', () => {
+    if (window.innerWidth <= 1024) {
+      navbar.classList.add('active', 'fade-in');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  closeNavbarButton.addEventListener('click', () => {
+    navbar.classList.remove('active', 'fade-in');
+    document.body.style.overflow = 'visible';
+  });
+
+  /* hide and show navbar */
+  let prevScrollPos: number = window.pageYOffset;
+
+  window.onscroll = function () {
+    const currentScrollPos: number = window.pageYOffset;
+
+    if (prevScrollPos > currentScrollPos) {
+      const header = document.querySelector('.header') as HTMLElement;
+      if (header) {
+        header.style.transform = 'translateY(0)';
+      }
+    } else {
+      const header = document.querySelector('.header') as HTMLElement;
+      if (header) {
+        header.style.transform = 'translateY(-150px)';
+      }
+    }
+
+    prevScrollPos = currentScrollPos;
+  };
+
+  /* change navbar colors */
+  const navbarChangeTrigger = document.querySelector('.navbar-change-trigger') as HTMLElement;
+  const header = document.querySelector('.header') as HTMLElement;
+
+  const isElementInViewport = (el: HTMLElement): boolean => {
+    const rect = el.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+  };
+
+  const handleScroll = (): void => {
+    if (!isElementInViewport(navbarChangeTrigger)) {
+      header.classList.add('transparent');
+    } else {
+      header.classList.remove('transparent');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    handleScroll();
+  });
+
+  window.addEventListener('resize', handleScroll);
 });

@@ -27,13 +27,69 @@
   <meta content="summary_large_image" name="twitter:card">
   <link href="/favicon.svg" rel="shortcut icon" type="image/x-icon">
   <link href="/webclip.svg" rel="apple-touch-icon">
+
+    <!--  Amplitude Auth -->
+    <script type="text/javascript">
+      (function(e, t) {
+          var n = e.amplitude || { _q: [], _iq: {} };
+          var r = t.createElement("script");
+          r.type = "text/javascript";
+          r.integrity = "sha384-girahbTbYZ9tT03PWWj0mEVgyxtZoyDF9KVZdL+R53PP5wCY0PiVUKq0jeRlMx9M";
+          r.crossOrigin = "anonymous";
+          r.async = true;
+          r.src = "https://cdn.amplitude.com/libs/amplitude-7.2.1-min.gz.js";
+          r.onload = function() {
+              if (!e.amplitude.runQueuedFunctions) {
+                  console.log("[Amplitude] Error: could not load SDK")
+              }
+          };
+          var i = t.getElementsByTagName("script")[0];
+          i.parentNode.insertBefore(r, i);
+          function s(e, t) {
+              e.prototype[t] = function() {
+                  this._q.push([t].concat(Array.prototype.slice.call(arguments, 0)));
+                  return this
+              }
+          }
+          var o = function() { this._q = []; return this };
+          var a = ["add", "append", "clearAll", "prepend", "set", "setOnce", "unset"];
+          for (var u = 0; u < a.length; u++) { s(o, a[u]) }
+          n.Identify = o;
+          var c = function() {
+              this._q = [];
+              return this
+          };
+          var l = ["setProductId", "setQuantity", "setPrice", "setRevenueType", "setEventProperties"];
+          for (var p = 0; p < l.length; p++) { s(c, l[p]) }
+          n.Revenue = c;
+          var d = ["init", "logEvent", "logRevenue", "setUserId", "setUserProperties", "setOptOut", "setVersionName", "setDomain", "setDeviceId", "enableTracking", "setGlobalUserProperties", "identify", "clearUserProperties", "setGroup", "logRevenueV2", "regenerateDeviceId", "groupIdentify", "onInit", "logEventWithTimestamp", "logEventWithGroups", "setSessionId", "resetSessionId"];
+          function v(e) {
+              function t(t) {
+                  e[t] = function() {
+                      e._q.push([t].concat(Array.prototype.slice.call(arguments, 0)))
+                  }
+              }
+              for (var n = 0; n < d.length; n++) { t(d[n]) }
+          }
+          v(n);
+          n.getInstance = function(e) {
+              e = (!e || e.length === 0 ? "$default_instance" : e).toLowerCase();
+              if (!n._iq.hasOwnProperty(e)) { n._iq[e] = { _q: [] };
+                  v(n._iq[e]) }
+              return n._iq[e]
+          };
+          e.amplitude = n
+      })(window, document);
+  amplitude.getInstance().init("d6471ca52b6515f3bbcbd74ac78b8aef", null, {
+      includeUtm: true,
+      includeReferrer: true}); </script>
 </head>
 
 <body>
   <header class="header">
     <div class="container">
       <div class="header__inner wm-flex-row justify-space-between">
-        <a href="/" title="Главная страница Потока" aria-label="logo" class="header__logo"><svg class="logo" width="76" height="20" viewBox="0 0 76 20"
+        <a href="/" title="Главная страница Потока" aria-label="logo" class="header__logo utm"><svg class="logo" width="76" height="20" viewBox="0 0 76 20"
           fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M15.7916 19.6477V0H0V19.6477H3.44594V2.87263H12.3457V19.6477H15.7916Z" fill="currentColor" />
           <path
@@ -51,7 +107,7 @@
         <nav class="header__navigation">
           <ul class="header__navbar">
             <li class="show-tablet-navbar-elements wm-flex-row justify-space-between align-items-center">
-              <a href="/" title="Главная страница Потока" aria-label="logo" class="header__logo">
+              <a href="/" title="Главная страница Потока" aria-label="logo" class="header__logo utm">
                 <svg class="logo" width="76" height="20" viewBox="0 0 76 20"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.7916 19.6477V0H0V19.6477H3.44594V2.87263H12.3457V19.6477H15.7916Z" fill="white" />
@@ -83,16 +139,16 @@
               </button>
 
             </li>
-            <li class="header__navigation-item"><a class="link btn-text" aria-label="инвесторам"
+            <li class="header__navigation-item"><a class="link btn-text utm" aria-label="инвесторам"
                 href="/investors/index.html">инвесторам</a>
             </li>
-            <li class="header__navigation-item"><a class="link btn-text" aria-label="заёмщикам"
+            <li class="header__navigation-item"><a class="link btn-text utm" aria-label="заёмщикам"
                 href="/borrowers/index.html">заемщикам</a>
             </li>
-            <li class="header__navigation-item"><a class="link btn-text" aria-label="партнерам"
+            <li class="header__navigation-item"><a class="link btn-text utm" aria-label="партнерам"
                 href="/partners/index.html">партнерам</a>
             </li>
-            <li class="header__navigation-item"><a class="link btn-text" aria-label="блог" 
+            <li class="header__navigation-item"><a class="link btn-text utm" aria-label="блог" 
               href="https://blog.potok.digital/">блог</a>
             </li>
 
@@ -102,9 +158,9 @@
                   личный кабинет
                 </p>
                 <div class="lk-tablet-buttons-holder wm-flex-row mt-12">
-                  <a id="LandingInvestAuthLinkDirect" href="https://i.potok.digital/#/" target="_blank" aria-label="как инвестор" class="mob-lk-link">инвестора</a>
+                  <a id="LandingInvestAuthLinkDirect" href="https://i.potok.digital/#/" target="_blank" aria-label="как инвестор" class="mob-lk-link utm">инвестора</a>
                   <figure>/</figure>
-                  <a id="LandingBorrowerAuthLinkDirect" href="https://b.potok.digital/" target="_blank" aria-label="как заемщик" class="mob-lk-link">заемщика</a>
+                  <a id="LandingBorrowerAuthLinkDirect" href="https://b.potok.digital/" target="_blank" aria-label="как заемщик" class="mob-lk-link utm">заемщика</a>
                 </div>
               </div>
             </li>
@@ -120,8 +176,8 @@
 
             <div class="login-popup">
               <div class="login-pop-up-w">
-                <a id="LandingInvestAuthLinkDirect" href="https://i.potok.digital/#/" target="_blank" aria-label="как инвестор" class="link btn-text">как инвестор</a>
-                <a id="LandingBorrowerAuthLinkDirect" href="https://b.potok.digital/" target="_blank" aria-label="как заемщик" class="link btn-text">как заемщик</a>
+                <a id="LandingInvestAuthLinkDirect" href="https://i.potok.digital/#/" target="_blank" aria-label="как инвестор" class="link btn-text utm">как инвестор</a>
+                <a id="LandingBorrowerAuthLinkDirect" href="https://b.potok.digital/" target="_blank" aria-label="как заемщик" class="link btn-text utm">как заемщик</a>
               </div>
             </div>
 
@@ -158,7 +214,7 @@
           </div>
         </div>
         <div class="intro__cards wm-flex-row">
-          <a href="#" aria-label="хочу инвестировать" class="card flex-column justify-space-between">
+          <a id="Main_Site_Page_Want_Loan_Button_Click" href="https://business.potok.digital/" aria-label="хочу инвестировать" class="card flex-column justify-space-between utm">
             <div class="card__text">
               <p class="card__title body-m">хочу получить заем</p>
               <div class="card__desc body-s">онлайн, без залога за 1 день</div>
@@ -169,7 +225,7 @@
                 fill="#10273D" />
             </svg>
           </a>
-          <a href="#" aria-label="хочу инвестировать" class="card flex-column justify-space-between">
+          <a id="Main_Site_Page_Want_Invest_Button_Click" href="https://investor.potok.digital/" aria-label="хочу инвестировать" class="card flex-column justify-space-between utm">
             <div class="card__text">
               <p class="card__title body-m">хочу инвестировать</p>
               <div class="card__desc body-s">инвестиции в займы бизнесам, прошедшим тщательный отбор</div>
@@ -268,7 +324,7 @@
               </ul>
             </div>
             <div class="product__button">
-              <a href="/borrowers/index.html" class="btn-text button-l" aria-label="узнать больше">узнать больше</a>
+              <a href="/borrowers/index.html" class="btn-text button-l utm" aria-label="узнать больше">узнать больше</a>
             </div>
             <img src="./src/assets/img/png/product_img1.png" class="product__img">
           </div>
@@ -284,7 +340,7 @@
               <p class="descriptor">* средняя доходность инвесторов платформы за последние 12 месяцев</p>
             </div>
             <div class="product__button">
-              <a href="/investors/index.html" class="btn-text button-l" aria-label="узнать больше">узнать больше</a>
+              <a href="/investors/index.html" class="btn-text button-l utm" aria-label="узнать больше">узнать больше</a>
             </div>
             <img src="./src/assets/img/png/product_img2.png" class="product__img">
           </div>
@@ -357,7 +413,7 @@
 
                 <a  href="https://b.potok.digital/registration" 
                     target="_blank" 
-                    class="btn-text tabs__button button-l outline"
+                    class="btn-text tabs__button button-l outline utm"
                   aria-label="стать заемщиком">стать заемщиком</a>
               </div>
               <div class="tabs-content-w" data-tab="2">
@@ -369,7 +425,7 @@
 
                 <a  href="https://i.potok.digital/#/" 
                     target="_blank" 
-                    class="btn-text tabs__button button-l outline" 
+                    class="btn-text tabs__button button-l outline utm" 
                     aria-label="стать инвестором">стать инвестором</a>
 
               </div>
@@ -415,7 +471,7 @@
           </a>
         </div>
         <p class="documents__desc body-s">про систему скоринга, стратегии инвестирования и новости платформы читайте в
-          нашем <a href="#" class="link-underline" aria-label="блоге">блоге</a></p>
+          нашем <a href="https://blog.potok.digital/" class="link-underline utm" aria-label="блоге">блоге</a></p>
       </div>
     </section>
 
@@ -633,8 +689,8 @@
           <div class="slogan__content flex-center flex-column">
             <h2 class="h2 slogan__title">начните зарабатывать с Потоком уже сегодня</h2>
             <div class="slogan__btns wm-flex-row flex-wrap">
-              <a href="https://b.potok.digital/registration" target="_blank" class="btn-text button-l" aria-label="стать заемщиком">стать заемщиком</a>
-              <a href="https://i.potok.digital/#/" class="btn-text button-l" target="_blank" aria-label="стать инвестором">стать инвестором</a>
+              <a href="https://b.potok.digital/registration" target="_blank" class="btn-text button-l utm" aria-label="стать заемщиком">стать заемщиком</a>
+              <a href="https://i.potok.digital/#/" target="_blank" class="btn-text button-l utm" aria-label="стать инвестором">стать инвестором</a>
             </div>
           </div>
           <div class="slogan__video">
@@ -796,7 +852,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
-        <a href="/" aria-label="logo" class="footer__logo">
+        <a href="/" aria-label="logo" class="footer__logo utm">
           <svg width="76" height="20" viewBox="0 0 76 20" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.7916 19.6477V0H0V19.6477H3.44594V2.87263H12.3457V19.6477H15.7916Z" fill="#10273D" />
             <path
@@ -875,14 +931,14 @@
 
 
             <ul class="footer__nav to">
-              <li><a href="/investors" class="h4 link" aria-label="инвесторам">инвесторам</a></li>
-              <li><a href="/borrowers" class="h4 link" aria-label="заемщикам">заемщикам</a></li>
-              <li><a href="/partners" class="h4 link" aria-label="партнерам">партнерам</a></li>
+              <li><a href="/investors" class="h4 link utm" aria-label="инвесторам">инвесторам</a></li>
+              <li><a href="/borrowers" class="h4 link utm" aria-label="заемщикам">заемщикам</a></li>
+              <li><a href="/partners" class="h4 link utm" aria-label="партнерам">партнерам</a></li>
             </ul>
             <ul class="footer__nav where">
-              <li><a href="/faq" class="btn-text link" aria-label="faq">faq</a></li>
-              <li><a href="https://blog.potok.digital/" class="btn-text link" aria-label="блог">блог</a></li>
-              <li><a href="/documents" class="btn-text link" aria-label="документы">документы</a></li>
+              <li><a href="/faq" class="btn-text link utm" aria-label="faq">faq</a></li>
+              <li><a href="https://blog.potok.digital/" class="btn-text link utm" aria-label="блог">блог</a></li>
+              <li><a href="/documents" class="btn-text link utm" aria-label="документы">документы</a></li>
             </ul>
             <ul class="footer__nav how">
               <li><a href="mailto:ok@potok.digital" class="btn-text link" title="Напишите нам ok@potok.digital" aria-label="Напишите нам ok@potok.digital">ok@potok.digital</a></li>
@@ -1022,7 +1078,6 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
-
 <script type="text/javascript">
   $(document).ready(function(){
      $('.slider-smi').slick({
@@ -1048,6 +1103,18 @@
       ]
      });
   });
+</script>
+
+<script text="" javascript="">
+  function getUrlParameters()
+  {
+    return window.location.search
+  }
+  var links = document.getElementsByClassName('utm')
+  for (var i = 0; i < links.length; i++)
+  {
+    links[i].href = links[i].href.concat(getUrlParameters())
+  }
 </script>
 
 </body>

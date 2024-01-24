@@ -17,6 +17,8 @@
     <meta content="summary_large_image" name="twitter:card">
     <link href="/favicon.svg" rel="shortcut icon" type="image/x-icon">
     <link href="/webclip.svg" rel="apple-touch-icon">
+
+
 </head>
 <body>
   <header class="header">
@@ -327,13 +329,13 @@
                 </div>
               </div>
 
-              <div class="slick-list relative draggable">
+              <div class="relative">
                 
                 <figure class="slider-gradient"></figure>
                 
-                <div class="slick-track">
+                <div class="slider-cases">
 
-                  <div class="slick-slide">
+                  <div class="case-card">
                     <p class="body-m">
                       Бизнес находится в Крыму: кредитоваться здесь сложно и дорого. Постоянно ощущаю нехватку оборотных средств, что очень мешает развиваться.
                       <br>
@@ -353,7 +355,7 @@
                     </div>
                   </div>
                   
-                  <div class="slick-slide">
+                  <div class="case-card">
                     <p class="body-m">
                       Занимаюсь гостиничным бизнесом больше 4 лет. Все это время получаю инвестиции через Поток — сервис очень удобный.
                       <br>
@@ -367,7 +369,7 @@
                     </div>
                   </div>
 
-                  <div class="slick-slide">
+                  <div class="case-card">
                     <p class="body-m">
                       Уже 3 года занимаюсь производством хлеба и мучных кондитерских изделий. В какой-то момент понадобился заем и я обратился в Поток. Привлекла оперативность принятия решений.
                       <br>
@@ -384,7 +386,7 @@
                     </div>
                   </div>
 
-                  <div class="slick-slide">
+                  <div class="case-card">
                     <p class="body-m">
                       Производству 3 года. Сначала все делал на собственные средства, но торговая сеть быстро выросла и мне понадобились дополнительные средства.
                       <br>
@@ -401,7 +403,7 @@
                     </div>
                   </div>
 
-                  <div class="slick-slide">
+                  <div class="case-card">
                     <p class="body-m">
                       Нужен был миллион для бизнеса. Лучшие условия на тот момент были именно в Потоке.
                       <br>
@@ -418,7 +420,7 @@
                     </div>
                   </div>
 
-                  <div class="slick-slide">
+                  <div class="case-card">
                     <p class="body-m">
                       Во время пандемии я ушла в онлайн бизнес. Сейчас занимаюсь торговлей на Wildberries. Для увеличения оборотного капитала регулярно нужны деньги, но получить их в кредит сложно.
                       <br>
@@ -432,7 +434,7 @@
                     </div>
                   </div>
 
-                  <div class="slick-slide">
+                  <div class="case-card">
                     <p class="body-m">
                       11 лет занимаюсь общественным питанием. За это время открыл 5 пекарен в разных городах. Мне постоянно нужны средства на оборот и закупку оборудования, поэтому в Поток обращаюсь часто.
                       <br>
@@ -699,6 +701,41 @@
     </footer>
     
     <script src="./borrowers.ts" type="module"></script>
+
+          <!-- Slick slider -->
+          <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+        
+        
+        <script type="text/javascript">
+          $('.slider-cases').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+          prevArrow: $('.case_prev'),
+          nextArrow: $('.case_next'),
+          variableWidth: true,
+          focusOnSelect: true,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                  slidesToShow: 1.5,
+                  variableWidth: false,
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                  slidesToShow: 1.2,
+                  variableWidth: false,
+              }
+            }
+          ]
+        });
+        </script>
+    
 </body>
 </html>
 

@@ -1,3 +1,20 @@
+/* custom form */
+
+.field-div {
+    flex: 1;
+    display: flex;
+    position: relative;
+    max-width: 494px;
+    margin-right: 12px;
+
+    @include tablet {
+        max-width: none;
+        margin-right: 0;
+        margin-bottom: 12px;
+    }
+  }
+
+
 /* Slider */
 
 .case-card {

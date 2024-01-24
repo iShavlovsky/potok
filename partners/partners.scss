@@ -212,3 +212,15 @@
     overflow: hidden;
 }
 
+.partners-faq-title {
+    margin-bottom: 92px;
+
+    @include tablet {
+        margin-bottom: 52px;
+    }
+
+    @include mobile {
+        margin-bottom: 32px;
+    }
+}
+

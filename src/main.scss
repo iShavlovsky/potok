@@ -334,7 +334,7 @@ header, footer {
     padding-bottom: px(64);
     padding-left: 0;
     padding-right: 0;
-    min-height: 100vh;
+    min-height: 180vh;
     position: relative;
     background: $c-background;
     overflow: hidden;
@@ -1351,6 +1351,13 @@ header, footer {
 }
 
 /* Staff */
+.staff-img-w {
+    width: 10%;
+    &img{
+        width: 100%;
+        height: auto;
+    }
+}
 .staff {
     padding-left: 0;
     padding-right: 0;
@@ -1518,9 +1525,9 @@ header, footer {
     color: $c-popup;
     z-index: 2;
     cursor: auto;
+    min-height: px(424);
 
     padding-right: px(80);
-    padding-top: px(100);
     padding-bottom: px(24);
 
 
@@ -1533,8 +1540,8 @@ header, footer {
     >img {
         flex: 0 0 55%;
         height: auto;
-        max-width: 100%;
-        object-fit: cover;
+        max-width: 55%;
+        object-fit: contain;
 
         @include tablet {
             width: 50%;

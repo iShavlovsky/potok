@@ -101,7 +101,6 @@
       includeReferrer: true}); 
   </script>
 
-
   <style>
 
     input, textarea, select, div, a, li, button {outline:none !important;}
@@ -659,7 +658,7 @@
                                 <input type="hidden" name="company_created_at" class="company_created_at">
                                 <input type="hidden" name="dadata_info" class="dadata_info js-dadata_info">
                                 <input type="hidden" name="label" class="js-label" value="main">
-                                <input type="hidden" name="utm_tags" class="js-utm-tags" value="{}">
+                                <input type="hidden" name="utm_tags" class="js-utm-tags" value="{links[i]}">
                                 <input type="hidden" name="referral_code" class="referral" value="none">
                               </div>
                             </div>
@@ -1038,7 +1037,22 @@
         ]
       });
     </script>
-    
+    <script>
+      'use strict';
+      $(function () {
+        let searchParams = new URLSearchParams(window.location.search),
+            utmTags = {};
+        for (let entry of searchParams) {
+          let utmName = entry[0],
+              utmValue = entry[1];
+          if (utmName.match(/^utm_|agent_ext_id/)) {
+            utmTags[utmName] = utmValue; 
+          }
+        }
+        $('.js-label').val(utmTags['utm_campaign'] || "main");
+        $('.js-utm-tags').val(JSON.stringify(utmTags));
+      });
+    </script>
 </body>
 </html>
 
